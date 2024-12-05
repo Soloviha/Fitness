@@ -96,6 +96,7 @@ export default function TypePage(): React.JSX.Element {
     left: 'calc(50% - 9px)',
   }));
 
+  
   return (
     <>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
