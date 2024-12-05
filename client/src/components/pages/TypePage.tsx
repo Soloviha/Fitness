@@ -15,7 +15,7 @@ export default function TypePage(): React.JSX.Element {
       <div className="row">
         {types.map((type) => (
           <div className="col-12" key={type.id}>
-            <TypeCard />
+            <TypeCard type={type}/>
           </div>
         ))}
       </div>

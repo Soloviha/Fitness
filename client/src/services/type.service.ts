@@ -9,7 +9,7 @@ class TypeService {
 
   async getAll(): Promise<TypeType[]> {
     try {
-      const response = await this.client.get('/typeOfWorkots');
+      const response = await this.client.get('/typeOfWorkouts');
       return typeSchema.array().parse(response.data);
     } catch (error) {
       console.error(error);

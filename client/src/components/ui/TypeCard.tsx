@@ -9,8 +9,13 @@ import Typography from '@mui/material/Typography';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
+import { TypeType } from '../../schemas/type.schema';
 
-export default function TypeCard(): React.JSX.Element {
+type TypeProps = {
+    type: TypeType
+}
+
+export default function TypeCard({type}: TypeProps): React.JSX.Element {
   const theme = useTheme();
 
   return (
@@ -18,10 +23,10 @@ export default function TypeCard(): React.JSX.Element {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
-            Live From Space
+            {type.name}
           </Typography>
           <Typography variant="subtitle1" component="div" sx={{ color: 'text.secondary' }}>
-            Mac Miller
+            {type.description}
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
@@ -39,7 +44,7 @@ export default function TypeCard(): React.JSX.Element {
       <CardMedia
         component="img"
         sx={{ width: 151 }}
-        image="/static/images/cards/live-from-space.jpg"
+        image="../../../public/trening.jpg"
         alt="Live from space album cover"
       />
     </Card>
