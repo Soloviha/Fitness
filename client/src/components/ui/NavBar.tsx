@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
-import {   setModalOpen } from '../../providers/slice/auth/authSlice';
+import { setModalOpen, setSignupModalOpen } from '../../providers/slice/auth/authSlice';
 import { FaUserCircle } from 'react-icons/fa';
 import LoginModal from '../pages/LoginModal';
+import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { user, accessToken } = useAppSelector((state) => state.auth);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const logoutHandler = (): void => {
     void dispatch(logoutThunk());
@@ -20,8 +22,15 @@ export default function NavBar(): React.JSX.Element {
   };
 
   const openLoginModal = (): void => {
-    void dispatch(setModalOpen());
+    if (!user) {
+      setIsLoginModalOpen(true);
+      void dispatch(setModalOpen());
+    }
+  };
 
+  const openSignupModal = (): void => {
+    setIsLoginModalOpen(false);
+    void dispatch(setSignupModalOpen());
   };
 
   return (
@@ -42,29 +51,46 @@ export default function NavBar(): React.JSX.Element {
               Тренировки
             </NavLink>
             {user && accessToken ? (
-              <NavLink to="/login" className="nav-link" onClick={logoutHandler} style={{ color: 'white' }}>
+              <NavLink
+                to="/login"
+                className="nav-link"
+                onClick={logoutHandler}
+                style={{ color: 'white' }}
+              >
                 Выход
               </NavLink>
             ) : (
-              <NavLink to="/signup" className="nav-link" style={{ color: 'white' }}>
-                Зарегистрироваться
-              </NavLink>
+              <Nav.Link
+                href="#"
+                className="nav-link"
+                onClick={openLoginModal}
+                style={{ color: 'white' }}
+              >
+                
+              </Nav.Link>
             )}
           </Nav>
           <Nav>
-            <NavLink
-              to="#"
+            <Nav.Link
+              href="#"
               className="nav-link"
-              style={{ color: 'white', display: 'flex', alignItems: 'center' }}
+              style={{
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                pointerEvents: user ? 'none' : 'auto',
+                opacity: user ? 0.5 : 1,
+              }}
               onClick={openLoginModal}
             >
               <span style={{ marginRight: '8px' }}>Личный кабинет</span>
               <FaUserCircle size={24} />
-            </NavLink>
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-      <LoginModal />
+      {isLoginModalOpen && <LoginModal openSignupModal={openSignupModal} />}
+      <SignupModal />
     </>
   );
 }

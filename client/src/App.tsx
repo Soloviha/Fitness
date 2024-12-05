@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
 import LoginPage from './components/pages/LoginModal';
-import SignupPage from './components/pages/SignupPage';
+import SignupPage from './components/pages/SignupModal';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
