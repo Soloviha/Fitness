@@ -19,8 +19,8 @@ export default function NavBar(): React.JSX.Element {
       <Container>
         <Navbar.Brand href="/">{user ?? 'Рестораны'}</Navbar.Brand>
         <Nav className="me-auto">
-          <NavLink to="/rests" className="nav-link">
-            Все рестораны
+          <NavLink to="/types" className="nav-link">
+            type
           </NavLink>
           {user ? (
             <>
