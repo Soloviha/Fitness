@@ -9,6 +9,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import LoginModal from '../pages/LoginModal';
 import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';
+import { Avatar } from '@mui/material';
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -43,6 +44,11 @@ export default function NavBar(): React.JSX.Element {
         }}
       >
         <Container>
+          <Avatar
+            alt="Remy Sharp"
+            src="../../../public/IMG_1902.PNG"
+            sx={{ width: 100, height: 100 }}
+          />
           <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}>
             {'JoJo_fit'}
           </Navbar.Brand>
@@ -68,9 +74,7 @@ export default function NavBar(): React.JSX.Element {
                 className="nav-link"
                 onClick={openLoginModal}
                 style={{ color: 'white' }}
-              >
-                
-              </Nav.Link>
+              ></Nav.Link>
             )}
           </Nav>
           <Nav>

@@ -50,3 +50,4 @@ export default function TypeCard({type}: TypeProps): React.JSX.Element {
     </Card>
   );
 }
+
