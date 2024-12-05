@@ -1,6 +1,8 @@
-import React from 'react';
-import LoginPage from './LoginModal';
+import React from 'react'
+import LoginModal from './LoginModal'
 
 export default function HelloPage(): React.JSX.Element {
-  return <LoginPage />;
+  return (
+    <LoginModal/>
+  )
 }
