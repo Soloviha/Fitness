@@ -9,6 +9,7 @@ const initialState: AuthSliceType = {
   user: null,
   accessToken: null,
   error: null,
+  isModalOpen:false,
 };
 
 export const authSlice = createSlice({
@@ -17,6 +18,15 @@ export const authSlice = createSlice({
   reducers: {
     setAccessToken: (state, action: PayloadAction<string>) => {
       state.accessToken = action.payload;
+    },
+    setModalOpen: (state) => {
+      state.isModalOpen = true;
+    },
+    setModalClose: (state) => {
+      state.isModalOpen = false;
+      state.error = null;
+      state.user = null;
+      state.accessToken = null;
     },
   },
   extraReducers: (builder) => {
@@ -52,6 +62,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setAccessToken } = authSlice.actions;
+export const { setAccessToken , setModalClose, setModalOpen} = authSlice.actions;
 
 export default authSlice.reducer;

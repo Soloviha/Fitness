@@ -7,11 +7,10 @@ import { store } from './providers/redux/store.ts';
 import {injectStore} from './api/axiosInstance.ts'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+ 
      <Provider store={store}>
     <App />
     </Provider>
-  </StrictMode>,
 );
 
 injectStore(store);
