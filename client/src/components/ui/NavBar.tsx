@@ -44,11 +44,13 @@ export default function NavBar(): React.JSX.Element {
         }}
       >
         <Container>
+          <NavLink to='/'>
           <Avatar
             alt="Remy Sharp"
-            src="../../../public/IMG_1902.PNG"
+            src="../../../public/IMG_1903.PNG"
             sx={{ width: 100, height: 100 }}
           />
+          </NavLink>
           <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}>
             {'JoJo_fit'}
           </Navbar.Brand>

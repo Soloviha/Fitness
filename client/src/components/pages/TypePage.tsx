@@ -102,9 +102,9 @@ export default function TypePage(): React.JSX.Element {
         {types.map((type, index) => (
           <ImageButton
             focusRipple
-            key={type.name} // Используем type.name как ключ
+            key={type.name} 
             style={{
-              width: images[index % images.length].width, // Убедитесь, что ширина соответствует изображениям
+              width: images[index % images.length].width,
             }}
           >
             <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
