@@ -10,6 +10,7 @@ export default function TypePage(): React.JSX.Element {
   useEffect(() => {
     void dispatch(getAll());
   }, []);
+  
   return (
     <div className="container">
       <div className="row">

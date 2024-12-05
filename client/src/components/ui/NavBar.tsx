@@ -47,8 +47,11 @@ export default function NavBar(): React.JSX.Element {
             {'JoJo_fit'}
           </Navbar.Brand>
           <Nav className="me-auto" style={{ fontSize: '18px' }}>
-            <NavLink to="/тренировки" className="nav-link" style={{ color: 'white' }}>
+            <NavLink to="/types" className="nav-link" style={{ color: 'white' }}>
               Тренировки
+            </NavLink>
+            <NavLink to="/types/workouts" className="nav-link" style={{ color: 'white' }}>
+              Упражнения
             </NavLink>
             {user && accessToken ? (
               <NavLink

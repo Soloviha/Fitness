@@ -8,6 +8,7 @@ import ProtectedRouter from './HOCs/ProtectedRouter';
 import LoginPage from './components/pages/LoginModal';
 import SignupPage from './components/pages/SignupModal';
 import TypePage from './components/pages/TypePage';
+import WorkoutPage from './components/pages/WorkoutPage';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -31,6 +32,10 @@ function App(): React.JSX.Element {
             {
               path: '/types',
               element: <TypePage />,
+            },
+            {
+              path: '/types/workouts',
+              element: <WorkoutPage />,
             },
             // {
             //   path: '/rests/:id',

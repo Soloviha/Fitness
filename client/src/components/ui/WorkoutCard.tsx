@@ -9,13 +9,13 @@ import Typography from '@mui/material/Typography';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
-import type { TypeType } from '../../schemas/type.schema';
+import type { WorkoutType } from '../../schemas/workout.shema';
 
-type TypeProps = {
-    type: TypeType
+type WorkoutProps = {
+    workout: WorkoutType
 }
 
-export default function TypeCard({type}: TypeProps): React.JSX.Element {
+export default function WorkoutCard({workout}: WorkoutProps): React.JSX.Element {
   const theme = useTheme();
 
   return (
@@ -23,10 +23,10 @@ export default function TypeCard({type}: TypeProps): React.JSX.Element {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
-            {type.name}
+            {workout.name}
           </Typography>
           <Typography variant="subtitle1" component="div" sx={{ color: 'text.secondary' }}>
-            {type.description}
+            {workout.description}
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
@@ -47,6 +47,9 @@ export default function TypeCard({type}: TypeProps): React.JSX.Element {
         image="../../../public/trening.jpg"
         alt="Live from space album cover"
       />
-    </Card>
+    </Card> 
   );
 }
+
+
+
