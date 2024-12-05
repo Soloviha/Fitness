@@ -105,7 +105,7 @@ export default function HelloPage(): React.JSX.Element {
           </main>
         </div>
       </div>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
         {images.map((image) => (
           <ImageButton
             focusRipple

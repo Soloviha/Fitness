@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
 import { signupThunk } from '../../providers/slice/auth/authThunks';
 import { setModalClose } from '../../providers/slice/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
+import styles from '../../components/css/SIgnupModal.module.css';
 
 export default function SignupModal(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -29,6 +30,8 @@ export default function SignupModal(): React.JSX.Element {
 
   return (
     <Modal show={isSignupModalOpen} onHide={handleClose}>
+         <div className={styles.modal}>
+         <div className={styles.modalContent}>
       <Modal.Header closeButton>
         <Modal.Title>Регистрация</Modal.Title>
       </Modal.Header>
@@ -54,6 +57,8 @@ export default function SignupModal(): React.JSX.Element {
           </Button>
         </Form>
       </Modal.Body>
+      </div>
+      </div>
     </Modal>
   );
 }

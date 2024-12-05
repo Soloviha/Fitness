@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
 import { loginThunk } from '../../providers/slice/auth/authThunks';
 import { setModalClose, setSignupModalOpen } from '../../providers/slice/auth/authSlice';
 import { useNavigate } from 'react-router-dom';
-
+import styles from '../../components/css/LoginModal.module.css';
 
 export default function LoginModal(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -34,7 +34,11 @@ export default function LoginModal(): React.JSX.Element {
   }, [user, accessToken, navigate]);
 
   return (
+   
     <Modal show={isModalOpen} onHide={handleClose}>
+    <div className={styles.modal}>
+    <div className={styles.modalContent}>
+      
       <Modal.Header closeButton>
         <Modal.Title>Вход</Modal.Title>
       </Modal.Header>
@@ -58,8 +62,10 @@ export default function LoginModal(): React.JSX.Element {
           </Button>
         </Form>
       </Modal.Body>
-     
+      </div>
+    </div>
     </Modal>
+   
     
   );
 }
