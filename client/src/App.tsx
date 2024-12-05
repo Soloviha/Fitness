@@ -7,6 +7,7 @@ import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
 import LoginPage from './components/pages/LoginModal';
 import SignupPage from './components/pages/SignupModal';
+import TypePage from './components/pages/TypePage';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -27,10 +28,10 @@ function App(): React.JSX.Element {
         {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
-            // {
-            //   path: '/rests',
-            //   element: <RestPage />,
-            // },
+            {
+              path: '/types',
+              element: <TypePage />,
+            },
             // {
             //   path: '/rests/:id',
             //   element: <OneRestCard />,
