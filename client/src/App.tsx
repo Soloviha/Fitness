@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
-import LoginPage from './components/pages/LoginPage';
-import SignupPage from './components/pages/SignupPage';
+import LoginPage from './components/pages/LoginModal';
+import SignupPage from './components/pages/SignupModal';
 import TypePage from './components/pages/TypePage';
 
 function App(): React.JSX.Element {
@@ -15,7 +15,7 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(refreshThunk());
-  }, []);
+  }, [dispatch]);
 
   const router = createBrowserRouter([
     {

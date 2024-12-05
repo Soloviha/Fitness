@@ -4,13 +4,13 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import LoginModal from './LoginModal';
 
 const images = [
   {
     url: '../../../public/sport-sajt20.jpg',
     title: 'Тренироваться',
     width: '40%',
-
   },
   {
     url: '../../../public/trening.jpg',
@@ -27,9 +27,9 @@ const images = [
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
   height: 200,
- 
+
   [theme.breakpoints.down('sm')]: {
-    width: '100% !important', 
+    width: '100% !important',
     height: 100,
   },
   '&:hover, &.Mui-focusVisible': {
@@ -66,8 +66,6 @@ const Image = styled('span')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   color: theme.palette.common.white,
-
-
 }));
 
 const ImageBackdrop = styled('span')(({ theme }) => ({
@@ -79,7 +77,6 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
   backgroundColor: theme.palette.common.black,
   opacity: 0.7,
   transition: theme.transitions.create('opacity'),
-
 }));
 
 const ImageMarked = styled('span')(({ theme }) => ({
@@ -93,53 +90,52 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function HelloPage(): React.JSX.Element {
   return (
-<div className={styles.container}>
-    <div >
-      <div className={`${styles.background_video} background-video`}>
-        <video autoPlay loop muted>
-          <source src="../../../public/2024-12-05_14.52.37.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <div className={styles.container}>
+      <div>
+        <div className={`${styles.background_video} background-video`}>
+          <video autoPlay loop muted>
+            <source src="../../../public/2024-12-05_14.52.37.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-      <div className={styles.content_wrapper}>
-        <main className={styles.main_content}>
-          <h1 className={styles.h1}>JOJO_fit</h1>
-          <p className={styles.p}>
-            Твой личный тренер
-          </p>
+        <div className={styles.content_wrapper}>
+          <main className={styles.main_content}>
+            <h1 className={styles.h1}>JOJO_fit</h1>
+            <p className={styles.p}>Твой личный тренер</p>
           </main>
+        </div>
       </div>
-    </div>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
-      {images.map((image) => (
-        <ImageButton
-          focusRipple
-          key={image.title}
-          style={{
-            width: image.width,
-          }}
-        >
-          <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
-          <ImageBackdrop className="MuiImageBackdrop-root" />
-          <Image>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              sx={(theme) => ({
-                position: 'relative',
-                p: 4,
-                pt: 2,
-                pb: `calc(${theme.spacing(1)} + 6px)`,
-              })}
-            >
-              {image.title}
-              <ImageMarked className="MuiImageMarked-root" />
-            </Typography>
-          </Image>
-        </ImageButton>
-      ))}
-    </Box>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+        {images.map((image) => (
+          <ImageButton
+            focusRipple
+            key={image.title}
+            style={{
+              width: image.width,
+            }}
+          >
+            <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+            <ImageBackdrop className="MuiImageBackdrop-root" />
+            <Image>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                sx={(theme) => ({
+                  position: 'relative',
+                  p: 4,
+                  pt: 2,
+                  pb: `calc(${theme.spacing(1)} + 6px)`,
+                })}
+              >
+                {image.title}
+                <ImageMarked className="MuiImageMarked-root" />
+              </Typography>
+            </Image>
+          </ImageButton>
+        ))}
+      </Box>
+      <LoginModal />
     </div>
   );
 }

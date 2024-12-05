@@ -1,14 +1,16 @@
 /* eslint-disable no-param-reassign */
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AuthSliceType } from "../../../schemas/auth.schema";
-import { loginThunk, logoutThunk, refreshThunk, signupThunk } from "./authThunks";
-
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import type { AuthSliceType } from '../../../schemas/auth.schema';
+import { loginThunk, logoutThunk, refreshThunk, signupThunk } from './authThunks';
 
 const initialState: AuthSliceType = {
   user: null,
   accessToken: null,
   error: null,
+  isModalOpen: false,
+  isSignupModalOpen: false,
 };
 
 export const authSlice = createSlice({
@@ -17,6 +19,19 @@ export const authSlice = createSlice({
   reducers: {
     setAccessToken: (state, action: PayloadAction<string>) => {
       state.accessToken = action.payload;
+    },
+    setModalOpen: (state) => {
+      state.isModalOpen = true;
+      state.isSignupModalOpen = false;
+    },
+    setSignupModalOpen: (state) => {
+      state.isSignupModalOpen = true;
+      state.isModalOpen = false;
+    },
+    setModalClose: (state) => {
+      state.isModalOpen = false;
+      state.isSignupModalOpen = false;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
@@ -52,6 +67,7 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setAccessToken } = authSlice.actions;
+export const { setAccessToken, setModalClose, setModalOpen, setSignupModalOpen } =
+  authSlice.actions;
 
 export default authSlice.reducer;
