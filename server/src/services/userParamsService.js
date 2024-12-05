@@ -16,6 +16,7 @@ class UserParamsService {
           userId,
           secondName: null,
           dateOfBirth: null,
+          sex: null,
           weight: null,
           height: null,
         });
@@ -29,14 +30,14 @@ class UserParamsService {
 
   async addingParams(data) {
     try {
-      const { userId, secondName, dateOfBirth, weight, height } = data;
+      const { userId, secondName, dateOfBirth, sex, weight, height } = data;
       const [params, created] = await this.#db.UserParams.findOrCreate({
         where: { userId },
-        defaults: { secondName, dateOfBirth, weight, height },
+        defaults: { secondName, dateOfBirth, sex, weight, height },
       });
 
       if (!created) {
-        await params.update({ secondName, dateOfBirth, weight, height });
+        await params.update({ secondName, dateOfBirth, sex, weight, height });
       }
 
       return params.get();
