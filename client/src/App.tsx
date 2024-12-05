@@ -7,6 +7,7 @@ import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
 import LoginPage from './components/pages/LoginPage';
 import SignupPage from './components/pages/SignupPage';
+import PersonalPage from './components/pages/PersonalPage';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -51,6 +52,10 @@ function App(): React.JSX.Element {
             {
               path: '/signup',
               element: <SignupPage />,
+            },
+            {
+              path: '/user/profile',
+              element: <PersonalPage />,
             },
           ],
         },
