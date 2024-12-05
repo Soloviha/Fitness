@@ -9,8 +9,12 @@ import { FaUserCircle } from 'react-icons/fa';
 import LoginModal from '../pages/LoginModal';
 import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';
+
 import styles from '../../components/css/NavBar.css.module.css';
 import { Image } from 'react-bootstrap';
+
+import { Avatar } from '@mui/material';
+
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -42,10 +46,21 @@ export default function NavBar(): React.JSX.Element {
     <>
       <Navbar className={styles.navbar}>
         <Container>
+
         
 
           <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}></Navbar.Brand>
           
+
+          <Avatar
+            alt="Remy Sharp"
+            src="../../../public/IMG_1902.PNG"
+            sx={{ width: 100, height: 100 }}
+          />
+          <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}>
+            {'JoJo_fit'}
+          </Navbar.Brand>
+
           <Nav className="me-auto" style={{ fontSize: '18px' }}>
             <NavLink to="/types" className="nav-link" style={{ color: 'white' }}>
               Тренировки
