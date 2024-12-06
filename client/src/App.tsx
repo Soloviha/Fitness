@@ -10,9 +10,11 @@ import PersonalPage from './components/pages/PersonalPage';
 
 import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
-import WorkoutCardOne from './components/ui/WorkoutCardOne';
+// import WorkoutCardOne from './components/ui/WorkoutCardOne';
 import LoginModal from './components/pages/LoginModal';
 import SignupModal from './components/pages/SignupModal';
+import { getAllWorkouts } from './providers/slice/workout/WorkoutThunk';
+import ExercisePage from './components/pages/ExercisePage';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -20,6 +22,10 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(refreshThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    void dispatch(getAllWorkouts());
   }, [dispatch]);
 
   const router = createBrowserRouter([
@@ -38,13 +44,21 @@ function App(): React.JSX.Element {
               element: <TypePage />,
             },
             {
-              path: '/types/workouts',
+              path: '/types/workouts/:id',
               element: <WorkoutPage />,
             },
             {
-              path: '/types/workouts/:id',
-              element: <WorkoutCardOne />,
+              path: '/types/workouts/exercises/:id',
+              element: <ExercisePage />,
             },
+            // {
+            //   path: '/types/workouts',
+            //   element: <WorkoutPage />,
+            // },
+            // {
+            //   path: '/types/workouts/:id',
+            //   element: <WorkoutCardOne />,
+            // },
             // {
             //   path: '/rests/new',
             //   element: <AddRestPage />,
