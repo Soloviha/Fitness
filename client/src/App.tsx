@@ -37,6 +37,10 @@ function App(): React.JSX.Element {
           element: <HelloPage />,
         },
         {
+          path: '/user/profile',
+          element: <PersonalPage />,
+        },
+        {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
             {
@@ -76,10 +80,10 @@ function App(): React.JSX.Element {
               path: '/signup',
               element: <SignupModal />,
             },
-            {
-              path: '/user/profile',
-              element: <PersonalPage />,
-            },
+            // {
+            //   path: '/user/profile',
+            //   element: <PersonalPage />,
+            // },
           ],
         },
       ],
