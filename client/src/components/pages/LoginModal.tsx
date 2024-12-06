@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { useEffect } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';

@@ -4,12 +4,12 @@ import { Button, Container, Form } from 'react-bootstrap';
 // import { updateUserParamsThunk, fetchUserParamsThunk } from '../../providers/slice/user/userThunks'; // Импортируйте нужные thunks
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import CalendarBlock from '../ui/CalendarBlock'; // Убедитесь, что путь к вашему компоненту правильный
 
 export default function UserParamsPage(): React.JSX.Element {
   // это не трогай пока, оно должно работать!!!!
-  //_________________________________________________________________________________
+  // _________________________________________________________________________________
 
   // const dispatch = useAppDispatch();
   // const userParams = useAppSelector((state) => state.user.params); // Получаем данные пользователя из Redux
@@ -25,7 +25,7 @@ export default function UserParamsPage(): React.JSX.Element {
   //   const formData = new FormData(e.currentTarget);
   //   void dispatch(updateUserParamsThunk(formData)); // Используйте нужный thunk для обновления параметров
   // };
-  //_________________________________________________________________________________
+  // _________________________________________________________________________________
   // это не трогай пока, оно должно работать!!!!
 
   return (
