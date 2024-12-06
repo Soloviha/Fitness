@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
 import { getAllWorkouts } from '../../providers/slice/workout/WorkoutThunk';
 import { useParams } from 'react-router-dom';
-
+// import Timer from '../ui/Timer'; // Предполагается, что этот компонент отображает обратный отсчет
 export default function TreningPage(): React.JSX.Element {
   const trenings = useAppSelector((state) => state.workout.workouts); // Получаем массив упражнений из Redux-стора
   const { id } = useParams();
@@ -11,9 +11,39 @@ export default function TreningPage(): React.JSX.Element {
   const dispatch = useAppDispatch();
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [isFinished, setIsFinished] = useState(false);
+
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
+
+  const workouts = useAppSelector((state) => state.workout.workouts);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [timerDuration, setTimerDuration] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
+
+//   useEffect(() => {
+//     if (currentIndex < workouts.length) {
+//       const workout = workouts[currentIndex];
+//       setTimerDuration(3000); // Устанавливаем длительность таймера
+
+//       const workoutTime =3000; 
+//       const pauseTime = 1000; 
+
+//       const totalDuration = workoutTime + pauseTime;
+
+//       const timer = setTimeout(() => {
+//         setCurrentIndex(currentIndex + 1);
+//       }, totalDuration);
+
+//       return () => clearTimeout(timer);
+//     } else {
+//       setIsFinished(true);
+//     }
+//   }, [currentIndex, workouts]);
+
+//   if (isFinished) {
+//     return <div>Все тренировки завершены!</div>;
+//   }
 
   useEffect(() => {
     void dispatch(getAllWorkouts());
@@ -83,7 +113,16 @@ export default function TreningPage(): React.JSX.Element {
   }
 
   return (
-
+    // <div className="container">
+    //   <div className="row">
+    //     {currentIndex < workouts.length && (
+    //       <div className="col-12">
+    //         <WorkoutCard workout={workouts[currentIndex]} />
+    //         {/* <Timer duration={timerDuration} /> Показываем таймер для текущего workout */}
+    //       </div>
+    //     )}
+    //   </div>
+    // <div className={styles.typeCard}>
   );
 }
 
