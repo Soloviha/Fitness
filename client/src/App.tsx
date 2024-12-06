@@ -31,6 +31,10 @@ function App(): React.JSX.Element {
           element: <HelloPage />,
         },
         {
+          path: '/user/profile',
+          element: <PersonalPage />,
+        },
+        {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
             {
@@ -45,10 +49,6 @@ function App(): React.JSX.Element {
               path: '/types/workouts/:id',
               element: <WorkoutCardOne />,
             },
-            // {
-            //   path: '/rests/new',
-            //   element: <AddRestPage />,
-            // },
           ],
         },
         {
@@ -62,10 +62,10 @@ function App(): React.JSX.Element {
               path: '/signup',
               element: <SignupModal />,
             },
-            {
-              path: '/user/profile',
-              element: <PersonalPage />,
-            },
+            // {
+            //   path: '/user/profile',
+            //   element: <PersonalPage />,
+            // },
           ],
         },
       ],
