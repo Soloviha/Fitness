@@ -11,6 +11,7 @@ export const exerciseSchema = z.object({
   workoutId: z.number(),
 });
 
+
 export type ExerciseType = z.infer<typeof exerciseSchema>;
 
 export type ExerciseSliceType = { 
