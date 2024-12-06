@@ -9,8 +9,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import LoginModal from '../pages/LoginModal';
 import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';
-import styles from '../../components/css/NavBar.css.module.css';
-import { Image } from 'react-bootstrap';
+import styles from '../css/NavBar.css.module.css'
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
