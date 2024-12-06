@@ -14,7 +14,7 @@ export default function PersonalMetric(): React.JSX.Element {
             type="number"
             name="weight"
             placeholder="Введите вес"
-            defaultValue="55"
+            defaultValue="100"
             required
           />
         </Form.Group>
@@ -25,7 +25,7 @@ export default function PersonalMetric(): React.JSX.Element {
             type="number"
             name="waistCircumference"
             placeholder="Введите объем талии"
-            defaultValue="80"
+            defaultValue="100"
             required
           />
         </Form.Group>
@@ -36,7 +36,7 @@ export default function PersonalMetric(): React.JSX.Element {
             type="number"
             name="chestCircumference"
             placeholder="Введите объем груди"
-            defaultValue="90"
+            defaultValue="120"
             required
           />
         </Form.Group>
@@ -47,7 +47,7 @@ export default function PersonalMetric(): React.JSX.Element {
             type="number"
             name="hipCircumference"
             placeholder="Введите объем бедер"
-            defaultValue="95"
+            defaultValue="120"
             required
           />
         </Form.Group>
@@ -58,7 +58,7 @@ export default function PersonalMetric(): React.JSX.Element {
             type="number"
             name="thighCircumference"
             placeholder="Введите объем бедра"
-            defaultValue="55"
+            defaultValue="70"
             required
           />
         </Form.Group>
@@ -69,7 +69,7 @@ export default function PersonalMetric(): React.JSX.Element {
             type="number"
             name="shoulderCircumference"
             placeholder="Введите объем плеча"
-            defaultValue="40"
+            defaultValue="50"
             required
           />
         </Form.Group>
