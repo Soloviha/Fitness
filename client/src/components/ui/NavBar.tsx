@@ -41,12 +41,7 @@ export default function NavBar(): React.JSX.Element {
       <Navbar className={styles.navbar}>
         <Container>
           <NavLink to='/'>
-
-        
-
           <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}></Navbar.Brand>
-          
-
           <Avatar
             alt="Remy Sharp"
             src="../../../public/photo-output.PNG"

@@ -7,8 +7,6 @@ import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
 import LoginPage from './components/pages/LoginModal';
 import SignupPage from './components/pages/SignupModal';
-
-import TypeCard from './components/ui/TypeCard';
 import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
 import WorkoutCardOne from './components/ui/WorkoutCardOne';
