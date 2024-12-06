@@ -5,9 +5,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
-import LoginPage from './components/pages/LoginPage';
-import SignupPage from './components/pages/SignupPage';
+
 import PersonalPage from './components/pages/PersonalPage';
+
+import TypePage from './components/pages/TypePage';
+import WorkoutPage from './components/pages/WorkoutPage';
+import WorkoutCardOne from './components/ui/WorkoutCardOne';
+import LoginModal from './components/pages/LoginModal';
+import SignupModal from './components/pages/SignupModal';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -15,7 +20,7 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(refreshThunk());
-  }, []);
+  }, [dispatch]);
 
   const router = createBrowserRouter([
     {
@@ -28,14 +33,18 @@ function App(): React.JSX.Element {
         {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
-            // {
-            //   path: '/rests',
-            //   element: <RestPage />,
-            // },
-            // {
-            //   path: '/rests/:id',
-            //   element: <OneRestCard />,
-            // },
+            {
+              path: '/types',
+              element: <TypePage />,
+            },
+            {
+              path: '/types/workouts',
+              element: <WorkoutPage />,
+            },
+            {
+              path: '/types/workouts/:id',
+              element: <WorkoutCardOne />,
+            },
             // {
             //   path: '/rests/new',
             //   element: <AddRestPage />,
@@ -47,11 +56,11 @@ function App(): React.JSX.Element {
           children: [
             {
               path: '/login',
-              element: <LoginPage />,
+              element: <LoginModal />,
             },
             {
               path: '/signup',
-              element: <SignupPage />,
+              element: <SignupModal />,
             },
             {
               path: '/user/profile',
