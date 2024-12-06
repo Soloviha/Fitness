@@ -10,7 +10,7 @@ import LoginModal from '../pages/LoginModal';
 import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';  
 import styles from '../css/NavBar.css.module.css'
-import styles from '../../components/css/NavBar.css.module.css';
+// import styles from '../../components/css/NavBar.css.module.css';
 import { Avatar } from '@mui/material';
 
 
@@ -38,9 +38,6 @@ export default function NavBar(): React.JSX.Element {
     void dispatch(setSignupModalOpen());
   };
 
-  const navigateToHome = (): void => {
-    navigate('/');
-  };
   return (
     <>
       <Navbar className={styles.navbar}>
