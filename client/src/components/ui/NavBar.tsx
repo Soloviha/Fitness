@@ -9,10 +9,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import LoginModal from '../pages/LoginModal';
 import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';
-
 import styles from '../../components/css/NavBar.css.module.css';
-import { Image } from 'react-bootstrap';
-
 import { Avatar } from '@mui/material';
 
 
@@ -39,13 +36,11 @@ export default function NavBar(): React.JSX.Element {
     void dispatch(setSignupModalOpen());
   };
 
-  const navigateToHome = (): void => {
-    navigate('/');
-  };
   return (
     <>
       <Navbar className={styles.navbar}>
         <Container>
+          <NavLink to='/'>
 
         
 
@@ -54,10 +49,11 @@ export default function NavBar(): React.JSX.Element {
 
           <Avatar
             alt="Remy Sharp"
-            src="../../../public/IMG_1902.PNG"
-            sx={{ width: 100, height: 100 }}
+            src="../../../public/photo-output.PNG"
+            sx={{ width: 70, height: 70 }}
           />
-          <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}>
+          </NavLink>
+          <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }} className={styles.gradient_text}>
             {'JoJo_fit'}
           </Navbar.Brand>
 

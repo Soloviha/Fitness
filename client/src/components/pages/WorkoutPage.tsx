@@ -6,6 +6,7 @@ import WorkoutCard from '../ui/WorkoutCard';
 export default function WorkoutPage(): React.JSX.Element {
   const workouts = useAppSelector((state) => state.workout.workouts);
   const dispatch = useAppDispatch();
+  
 
   useEffect(() => {
     void dispatch(getAllWorkouts());
