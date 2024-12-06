@@ -123,7 +123,7 @@ export default function TypePage(): React.JSX.Element {
             
           <ImageButton
             focusRipple
-            key={type.name}
+            key={type.id}
             style={{
               width: images[index % images.length].width,
             }}
