@@ -7,6 +7,7 @@ const typeOfWorkoutRouter = require('./routers/typeOfWorkoutRouter');
 const workoutRouter = require('./routers/workoutRouter');
 const UserParameterRouter = require('./routers/userParameterRouter');
 // const userParameterRouter = require('./routers/userParameterRoute')
+const exerciseRouter = require('./routers/exerciseRouter')
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/token', tokenRouter);
 app.use('/api/typeOfWorkouts', typeOfWorkoutRouter);
 app.use('/api/workouts', workoutRouter);
-app.use('/api/userP', UserParameterRouter);
+app.use('/api/exercises', exerciseRouter);
+app.use('/api/userP', UserParameterRouter)
 
 module.exports = app;

@@ -2,12 +2,12 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Workouts', {
+    await queryInterface.createTable('Exercises', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
         type: Sequelize.STRING,
@@ -17,40 +17,44 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      isPublic: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: true
-      },
       time: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
-      kcal: {
+      reps: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
-      typeId: {
+      relax: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      },
+      isPublic: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true,
+      },
+      workoutId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'TypeOfWorkouts',
-          key: 'id'
-          },
-          allowNull: false,
-          onDelete: 'CASCADE'
+          model: 'Workouts',
+          key: 'id',
+        },
+        allowNull: false,
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW')
+        defaultValue: Sequelize.fn('NOW'),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.fn('NOW')
-      }
+        defaultValue: Sequelize.fn('NOW'),
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Workouts');
-  }
+    await queryInterface.dropTable('Exercises');
+  },
 };
