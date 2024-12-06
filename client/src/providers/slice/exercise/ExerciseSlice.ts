@@ -5,7 +5,7 @@ import type { ExerciseSliceType } from '../../../schemas/exercise.schema';
 import { getAllExercises } from './ExerciseThunk';
 
 const initialState: ExerciseSliceType = {
-  exersices: [],
+  exercises: [],
   error: null,
 };
 
@@ -22,7 +22,7 @@ export const exerciseSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getAllExercises.fulfilled, (state, action) => {
-      state.exersices = action.payload;
+      state.exercises = action.payload;
     });
     builder.addCase(getAllExercises.rejected, (state) => {
       state.error = 'Ошибка получения';
