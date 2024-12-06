@@ -1,9 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { TypeSliceType } from '../../../schemas/type.schema';
+import type { TypeSliceType } from '../../../schemas/type.schema';
 import { getAll } from './typeThunk';
-
 
 const initialState: TypeSliceType = {
   types: [],
@@ -31,6 +30,6 @@ export const typeSlice = createSlice({
   },
 });
 
-export const { setError, clearError} = typeSlice.actions;
+export const { setError, clearError } = typeSlice.actions;
 
 export default typeSlice.reducer;
