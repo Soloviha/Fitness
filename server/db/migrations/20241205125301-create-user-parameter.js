@@ -17,6 +17,26 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: true,
       },
+      gender: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      dateOfBirth: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      img: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      BMI: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      secondName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       userId: {
         type: Sequelize.INTEGER,
         references: {

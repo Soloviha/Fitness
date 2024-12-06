@@ -13,6 +13,7 @@
   top: -120px !important;
 }
 
+
 .gradient_text {
   background: linear-gradient(to right, #ff6b6b, #ffa500, #9370db, #7b68ee);
   background-size: 200% 200%;
@@ -34,6 +35,7 @@
     background-position: 0% 50%;
   }
 }
+
 
 /* .avatar {
   top: 10px;
