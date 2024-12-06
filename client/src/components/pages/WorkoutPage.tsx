@@ -1,17 +1,19 @@
 import React from 'react';
+import { useAppSelector } from '../../providers/redux/hooks';
 import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-import { useAppSelector } from '../../providers/redux/hooks';
 import { NavLink, useParams } from 'react-router-dom';
 import styles from '../css//WorkoutPage.module.css';
 
 export default function WorkoutPage(): React.JSX.Element {
   const { id } = useParams();
   const restId = id ? Number(id) : undefined;
-  const workouts = useAppSelector((state) => state.workout.workouts.filter((el) => el.typeId === restId));
+  const workouts = useAppSelector((state) =>
+    state.workout.workouts.filter((el) => el.typeId === restId),
+  );
 
   const theme = useTheme();
 
@@ -33,9 +35,9 @@ export default function WorkoutPage(): React.JSX.Element {
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
     height: 200,
-    margin: theme.spacing(2), // Отступы между кнопками
-    borderRadius: theme.shape.borderRadius, // Закругленные углы
-    boxShadow: theme.shadows[3], // Тень для кнопок
+    margin: theme.spacing(2), 
+    borderRadius: theme.shape.borderRadius, 
+    boxShadow: theme.shadows[3], 
 
     [theme.breakpoints.down('sm')]: {
       width: '100% !important',
@@ -63,7 +65,7 @@ export default function WorkoutPage(): React.JSX.Element {
     bottom: 0,
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
-    borderRadius: 'inherit', // Закругление углов изображения
+    borderRadius: 'inherit', 
   });
 
   const Image = styled('span')(({ theme }) => ({
@@ -99,47 +101,45 @@ export default function WorkoutPage(): React.JSX.Element {
   }));
 
   return (
-    <div className={styles.typeCard}>
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'nowrap',
-          justifyContent: 'center',
-          minWidth: 300,
-          width: '100%',
-          padding: theme.spacing(2),
-          overflowX: 'auto',
-          marginTop: '100px',
-        }}
-      >
-        {workouts.map((workout, index) => (
-          <>
-            <ImageButton
-              focusRipple
-              key={workout.id}
-              style={{
-                width: images[index % images.length].width,
-              }}
-            >
-              <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
-              <ImageBackdrop className="MuiImageBackdrop-root" />
-              <Image className={styles.img}>
-                <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
-                  <Typography gutterBottom variant="h5" component="div">
-                    {workout.name}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {workout.description}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {workout.time} - {workout.kcal}
-                  </Typography>
-                </NavLink>
-              </Image>
-            </ImageButton>
-          </>
-        ))}
-      </Box>
-    </div>
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'nowrap',
+        justifyContent: 'center',
+        minWidth: 300,
+        width: '100%',
+        padding: theme.spacing(2),
+        overflowX: 'auto',
+        marginTop: '100px',
+      }}
+    >
+      {workouts.map((workout, index) => (
+        <>
+          <ImageButton
+            focusRipple
+            key={workout.id}
+            style={{
+              width: images[index % images.length].width,
+            }}
+          >
+            <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
+            <ImageBackdrop className="MuiImageBackdrop-root" />
+            <Image className={styles.img}>
+              <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
+                <Typography gutterBottom variant="h5" component="div">
+                  {workout.name}
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  {workout.description}
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  {workout.time} - {workout.kcal}
+                </Typography>
+              </NavLink>
+            </Image>
+          </ImageButton>
+        </>
+      ))}
+    </Box>
   );
 }

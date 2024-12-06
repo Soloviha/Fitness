@@ -37,9 +37,9 @@ export default function TypePage(): React.JSX.Element {
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
     height: 200,
-    margin: theme.spacing(2), // Отступы между кнопками
-    borderRadius: theme.shape.borderRadius, // Закругленные углы
-    boxShadow: theme.shadows[3], // Тень для кнопок
+    margin: theme.spacing(2), 
+    borderRadius: theme.shape.borderRadius, 
+    boxShadow: theme.shadows[3], 
 
     [theme.breakpoints.down('sm')]: {
       width: '100% !important',
@@ -67,7 +67,7 @@ export default function TypePage(): React.JSX.Element {
     bottom: 0,
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
-    borderRadius: 'inherit', // Закругление углов изображения
+    borderRadius: 'inherit', 
   });
 
   const Image = styled('span')(({ theme }) => ({
@@ -104,20 +104,18 @@ export default function TypePage(): React.JSX.Element {
 
   return (
     <div className={styles.typeCard}>
-       
       <Box
         sx={{
           display: 'flex',
-          flexWrap: 'nowrap', 
-          justifyContent: 'center', 
+          flexWrap: 'nowrap',
+          justifyContent: 'center',
           minWidth: 300,
           width: '100%',
-          padding: theme.spacing(2), 
+          padding: theme.spacing(2),
           overflowX: 'auto',
-          marginTop: '100px'
+          marginTop: '100px',
         }}
       >
-
         {types.map((type, index) => (
             <>
             
@@ -153,9 +151,7 @@ export default function TypePage(): React.JSX.Element {
             
               </>
         ))}
-    
       </Box>
-    
     </div>
   );
 }
