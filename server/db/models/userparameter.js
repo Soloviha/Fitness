@@ -14,8 +14,13 @@ module.exports = (sequelize, DataTypes) => {
       }
   }
   UserParameter.init({
+    gender:DataTypes.STRING,
     weight: DataTypes.INTEGER,
     height: DataTypes.INTEGER,
+    dateOfBirth:DataTypes.STRING,
+    BMI:DataTypes.INTEGER,
+    secondName:DataTypes.STRING,
+    img:DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {
     sequelize,

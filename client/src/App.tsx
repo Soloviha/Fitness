@@ -5,11 +5,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
-import LoginPage from './components/pages/LoginModal';
-import SignupPage from './components/pages/SignupModal';
+
+import PersonalPage from './components/pages/PersonalPage';
+
 import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
 import WorkoutCardOne from './components/ui/WorkoutCardOne';
+import LoginModal from './components/pages/LoginModal';
+import SignupModal from './components/pages/SignupModal';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -40,7 +43,7 @@ function App(): React.JSX.Element {
             },
             {
               path: '/types/workouts/:id',
-              element: <WorkoutCardOne/>,
+              element: <WorkoutCardOne />,
             },
             // {
             //   path: '/rests/new',
@@ -53,11 +56,15 @@ function App(): React.JSX.Element {
           children: [
             {
               path: '/login',
-              element: <LoginPage />,
+              element: <LoginModal />,
             },
             {
               path: '/signup',
-              element: <SignupPage />,
+              element: <SignupModal />,
+            },
+            {
+              path: '/user/profile',
+              element: <PersonalPage />,
             },
           ],
         },
