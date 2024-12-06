@@ -8,9 +8,11 @@ import { setModalOpen, setSignupModalOpen } from '../../providers/slice/auth/aut
 import { FaUserCircle } from 'react-icons/fa';
 import LoginModal from '../pages/LoginModal';
 import SignupModal from '../pages/SignupModal';
-import { logoutThunk } from '../../providers/slice/auth/authThunks';
+import { logoutThunk } from '../../providers/slice/auth/authThunks';  
 import styles from '../../components/css/NavBar.css.module.css';
 import { Avatar } from '@mui/material';
+
+
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -39,14 +41,14 @@ export default function NavBar(): React.JSX.Element {
     <>
       <Navbar className={styles.navbar}>
         <Container>
-          <NavLink to="/">
-            <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}></Navbar.Brand>
 
-            <Avatar
-              alt="Remy Sharp"
-              src="../../../public/photo-output.PNG"
-              sx={{ width: 70, height: 70 }}
-            />
+          <NavLink to='/'>
+          <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}></Navbar.Brand>
+          <Avatar
+            alt="Remy Sharp"
+            src="../../../public/photo-output.PNG"
+            sx={{ width: 70, height: 70 }}
+          />
           </NavLink>
           <Navbar.Brand
             href="/"
