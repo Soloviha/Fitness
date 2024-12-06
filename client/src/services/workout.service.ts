@@ -1,17 +1,16 @@
 import type { AxiosInstance } from 'axios';
 import axiosInstance from '../api/axiosInstance';
-import type { TypeType } from '../schemas/type.schema';
-import { typeSchema } from '../schemas/type.schema';
+import { workoutSchema, type WorkoutType } from '../schemas/workout.shema';
 
-class TypeService {
+class WorkoutService {
   constructor(private readonly client: AxiosInstance) {
     this.client = client;
   }
 
-  async getAll(): Promise<TypeType[]> {
+  async getAllWorkout(): Promise<WorkoutType[]> {
     try {
-      const response = await this.client.get('/typeOfWorkouts');
-      return typeSchema.array().parse(response.data);
+      const response = await this.client.get('/workouts');
+      return workoutSchema.array().parse(response.data);
     } catch (error) {
       console.error(error);
       if (error instanceof Error) return Promise.reject(error);
@@ -20,4 +19,4 @@ class TypeService {
   }
 }
 
-export default new TypeService(axiosInstance);
+export default new WorkoutService(axiosInstance);

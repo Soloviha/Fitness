@@ -4,9 +4,10 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-
+import styles from '../css//TypePage.module.css';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
 import { getAll } from '../../providers/slice/type/typeThunk';
+import { NavLink } from 'react-router-dom';
 
 export default function TypePage(): React.JSX.Element {
   const types = useAppSelector((state) => state.type.types);
@@ -14,7 +15,8 @@ export default function TypePage(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(getAll());
-  }, []);
+  }, [dispatch]);
+
   const theme = useTheme();
 
   const images = [
@@ -35,6 +37,9 @@ export default function TypePage(): React.JSX.Element {
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
     height: 200,
+    margin: theme.spacing(2), // Отступы между кнопками
+    borderRadius: theme.shape.borderRadius, // Закругленные углы
+    boxShadow: theme.shadows[3], // Тень для кнопок
 
     [theme.breakpoints.down('sm')]: {
       width: '100% !important',
@@ -62,6 +67,7 @@ export default function TypePage(): React.JSX.Element {
     bottom: 0,
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
+    borderRadius: 'inherit', // Закругление углов изображения
   });
 
   const Image = styled('span')(({ theme }) => ({
@@ -97,19 +103,35 @@ export default function TypePage(): React.JSX.Element {
   }));
 
   return (
-    <>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+    <div className={styles.typeCard}>
+       
+      <Box
+        sx={{
+          display: 'flex',
+          flexWrap: 'nowrap', 
+          justifyContent: 'center', 
+          minWidth: 300,
+          width: '100%',
+          padding: theme.spacing(2), 
+          overflowX: 'auto',
+          marginTop: '100px'
+        }}
+      >
+
         {types.map((type, index) => (
+            <>
+            
           <ImageButton
             focusRipple
-            key={type.name} // Используем type.name как ключ
+            key={type.name}
             style={{
-              width: images[index % images.length].width, // Убедитесь, что ширина соответствует изображениям
+              width: images[index % images.length].width,
             }}
           >
             <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
             <ImageBackdrop className="MuiImageBackdrop-root" />
-            <Image>
+            <Image className={styles.img}>
+            <NavLink to={`/types/workouts/${type.id}`} className='nav-link'>
               <Typography
                 component="span"
                 variant="subtitle1"
@@ -124,10 +146,16 @@ export default function TypePage(): React.JSX.Element {
                 {type.name} - {type.description}
                 <ImageMarked className="MuiImageMarked-root" />
               </Typography>
+              </NavLink>
             </Image>
+        
           </ImageButton>
+            
+              </>
         ))}
+    
       </Box>
-    </>
+    
+    </div>
   );
 }
