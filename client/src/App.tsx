@@ -6,16 +6,13 @@ import Layout from './components/Layout';
 import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
 import PersonalPage from './components/pages/PersonalPage';
-import TreningTime from './components/ui/TreningTime'
 import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
 import LoginModal from './components/pages/LoginModal';
 import SignupModal from './components/pages/SignupModal';
 import { getAllWorkouts } from './providers/slice/workout/WorkoutThunk';
-import ExercisePage from './components/pages/ExercisePage';
-// import { getAllExercises } from './providers/slice/exercise/ExerciseThunk';
-import TreningPage from './components/pages/TreningPage';
 import { getAllExercises } from './providers/slice/exercise/ExerciseThunk';
+import ExercisePage from './components/pages/ExercisePage';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -27,7 +24,10 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(getAllWorkouts());
-    // void dispatch(getAllExercises())
+  }, [dispatch]);
+
+  useEffect(() => {
+    void dispatch(getAllExercises())
   }, [dispatch]);
 
   const router = createBrowserRouter([
@@ -54,13 +54,9 @@ function App(): React.JSX.Element {
               element: <WorkoutPage />,
             },
             {
-              path: '/types/workouts/exercises/:id',
-              element: <TreningPage />,
+              path: 'types/workouts/exercises/:id',
+              element: <ExercisePage />,
             },
-            {
-            path: '/pop',
-            element: < TreningTime/>,
-          },
           ],
         },
         {
