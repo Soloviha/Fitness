@@ -3,6 +3,7 @@ import authReducer from '../slice/auth/authSlice';
 import typeReducer from '../slice/type/TypeSlice'
 import workoutReducer from '../slice/workout/WorkoutSlice'
 import exerciseReducer from '../slice/exercise/ExerciseSlice'
+import articleReducer from '../slice/article/ArticleSlice'
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     type: typeReducer,
     workout: workoutReducer,
     exercise: exerciseReducer,
+    article: articleReducer
   },
 });
 

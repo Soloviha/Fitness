@@ -10,7 +10,7 @@ export default function TreningTime(): React.JSX.Element {
   const [isWorkoutFinished, setIsWorkoutFinished] = useState(false);
   const [showCard, setShowCard] = useState(false);
   const [remainingTime, setRemainingTime] = useState(0);
-  const [isResting, setIsResting] = useState(false); // Состояние для отслеживания отдыха
+  const [isResting, setIsResting] = useState(false);
 
   useEffect(() => {
     void dispatch(getAllExercises());
@@ -19,45 +19,44 @@ export default function TreningTime(): React.JSX.Element {
   useEffect(() => {
     if (currentIndex < trenings.length) {
       const currentWorkout = trenings[currentIndex];
-      setShowCard(true); // Показываем карточку
+      setShowCard(true);
 
-      const workoutTime = currentWorkout.time * 1000; // переводим в миллисекунды
-      const relaxTime = currentWorkout.relax * 1000; // переводим в миллисекунды
+      const workoutTime = currentWorkout.time * 1000;
+      const relaxTime = currentWorkout.relax * 1000;
 
-      setRemainingTime(workoutTime); // Устанавливаем оставшееся время на тренировку
+      setRemainingTime(workoutTime);
 
       const workoutInterval = setInterval(() => {
         setRemainingTime((prevTime) => {
           if (prevTime <= 1000) {
-            clearInterval(workoutInterval); // Очищаем интервал, когда время истекает
-            setShowCard(false); // Скрываем карточку после завершения
-            setIsResting(true); // Устанавливаем состояние отдыха
-            setRemainingTime(relaxTime); // Устанавливаем оставшееся время на отдых
+            clearInterval(workoutInterval);
+            setShowCard(false);
+            setIsResting(true);
+            setRemainingTime(relaxTime);
 
             const relaxInterval = setInterval(() => {
               setRemainingTime((prevRelaxTime) => {
                 if (prevRelaxTime <= 1000) {
-                  clearInterval(relaxInterval); // Очищаем интервал отдыха
-                  setIsResting(false); // Сбрасываем состояние отдыха
-                  setCurrentIndex((prevIndex) => prevIndex + 1); // Переходим к следующей карточке
-                  return 0; // Возвращаем 0, чтобы не было отрицательного времени
+                  clearInterval(relaxInterval);
+                  setIsResting(false);
+                  setCurrentIndex((prevIndex) => prevIndex + 1);
+                  return 0;
                 }
-                return prevRelaxTime - 1000; // Уменьшаем оставшееся время на 1 секунду
+                return prevRelaxTime - 1000;
               });
-            }, 1000); // Обновляем каждую секунду для отдыха
+            }, 1000);
 
-            return 0; // Возвращаем 0 для тренировки
+            return 0;
           }
-          return prevTime - 1000; // Уменьшаем оставшееся время на 1 секунду
+          return prevTime - 1000;
         });
-      }, 1000); // Обновляем каждую секунду для тренировки
+      }, 1000);
 
       return () => {
-        clearInterval(workoutInterval); // Очистка интервала при размонтировании
+        clearInterval(workoutInterval);
       };
-    } else {
-      setIsWorkoutFinished(true); // Устанавливаем состояние завершенности
     }
+    setIsWorkoutFinished(true);
   }, [currentIndex, trenings]);
 
   if (isWorkoutFinished) {
@@ -70,10 +69,10 @@ export default function TreningTime(): React.JSX.Element {
         <div className="row">
           <div className="col-12">
             <Popa workout={trenings[currentIndex]} />
-            <div>
-              Оставшееся время: {Math.ceil(remainingTime / 1000)} секунд
-            </div>
-            {isResting && <div > Оставшееся время отдыха: {Math.ceil(remainingTime / 1000)} секунд</div>}
+            <div>Оставшееся время: {Math.ceil(remainingTime / 1000)} секунд</div>
+            {isResting && (
+              <div> Оставшееся время отдыха: {Math.ceil(remainingTime / 1000)} секунд</div>
+            )}
           </div>
         </div>
       )}

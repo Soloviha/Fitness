@@ -14,6 +14,9 @@ import LoginModal from './components/pages/LoginModal';
 import SignupModal from './components/pages/SignupModal';
 import { getAllWorkouts } from './providers/slice/workout/WorkoutThunk';
 import ExercisePage from './components/pages/ExercisePage';
+import Timer from './components/ui/Timer';
+import { getAllArticle } from './providers/slice/article/ArticleThunk';
+import ArticlePage from './components/pages/ArticlePage';
 // import { getAllExercises } from './providers/slice/exercise/ExerciseThunk';
 
 function App(): React.JSX.Element {
@@ -26,6 +29,7 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(getAllWorkouts());
+    void dispatch(getAllArticle())
     // void dispatch(getAllExercises())
   }, [dispatch]);
 
@@ -59,6 +63,10 @@ function App(): React.JSX.Element {
             {
             path: '/pop',
             element: < TreningTime/>,
+          },
+          {
+            path: '/article',
+            element: < ArticlePage/>,
           },
           ],
         },

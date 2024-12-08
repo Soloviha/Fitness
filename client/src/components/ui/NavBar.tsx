@@ -68,6 +68,9 @@ export default function NavBar(): React.JSX.Element {
             <NavLink to="/pop" className="nav-link" style={{ color: 'white' }}>
               pop
             </NavLink>
+            <NavLink to="/article" className="nav-link" style={{ color: 'white' }}>
+              article
+            </NavLink>
             {user && accessToken ? (
               <NavLink
                 to="/login"
