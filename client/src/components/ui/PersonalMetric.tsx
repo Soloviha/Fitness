@@ -6,6 +6,7 @@ import styles from '../../components/css/PersonalPage.module.css';
 export default function PersonalMetric(): React.JSX.Element {
   return (
     <Container className={styles.PersonalMetric}>
+      <h4>Антропометрические показатели </h4>
       <Form>
         {/* onSubmit={submitHandler} */}
         <Form.Group className={styles.mb_3} controlId="formBasicWeight">
@@ -48,28 +49,6 @@ export default function PersonalMetric(): React.JSX.Element {
             name="hipCircumference"
             placeholder="Введите объем бедер"
             defaultValue="120"
-            required
-          />
-        </Form.Group>
-
-        <Form.Group className={styles.mb_3} controlId="formBasicThighCircumference">
-          <Form.Label>Объем бедра (см)</Form.Label>
-          <Form.Control
-            type="number"
-            name="thighCircumference"
-            placeholder="Введите объем бедра"
-            defaultValue="70"
-            required
-          />
-        </Form.Group>
-
-        <Form.Group className={styles.mb_3} controlId="formBasicShoulderCircumference">
-          <Form.Label>Объем плеча (см)</Form.Label>
-          <Form.Control
-            type="number"
-            name="shoulderCircumference"
-            placeholder="Введите объем плеча"
-            defaultValue="50"
             required
           />
         </Form.Group>

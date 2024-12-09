@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from './providers/redux/hooks';
 import { refreshThunk } from './providers/slice/auth/authThunks';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -7,21 +7,47 @@ import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
 
 import PersonalPage from './components/pages/PersonalPage';
-import TreningTime from './components/ui/TreningTime'
+import TreningTime from './components/ui/TreningTime';
 import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
 import LoginModal from './components/pages/LoginModal';
 import SignupModal from './components/pages/SignupModal';
 import { getAllWorkouts } from './providers/slice/workout/WorkoutThunk';
 import ExercisePage from './components/pages/ExercisePage';
-import Timer from './components/ui/Timer';
 import { getAllArticle } from './providers/slice/article/ArticleThunk';
 import ArticlePage from './components/pages/ArticlePage';
-// import { getAllExercises } from './providers/slice/exercise/ExerciseThunk';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
   const isUser = useAppSelector((state) => !!state.auth.user);
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: BeforeInstallPromptEvent): void => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  const handleInstallClick = () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('Пользователь установил приложение');
+        } else {
+          console.log('Пользователь отказался от установки');
+        }
+        setDeferredPrompt(null);
+      });
+    }
+  };
 
   useEffect(() => {
     void dispatch(refreshThunk());
@@ -29,7 +55,7 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(getAllWorkouts());
-    void dispatch(getAllArticle())
+    void dispatch(getAllArticle());
     // void dispatch(getAllExercises())
   }, [dispatch]);
 
@@ -45,6 +71,7 @@ function App(): React.JSX.Element {
           path: '/user/profile',
           element: <PersonalPage />,
         },
+
         {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
@@ -61,13 +88,13 @@ function App(): React.JSX.Element {
               element: <ExercisePage />,
             },
             {
-            path: '/pop',
-            element: < TreningTime/>,
-          },
-          {
-            path: '/article',
-            element: < ArticlePage/>,
-          },
+              path: '/pop',
+              element: <TreningTime />,
+            },
+            {
+              path: '/article',
+              element: <ArticlePage />,
+            },
           ],
         },
         {

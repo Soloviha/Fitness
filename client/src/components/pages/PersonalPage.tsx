@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Form, Row } from 'react-bootstrap';
 import CalendarBlock from '../ui/CalendarBlock';
 import PersonalMetric from '../ui/PersonalMetric';
@@ -6,8 +6,11 @@ import FavoriteWorkouts from '../ui/FavoriteWorkouts';
 import PersonalGoals from '../ui/PersonalGoals';
 import PhotoBlock from '../ui/PhotoBlock';
 import styles from '../css/PersonalPage.module.css';
+import ProgressChart from '../ui/ProgressChart';
 
 export default function PersonalPage(): React.JSX.Element {
+  const [workoutData, setWorkoutData] = useState([{ date: '2024-12-01', count: 3 }, { date: '2024-12-02', count: 2 }]);
+  const [weightData, setWeightData] = useState([{ date: '2024-12-01', weight: 70 }, { date: '2024-12-02', weight: 69 }]);
   // это не трогай пока, оно должно работать!!!!
   // _________________________________________________________________________________
 
@@ -29,12 +32,13 @@ export default function PersonalPage(): React.JSX.Element {
   // это не трогай пока, оно должно работать!!!!
 
   return (
-    <div className={styles.personalPage}>
+    <div >
       <Container className={styles.formContainer}>
         <Row className={styles.row}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ flex: 1, marginRight: '10px' }}>
-              <CalendarBlock />
+              {/* <CalendarBlock /> */}
+              <ProgressChart workoutData={workoutData} weightData={weightData} /> {/* Используйте компонент диаграммы */}
             </div>
             <div style={{ flex: 1, marginLeft: '10px' }}>
               <PhotoBlock />
@@ -42,8 +46,9 @@ export default function PersonalPage(): React.JSX.Element {
           </div>
         </Row>
         <>
-          <h1 className={styles.h1}>Параметры Пользователя</h1>
+         
           <Form>
+          <h4 >Параметры Пользователя</h4>
             {/* onSubmit={submitHandler} */}
             <Form.Group className={styles.mb_3} controlId="formBasicName">
               <Form.Label>Имя</Form.Label>
