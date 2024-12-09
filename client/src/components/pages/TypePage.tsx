@@ -141,7 +141,7 @@ export default function TypePage(): React.JSX.Element {
                   pb: `calc(${theme.spacing(1)} + 6px)`,
                 })}
               >
-                {type.name} - {type.description}
+                {type.name} 
                 <ImageMarked className="MuiImageMarked-root" />
               </Typography>
               </NavLink>

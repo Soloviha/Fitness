@@ -10,15 +10,15 @@ class UserParamsService {
   async getParams(userId) {
     try {
       let params = await this.#db.UserParams.findOne({ where: { userId } });
-      // Если параметры не найдены, создаём их с null
       if (!params) {
         params = await this.#db.UserParams.create({
           userId,
           secondName: null,
           dateOfBirth: null,
-          sex: null,
+          gender: null,
           weight: null,
           height: null,
+          img: null,
         });
       }
       return params.get();
@@ -30,14 +30,14 @@ class UserParamsService {
 
   async addingParams(data) {
     try {
-      const { userId, secondName, dateOfBirth, sex, weight, height } = data;
+      const { userId, secondName, dateOfBirth, gender, weight, height, BMI, img } = data;
       const [params, created] = await this.#db.UserParams.findOrCreate({
         where: { userId },
-        defaults: { secondName, dateOfBirth, sex, weight, height },
+        defaults: { secondName, dateOfBirth, gender, weight, height, BMI, img },
       });
 
       if (!created) {
-        await params.update({ secondName, dateOfBirth, sex, weight, height });
+        await params.update({ secondName, dateOfBirth, gender, weight, height, BMI, img });
       }
 
       return params.get();
