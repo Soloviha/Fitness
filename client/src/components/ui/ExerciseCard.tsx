@@ -66,8 +66,6 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps): React.JSX
   return (
     <StyledCard>
       <StyledCardMedia
-        // component="video"
-        // src={exercise.picture}
         title={exercise.name}
       />
       <img src={exercise.picture} style={{height: '500px', width: '800px'}}/>

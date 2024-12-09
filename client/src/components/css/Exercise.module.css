@@ -1,0 +1,23 @@
+.remaining_time_container {
+    background-color: #f0f8ff; /* Светлый фон */
+    border: 2px solid #007bff; /* Синяя рамка */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 20px; /* Отступы внутри контейнера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по краям */
+    align-items: center; /* Центрирование по вертикали */
+    margin-top: 20px; /* Отступ сверху */
+  }
+  
+  .remaining_time {
+    font-size: 1.5rem; /* Размер шрифта */
+    color: #333; /* Темный цвет текста */
+    font-weight: bold; /* Жирный текст */
+  }
+  
+  .remaining_rest_time {
+    font-size: 1.5rem; /* Размер шрифта */
+    color: #dc3545; /* Красный цвет для времени отдыха */
+    font-weight: bold; /* Жирный текст */
+  }
