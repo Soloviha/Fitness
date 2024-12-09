@@ -15,6 +15,7 @@ export const store = configureStore({
     userP: userPReducer,
     exercise: exerciseReducer,
     chat: chatReducer,
+    descCard:descCardReducer
   },
 });
 
