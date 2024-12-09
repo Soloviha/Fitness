@@ -10,6 +10,8 @@ import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
 import LoginModal from './components/pages/LoginModal';
 import SignupModal from './components/pages/SignupModal';
+// import TestPage from './components/pages/TestPage';
+import Lizaui from '../src/components/ui/Lizaui'
 import { getAllWorkouts } from './providers/slice/workout/WorkoutThunk';
 import { getAllExercises } from './providers/slice/exercise/ExerciseThunk';
 import ExercisePage from './components/pages/ExercisePage';
@@ -41,6 +43,10 @@ function App(): React.JSX.Element {
         {
           path: '/user/profile',
           element: <PersonalPage />,
+        },
+        {
+          path: '/userP',
+          element: <Lizaui/>,
         },
         {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
