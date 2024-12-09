@@ -53,7 +53,6 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     void dispatch(getAllWorkouts());
-    // void dispatch(getAllArticle());
   }, [dispatch]);
 
   useEffect(() => {
@@ -89,14 +88,6 @@ function App(): React.JSX.Element {
               path: 'types/workouts/exercises/:id',
               element: <ExercisePage />,
             },
-            // {
-            //   path: '/pop',
-            //   element: <TreningTime />,
-            // },
-            // {
-            //   path: '/article',
-            //   element: <ArticlePage />,
-            // },
           ],
         },
         {

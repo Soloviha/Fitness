@@ -79,3 +79,4 @@ export default function TreningTime(): React.JSX.Element {
     </div>
   );
 }
+

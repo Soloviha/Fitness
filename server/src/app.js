@@ -5,8 +5,8 @@ const authRouter = require('./routers/authRouter');
 const tokenRouter = require('./routers/tokenRouter');
 const typeOfWorkoutRouter = require('./routers/typeOfWorkoutRouter')
 const workoutRouter = require('./routers/workoutRouter')
-const exerciseRouter = require('./routers/exerciseRouter');
-const articleRouter = require('./routers/articleRouter');
+const exerciseRouter = require('./routers/exerciseRouter')
+const chatRouter = require('./routers/chatRouter')
 
 const app = express();
 
@@ -20,6 +20,6 @@ app.use('/api/token', tokenRouter);
 app.use('/api/typeOfWorkouts', typeOfWorkoutRouter);
 app.use('/api/workouts', workoutRouter);
 app.use('/api/exercises', exerciseRouter);
-app.use('/api/article', articleRouter)
+app.use('/api/chats', chatRouter);
 
 module.exports = app;

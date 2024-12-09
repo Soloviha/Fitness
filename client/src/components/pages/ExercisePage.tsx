@@ -2,6 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useAppSelector } from '../../providers/redux/hooks';
 import { useParams } from 'react-router-dom';
 import ExerciseCard from '../ui/ExerciseCard';
+import { styled } from '@mui/system';
+
+const Container = styled('div')({
+  marginBottom: '48px', // Увеличиваем расстояние между ExerciseCard и div с оставшимся временем
+});
+
+const RemainingTimeContainer = styled('div')({
+  marginTop: '32px', // Увеличиваем отступ сверху для оставшегося времени
+});
+
+const RemainingRestTimeContainer = styled('div')({
+  marginTop: '24px', // Увеличиваем отступ сверху для оставшегося времени отдыха
+});
 
 export default function ExercisePage(): React.JSX.Element {
 
@@ -68,15 +81,21 @@ export default function ExercisePage(): React.JSX.Element {
   return (
     <div className="container">
       {showCard && (
-        <div className="row">
-          <div className="col-12">
-            <ExerciseCard exercise={exercises[currentIndex]} />
-            <div>
-              Оставшееся время: {Math.ceil(remainingTime / 1000)} секунд
+        <Container>
+          <div className="row">
+            <div className="col-12">
+              <ExerciseCard exercise={exercises[currentIndex]} />
             </div>
-            {isResting && <div > Оставшееся время отдыха: {Math.ceil(remainingTime / 1000)} секунд</div>}
           </div>
-        </div>
+          <RemainingTimeContainer>
+            Оставшееся время: {Math.ceil(remainingTime / 1000)} секунд
+          </RemainingTimeContainer>
+          {isResting && (
+            <RemainingRestTimeContainer>
+              Оставшееся время отдыха: {Math.ceil(remainingTime / 1000)} секунд
+            </RemainingRestTimeContainer>
+          )}
+        </Container>
       )}
     </div>
   );

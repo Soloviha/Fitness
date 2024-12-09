@@ -1,70 +1,68 @@
 .workoutCard {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 450vh; /* Высота страницы */
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    position: relative; 
-    overflow: hidden;
+  margin: 0;
+  /* padding: 2rem; Добавляем отступы для лучшего вида */
+  width: 100%;
+  height: 450vh;  /* Высота страницы */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem; /* Добавляем отступ снизу для описания */
 }
+
 
 /* Эффект градиента на фоне */
 .workoutCard::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(255, 255, 255, 0.1)
-    );
-    z-index: 0.4; /* Отправляем градиент ниже */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.1));
+  z-index: 0.4; /* Отправляем градиент ниже */
 }
 
 /* Эффект анимации фона */
 @keyframes backgroundAnimation {
-    0% {
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-    70% {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    100% {
-        background-color: rgba(0, 0, 0, 0.9);
-    }
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  70% {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 }
 
 /* Новая анимация фона */
 @keyframes backgroundAnimation {
-    0% {
-        background-color: rgba(0, 0, 0, 0.9);
-        transform: scale(1);
-    }
-    25% {
-        background-color: rgba(0, 0, 0, 0.7);
-        transform: scale(1.02);
-    }
-    50% {
-        background-color: rgba(0, 0, 0, 0.5);
-        transform: scale(1.05);
-    }
-    75% {
-        background-color: rgba(0, 0, 0, 0.7);
-        transform: scale(1.02);
-    }
-    100% {
-        background-color: rgba(0, 0, 0, 0.9);
-        transform: scale(1);
-    }
+  0% {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1);
+  }
+  25% {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.02);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1);
+  }
 }
 
 .workoutCard {
-    animation: backgroundAnimation 15s infinite; /* Анимация фона */
+  animation: backgroundAnimation 15s infinite; /* Анимация фона */
 }

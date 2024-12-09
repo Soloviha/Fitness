@@ -14,7 +14,7 @@ export const exerciseSchema = z.object({
 
 export type ExerciseType = z.infer<typeof exerciseSchema>;
 
-export type ExerciseSliceType = {
+export type ExerciseSliceType = { 
   exercises: ExerciseType[];
   error: string | null;
 };
