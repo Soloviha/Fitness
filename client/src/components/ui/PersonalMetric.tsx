@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Button, Container, Form } from 'react-bootstrap';
 import styles from '../../components/css/PersonalPage.module.css';
 
