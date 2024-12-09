@@ -70,10 +70,12 @@ export default function ExercisePage(): React.JSX.Element {
     <Container>
       <div className="row">
         {!isResting ? (
+          <>
           <ExerciseCard exercise={exercises[currentIndex]} />
           <RemainingTimeContainer>
           Оставшееся время: {Math.ceil(remainingTime / 1000)} секунд
         </RemainingTimeContainer>
+        </>
         ) : (
           <Timer
             isResting={isResting}
