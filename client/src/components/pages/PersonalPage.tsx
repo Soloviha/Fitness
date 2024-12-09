@@ -6,6 +6,7 @@ import FavoriteWorkouts from '../ui/FavoriteWorkouts';
 import PersonalGoals from '../ui/PersonalGoals';
 import PhotoBlock from '../ui/PhotoBlock';
 import styles from '../css/PersonalPage.module.css';
+import GraficBlock from '../ui/GraficBlock';
 
 export default function PersonalPage(): React.JSX.Element {
   // это не трогай пока, оно должно работать!!!!
@@ -31,6 +32,14 @@ export default function PersonalPage(): React.JSX.Element {
   return (
     <div className={styles.personalPage}>
       <Container className={styles.formContainer}>
+        <Row>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ flex: 1, marginRight: '10px' }}>
+              <GraficBlock />
+            </div>
+       
+          </div>
+        </Row>
         <Row className={styles.row}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ flex: 1, marginRight: '10px' }}>
