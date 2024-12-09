@@ -1,4 +1,5 @@
 'use strict';
+
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Exercise extends Model {
@@ -20,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       relax: DataTypes.INTEGER,
       isPublic: DataTypes.BOOLEAN,
       workoutId: DataTypes.INTEGER,
+      picture: DataTypes.TEXT,
     },
     {
       sequelize,

@@ -8,6 +8,10 @@ const workoutRouter = require('./routers/workoutRouter');
 const UserParameterRouter = require('./routers/userParameterRouter');
 const exerciseRouter = require('./routers/exerciseRouter');
 const descCardRouter = require('./routers/descCardRouter');
+const typeOfWorkoutRouter = require('./routers/typeOfWorkoutRouter')
+const workoutRouter = require('./routers/workoutRouter')
+const exerciseRouter = require('./routers/exerciseRouter')
+const chatRouter = require('./routers/chatRouter')
 
 const app = express();
 
@@ -24,5 +28,6 @@ app.use('/api/workouts', workoutRouter);
 app.use('/api/exercises', exerciseRouter);
 app.use('/api/userP', UserParameterRouter)
 app.use('/api/descCard', descCardRouter)
+app.use('/api/chats', chatRouter);
 
 module.exports = app;

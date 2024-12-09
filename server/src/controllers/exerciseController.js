@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const exerciseService = require('../services/exerciseServvice');
+const exerciseService = require('../services/exerciseService');
 
 class ExerciseController {
   #service;

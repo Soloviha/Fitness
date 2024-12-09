@@ -54,6 +54,18 @@ export default function NavBar(): React.JSX.Element {
               {'fit'}
             </Navbar.Brand>
 
+          <Nav className="me-auto" style={{ fontSize: '18px' }}>
+            <NavLink to="/types" className="nav-link" style={{ color: 'white' }}>
+              Тренировки
+            </NavLink>
+            {user && accessToken ? (
+              <NavLink
+                to="/login"
+                className="nav-link"
+                onClick={logoutHandler}
+                style={{ color: 'white' }}
+              >
+                Выход
             <Nav className="me-auto">
               <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                 Тренировки
