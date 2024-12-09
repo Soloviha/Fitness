@@ -33,23 +33,23 @@ export default function SignupModal(): React.JSX.Element {
       <div className={styles.modal}>
         <div className={styles.modalContent}>
           <Modal.Header closeButton>
-            <Modal.Title>Регистрация</Modal.Title>
+            <Modal.Title className="text-light" style={{ fontSize: '16px' }}>Регистрация</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
             <Form onSubmit={submitHandler}>
-              <Form.Group className={styles.mb_3} controlId="formBasicName">
-                <Form.Label>Имя</Form.Label>
+              <Form.Group className={`${styles.mb_3} ${styles.formGroup}`} controlId="formBasicName">
+                <Form.Label className="text-light" style={{ fontSize: '16px' }}>Имя</Form.Label>
                 <Form.Control type="text" name="name" placeholder="Введите ваше имя" required />
               </Form.Group>
 
-              <Form.Group className={styles.mb_3} controlId="formBasicEmail">
-                <Form.Label>Почта</Form.Label>
+              <Form.Group className={`${styles.mb_3} ${styles.formGroup}`} controlId="formBasicEmail">
+                <Form.Label className="text-light" style={{ fontSize: '16px' }}>Почта</Form.Label>
                 <Form.Control type="email" name="email" placeholder="Введите почту" required />
               </Form.Group>
 
-              <Form.Group className={styles.mb_3} controlId="formBasicPassword">
-                <Form.Label>Пароль</Form.Label>
+              <Form.Group className={`${styles.mb_3} ${styles.formGroup}`} controlId="formBasicPassword">
+                <Form.Label className="text-light" style={{ fontSize: '16px' }}>Пароль</Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
@@ -57,7 +57,7 @@ export default function SignupModal(): React.JSX.Element {
                   required
                 />
               </Form.Group>
-              <Button variant="primary" type="submit">
+              <Button type="submit" className={`btn-lg w-100 mb-3 ${styles.button}`}>
                 Зарегистрироваться
               </Button>
             </Form>

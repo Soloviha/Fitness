@@ -38,26 +38,29 @@ export default function LoginModal(): React.JSX.Element {
       <div className={styles.modal}>
         <div className={styles.modalContent}>
           <Modal.Header closeButton>
-            <Modal.Title>Вход</Modal.Title>
+            <Modal.Title className="text-light" style={{ fontSize: '16px' }}>Вход</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
             <Form onSubmit={submitHandler}>
-              <Form.Group className={styles.mb_3} controlId="formBasicEmail">
-                <Form.Label>Почта</Form.Label>
+              <Form.Group className={`${styles.mb_3} ${styles.formGroup}`} controlId="formBasicEmail">
+                <Form.Label className="text-light" style={{ fontSize: '16px' }}>Почта</Form.Label>
                 <Form.Control type="email" name="email" placeholder="Enter email" required />
               </Form.Group>
 
-              <Form.Group className={styles.mb_3} controlId="formBasicPassword">
-                <Form.Label>Пароль</Form.Label>
+              <Form.Group className={`${styles.mb_3} ${styles.formGroup}`} controlId="formBasicPassword">
+                <Form.Label className="text-light" style={{ fontSize: '16px' }}>Пароль</Form.Label>
                 <Form.Control type="password" name="password" placeholder="Password" required />
               </Form.Group>
-              <Button variant="primary" type="submit">
+
+              <Button type="submit" className={`btn-lg w-100 mb-3 ${styles.button}`}>
                 Войти
               </Button>
-              <Button variant="link" onClick={openSignupModal}>
-                Регистрация
-              </Button>
+              <div className="d-flex justify-content-center">
+                <Button variant="link" onClick={openSignupModal} className={styles.signupButton}>
+                  Регистрация
+                </Button>
+              </div>
             </Form>
           </Modal.Body>
         </div>
