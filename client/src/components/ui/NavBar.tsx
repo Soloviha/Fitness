@@ -39,6 +39,21 @@ export default function NavBar(): React.JSX.Element {
     <>
       <Navbar className={styles.navbar} expand="lg">
         <Container>
+          <NavLink to="/">
+            <Navbar.Brand href="/" style={{ fontSize: '24px', color: 'white' }}></Navbar.Brand>
+            <Avatar
+              alt="Remy Sharp"
+              src="../../../public/photo-output.PNG"
+              sx={{ width: 70, height: 70 }}
+            />
+          </NavLink>
+          <Navbar.Brand
+            href="/"
+            style={{ fontSize: '24px', color: 'white' }}
+            className={styles.gradient_text}
+          >
+            {'JoJo_fit'}
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <NavLink to="/" style={{ textDecoration: 'none' }}>
@@ -53,7 +68,6 @@ export default function NavBar(): React.JSX.Element {
             <Navbar.Brand className={`${styles.gradient_text} ${styles.navbarBrand} ${styles.navbarText}`}>
               {'fit'}
             </Navbar.Brand>
-
           <Nav className="me-auto" style={{ fontSize: '18px' }}>
             <NavLink to="/types" className="nav-link" style={{ color: 'white' }}>
               Тренировки
