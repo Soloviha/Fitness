@@ -34,6 +34,14 @@ export default function PersonalPage(): React.JSX.Element {
   return (
     <div >
       <Container className={styles.formContainer}>
+        <Row>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ flex: 1, marginRight: '10px' }}>
+              <GraficBlock />
+            </div>
+       
+          </div>
+        </Row>
         <Row className={styles.row}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ flex: 1, marginRight: '10px' }}>
