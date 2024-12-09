@@ -16,7 +16,6 @@
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
-    "@mui/icons-material": "^6.1.10",
     "@mui/material": "^6.1.10",
     "@mui/x-date-pickers": "^7.23.1",
     "@reduxjs/toolkit": "^2.4.0",
@@ -38,6 +37,7 @@
     "@elbrus/eslint-config": "^1.0.0",
     "@eslint/js": "^9.13.0",
     "@types/react": "^18.3.12",
+     "date-fns": "^2.29.3",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "eslint": "^9.13.0",

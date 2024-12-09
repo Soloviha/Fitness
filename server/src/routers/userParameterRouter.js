@@ -1,9 +1,19 @@
 const express = require('express');
-const UserParameterController = require('../controllers/UserParameterController');
-const upload = require('../config/multerConfig'); 
+const UserParameterController = require('../controllers/userParameterController');
+const upload = require('../middlewares/multer');
+const { verifyAccessToken } = require('../middlewares/verifyTokens');
+// const upload = require('../config/multerConfig');
 
-const router = express.Router();
+const UserParameterRouter = express.Router();
 
-router.post('/', upload.single('photo'), UserParameterController.createParameter);
+UserParameterRouter.get('/', UserParameterController.getAllParameters);
 
-module.exports = router;
+UserParameterRouter.post(
+  '/', verifyAccessToken,
+  upload.single('img'),
+  UserParameterController.createParameter,
+);
+
+UserParameterRouter.put('/:id', UserParameterController.updateParameter);
+
+module.exports = UserParameterRouter;
