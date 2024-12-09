@@ -4,13 +4,13 @@ export const exerciseSchema = z.object({
   id: z.number(),
   name: z.string(),
   description: z.string(),
-  isPublic: z.boolean(),
-  time: z.number(),
+  time: z.number().nullable(),
   reps: z.number().nullable(),
-  relax: z.number(),
+  relax: z.number().nullable(),
+  isPublic: z.boolean(),
   workoutId: z.number(),
+  picture: z.string(),
 });
-
 
 export type ExerciseType = z.infer<typeof exerciseSchema>;
 
