@@ -9,8 +9,8 @@ import styles from '../css/PersonalPage.module.css';
 import ProgressChart from '../ui/ProgressChart';
 
 export default function PersonalPage(): React.JSX.Element {
-  const [workoutData, setWorkoutData] = useState([{ date: '2024-12-01', count: 3 }, { date: '2024-12-02', count: 2 }]);
-  const [weightData, setWeightData] = useState([{ date: '2024-12-01', weight: 70 }, { date: '2024-12-02', weight: 69 }]);
+  // const [workoutData, setWorkoutData] = useState([{ date: '2024-12-01', count: 3 }, { date: '2024-12-02', count: 2 }]);
+  // const [weightData, setWeightData] = useState([{ date: '2024-12-01', weight: 70 }, { date: '2024-12-02', weight: 69 }]);
   // это не трогай пока, оно должно работать!!!!
   // _________________________________________________________________________________
 
