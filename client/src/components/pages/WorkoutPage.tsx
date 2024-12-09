@@ -10,9 +10,9 @@ import styles from '../css//WorkoutPage.module.css';
 
 export default function WorkoutPage(): React.JSX.Element {
   const { id } = useParams();
-  const restId = id ? Number(id) : undefined;
+  const workId = id ? Number(id) : undefined;
   const workouts = useAppSelector((state) =>
-    state.workout.workouts.filter((el) => el.typeId === restId),
+    state.workout.workouts.filter((el) => el.typeId === workId),
   );
 
   const theme = useTheme();
