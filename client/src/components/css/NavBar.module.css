@@ -9,11 +9,6 @@
   z-index: 2;
 }
 
-.hidden {
-  top: -120px !important;
-}
-
-
 .gradient_text {
   background: linear-gradient(to right, #ff6b6b, #ffa500, #9370db, #7b68ee);
   background-size: 200% 200%;
@@ -22,6 +17,8 @@
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   font-weight: bold;
+  margin-top: 40px;
+  margin-left: -30px;
 }
 
 @keyframes gradient-animation {
@@ -36,8 +33,39 @@
   }
 }
 
+.navbarBrand {
+  display: flex;
+  align-items: center;
+}
 
-/* .avatar {
-  top: 10px;
-  transform: scale(1); /* Увеличиваем размер аватара на 150% */
+.navbarContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navLink {
+  color: #fff !important;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ccc !important;
+  }
+}
+
+.userMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.personalCabinet {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
 
