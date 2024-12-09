@@ -35,20 +35,3 @@ export type UserMessageType = z.infer<typeof chatSchema>;
 // Тип для ответа от сервера
 export type ServerResponseType = z.infer<typeof serverResponseSchema>;
 
-
-
-
-
-
-// import { z } from 'zod';
-
-// export const chatSchema = z.string().min(1, "Сообщение не может быть пустым");
-
-// export type ChatType = {
-//     id: number;
-//     text: string;
-//   }
-  
-//   export type ChatSliceType = {
-//     messages: ChatType[];
-//   }
