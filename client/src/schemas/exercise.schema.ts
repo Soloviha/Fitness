@@ -9,6 +9,7 @@ export const exerciseSchema = z.object({
   relax: z.number().nullable(),
   isPublic: z.boolean(),
   workoutId: z.number(),
+  picture: z.string(),
 });
 
 

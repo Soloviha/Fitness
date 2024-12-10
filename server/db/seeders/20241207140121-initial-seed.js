@@ -13,14 +13,14 @@ module.exports = {
       },
       {
         title: 'StrengthUp',
-        image: 'https://ss.sport-express.ru/userfiles/materials/195/1950512/full.jpg',
+        image: 'http://localhost:3000/img1/IMG1984.jpeg',
         description: 'Многоповторная силовая тренировка со штангой поможет вам стать сильнее с помощью базовых упражнений дял рук, ног, спины и груди, подятнуть мышцы и привести тело в тонус. ',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'HighTraining',
-        image: 'https://peaksport.com.ua/images_banner/%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8/02%2C12%2C2021-statia-pol_02.jpg',
+        image: 'http://localhost:3000/img1/IMG1986.jpeg',
         description: 'Высокоинтенсивная интервальная тренировка с минимальным набором оборудования, быстро разгоняющая метаболизм и приносящая ощутимые результаты. Стройность, лёгкость и прекрасное настроение гарантированы.',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -29,6 +29,13 @@ module.exports = {
         title: 'Rider',
         image: 'https://petrasport.ru/d/kakie_myshcy_rabotayut_na_velatrenazhere_3.jpg',
         description: 'Интенсивная кардио-тренировка с использованием сайкл-тренажёра. Идеальна для всех, кто хочет  сбросить лишние килограммы, поможет создать красивый рельеф ягодиц и бёдер, проработать мышцы ног и пресса. ',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Run IT',
+        image: 'http://localhost:3000/img1/IMG1985.JPG',
+        description: 'Общая выносливость служит базисом для развития специальной выносливости, что является неминуемой ступенью развития любого спортсмена, прежде чем переходить к любому другому виду деятельности более узкой направленности. ',
         createdAt: new Date(),
         updatedAt: new Date()
       },

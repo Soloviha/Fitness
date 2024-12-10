@@ -16,7 +16,7 @@ export default function DescCard({ descCard }: DescCardProps): React.JSX.Element
 
   return (
     <div className={styles.cardContainer}>
-      <Card className={`${styles.cardFlip} ${isFlipped ? styles.flipped : ''}`} style={{ border: '2px solid #ccc' }}>
+      <Card className={`${styles.cardFlip} ${isFlipped ? styles.flipped : ''} `} style={{ border: '2px solid #ccc' }}>
         <div className={styles.cardFront}>
           <Card.Img 
             variant="top" 
