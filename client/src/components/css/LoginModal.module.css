@@ -1,0 +1,33 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+  background-color: transparent;
+  padding: 20px;
+  border: none;
+  width: 400px;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+  border: none !important;
+}
+
+.signupButton {
+  color: #b73ec7 !important;
+}

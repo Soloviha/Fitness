@@ -1,3 +1,13 @@
+# Public
+public/*
+!public/.gitkeep
+!public/img
+!public/video
+public/img/*
+!public/img/.gitkeep
+public/video/*
+!public/video/.gitkeep
+
 # Logs
 logs
 *.log

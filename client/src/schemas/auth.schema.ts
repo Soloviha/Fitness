@@ -28,4 +28,6 @@ export type AuthSliceType = {
   user: UserType | null;
   accessToken: string | null;
   error: string | null;
+  isModalOpen: boolean;
+  isSignupModalOpen: boolean;
 };

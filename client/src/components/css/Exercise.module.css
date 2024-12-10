@@ -1,0 +1,104 @@
+.card_container {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 100vh; /* Занимает всю высоту экрана */
+    background-image: url(https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?semt=ais_hybrid);
+    background-size: cover; /* Изображение занимает всю ширину и высоту */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Предотвращаем повторение изображения */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .card_container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.687); /* Затемнение с прозрачностью */
+    z-index: 1; /* Устанавливаем слой затемнения выше фона */
+  }
+
+
+  .img {
+    height: 350px; /* Высота изображения */
+    width: 450px; /* Ширина изображения */
+    /* margin-top: 80px; */
+    /* object-fit: cover; Сохраняем пропорции изображения, обрезая его при необходимости */
+  }
+  
+
+  
+  .styled_title {
+    font-size: 1.5rem; /* Размер заголовка */
+    color: #333333; /* Цвет заголовка */
+    margin-bottom: 8px; /* Отступ снизу */
+  }
+  
+  .styled_description {
+    font-size: 1rem; /* Размер описания */
+    color: #666; /* Цвет описания */
+  }
+  
+  .styled_info_box {
+    position: relative; /* Содержимое будет выше затемнения */
+    z-index: 2; /* Устанавливаем содержимое выше затемнения */
+    color: rgb(0, 0, 0);
+    display: flex; /* Используем flexbox для размещения информации */
+    justify-content: space-around; /* Равномерное распределение информации */
+    padding: 16px; /* Отступы внутри информационного блока */
+    background-color: #f0f0f0; /* Фоновый цвет для блока информации */
+  }
+  
+  .styled-info-item {
+    flex: 1; /* Элементы занимают равное пространство */
+    text-align: center; /* Центрируем текст */
+    color: #7900e35e; /* Цвет текста информации */
+  }
+
+  .button {
+    height: 100px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+    border: none !important;
+  }
+  
+
+  .styled_card {
+    position: relative; /* Содержимое будет выше затемнения */
+    z-index: 2; /* Устанавливаем содержимое выше затемнения */
+    color: white;
+    background-color: white; /* Цвет фона карточки */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень карточки */
+    max-width: 800px; /* Максимальная ширина карточки */
+    width: 100%; /* Ширина карточки на 100% доступного пространства */
+    justify-content: space-evenly;
+    overflow: hidden; /* Скрываем переполнение */
+    /* display: flex; Используем flexbox для размещения содержимого */
+    /* flex-direction: column;  */
+    /* padding: 16px; Отступы внутри карточки */
+  }
+  
+  .styled_title_and_description {
+    /* display: flex; Flexbox для заголовка и описания */
+    /* justify-content: space-between; Равномерное распределение пространства */
+    margin-bottom: 16px; /* Отступ снизу для разделения */
+  }
+  
+  .styled_info_box {
+    display: flex; /*Flexbox для информационных элементов */
+    justify-content: space-between; /*Равномерное распределение пространства */
+  }
+  
