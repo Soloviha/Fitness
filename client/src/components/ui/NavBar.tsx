@@ -50,7 +50,9 @@ export default function NavBar(): React.JSX.Element {
                 />
               </Navbar.Brand>
             </NavLink>
-            <Navbar.Brand className={`${styles.gradient_text} ${styles.navbarBrand} ${styles.navbarText}`}>
+            <Navbar.Brand
+              className={`${styles.gradient_text} ${styles.navbarBrand} ${styles.navbarText}`}
+            >
               {'fit'}
             </Navbar.Brand>
             <Nav className="me-auto">
@@ -58,9 +60,6 @@ export default function NavBar(): React.JSX.Element {
             
               <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                 Тренировки
-              </NavLink>
-              <NavLink to="/pop" className={`nav-link ${styles.navLink}`}>
-                Упражнения
               </NavLink>
               <NavLink to="/userP" className={`nav-link ${styles.navLink}`}>
                 Пользовательские параметры

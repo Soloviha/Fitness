@@ -7,14 +7,6 @@ class ChatService {
     this.#db = db;
   }
 
-  async getAllMessages() {
-   const allMasseges = await this.#db.Chat.findAll(); // Получаем все сообщения из базы данных
-   return allMasseges.map(chat => ({
-    id: chat.id,
-    text: chat.response, // Или другое поле, которое вы хотите использовать
-  }));
-  }
-
   async getResponse(userMessage) {
     const chat = await this.#db.Chat.findOne({
       where: {
