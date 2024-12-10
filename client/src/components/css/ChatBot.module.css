@@ -11,8 +11,8 @@
   color: white;
   border: none;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   animation: pulse 2s infinite;
@@ -68,6 +68,9 @@
   padding: 10px;
   flex-grow: 1;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .message {
@@ -80,12 +83,12 @@
   background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
   align-self: flex-end;
   font-size: 15px;
+  color: white;
 }
 
 .bot_message {
   background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
   color: white;
-  align-self: flex-start;
   font-size: 15px;
 }
 
