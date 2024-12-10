@@ -1,0 +1,63 @@
+.paperContainer {
+    box-shadow: none !important;
+  }
+  
+  .descCardContainer {
+    margin-bottom: 16px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  
+  .buttonContainerStart {
+    justify-content: flex-start;
+  }
+  
+  .buttonContainerEnd {
+    justify-content: flex-end;
+  }
+  
+  .buttonContainerCenter {
+    justify-content: center;
+  }
+  
+  .navButton {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    min-width: 0;
+    margin: 0 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navButtonLeft {
+    margin-left: 16px;
+  }
+  
+  .navButtonRight {
+    margin-right: 16px;
+  }
+  
+  .descCardContainer {
+    margin-bottom: 16px;
+    transition: opacity 2s ease-in-out; /* Плавный переход */
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.fadeOut {
+    opacity: 0;
+}
