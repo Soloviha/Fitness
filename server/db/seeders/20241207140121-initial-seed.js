@@ -32,6 +32,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      // rfrf
       {
         title: 'Run IT',
         image: 'https://img.freepik.com/free-photo/amazing-woman-running-while-training_197531-13088.jpg?t=st=1733849898~exp=1733853498~hmac=889084cf74acece984faf610c6b46e9efc5e6ddeed16da965ddc6ae5f6711333&w=1380',
