@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   DescCard.init({
     title:DataTypes.STRING,
     description: DataTypes.TEXT,
-    image: DataTypes.STRING
+    image: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'DescCard',
