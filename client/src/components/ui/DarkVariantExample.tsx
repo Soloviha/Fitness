@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Carousel from 'react-carousel-mui';
-import DescCard from '../ui/DescCard';
+// import Carousel from 'react-carousel-mui';
+// import DescCard from '../ui/DescCard';
 import type { DescCardType } from '../../schemas/descCard.schema';
 import styles from '../css/DarkVariantExample.module.css';
 
@@ -13,7 +13,7 @@ export default function DarkVariantExample({ descCard }: DescCardProps): React.J
   return (
     <Box className={styles.carouselContainer}> 
       
-        <Carousel maxContainerWidth={2400} 
+        {/* <Carousel maxContainerWidth={2400} 
           items={descCard}
           itemsPerPage={{
             xs: 2,
@@ -24,7 +24,7 @@ export default function DarkVariantExample({ descCard }: DescCardProps): React.J
             xl: 4,
           }}
           itemRenderer={(item) => <DescCard descCard={item} />}
-        />
+        /> */}
     
     </Box>
   );

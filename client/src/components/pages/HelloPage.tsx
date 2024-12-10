@@ -54,7 +54,7 @@ export default function HelloPage(): React.JSX.Element {
 
         <div className={styles.backgroundRun}>
           <video autoPlay loop muted>
-            <source src="/videorun.mp4" type="video/mp4" />
+            <source src="../../../public/video-run.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
