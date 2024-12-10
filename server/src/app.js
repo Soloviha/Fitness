@@ -8,6 +8,8 @@ const workoutRouter = require('./routers/workoutRouter');
 const UserParameterRouter = require('./routers/userParameterRouter');
 const exerciseRouter = require('./routers/exerciseRouter');
 const descCardRouter = require('./routers/descCardRouter');
+ const path = require('path')
+
 const chatRouter = require('./routers/chatRouter')
 
 const app = express();
@@ -17,6 +19,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use('/img', express.static(path.join(__dirname, 'img')));
 
 app.use('/api/auth', authRouter);
 app.use('/api/token', tokenRouter);

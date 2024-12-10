@@ -119,36 +119,39 @@ export default function TypePage(): React.JSX.Element {
         }}
       >
         {types.map((type, index) => (
-          <>
-            <ImageButton
-              focusRipple
-              key={type.id}
-              style={{
-                width: images[index % images.length].width,
-              }}
-            >
-              <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
-              <ImageBackdrop className="MuiImageBackdrop-root" />
-              <Image className={styles.img}>
-                <NavLink to={`/types/workouts/${type.id}`} className="nav-link">
-                  <Typography
-                    component="span"
-                    variant="subtitle1"
-                    color="inherit"
-                    sx={(theme) => ({
-                      position: 'relative',
-                      p: 4,
-                      pt: 2,
-                      pb: `calc(${theme.spacing(1)} + 6px)`,
-                    })}
-                  >
-                    {type.name}
-                    <ImageMarked className="MuiImageMarked-root" />
-                  </Typography>
-                </NavLink>
-              </Image>
-            </ImageButton>
-          </>
+            <>
+            
+          <ImageButton
+            focusRipple
+            key={type.id}
+            style={{
+              width: images[index % images.length].width,
+            }}
+          >
+            <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
+            <ImageBackdrop className="MuiImageBackdrop-root" />
+            <Image className={styles.img}>
+            <NavLink to={`/types/workouts/${type.id}`} className='nav-link'>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                sx={(theme) => ({
+                  position: 'relative',
+                  p: 4,
+                  pt: 2,
+                  pb: `calc(${theme.spacing(1)} + 6px)`,
+                })}
+              >
+                {type.name}
+                <ImageMarked className="MuiImageMarked-root" />
+              </Typography>
+              </NavLink>
+            </Image>
+        
+          </ImageButton>
+            
+              </>
         ))}
       </Box>
     </div>

@@ -5,6 +5,7 @@ export const descCardSchema = z.object({
   title: z.string(),
   description: z.string(),
   image: z.string(),
+  
 });
 
 export type DescCardType = z.infer<typeof descCardSchema>;
@@ -12,4 +13,5 @@ export type DescCardType = z.infer<typeof descCardSchema>;
 export type DescCardSliceType = {
   descCard: DescCardType[];
   error: string | null;
+
 };

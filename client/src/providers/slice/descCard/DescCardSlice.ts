@@ -7,6 +7,7 @@ import { getAllDescCard } from './DescCardTHunk';
 const initialState: DescCardSliceType = {
   descCard: [],
   error: null,
+  
 };
 
 export const descCardSlice = createSlice({
@@ -19,6 +20,7 @@ export const descCardSlice = createSlice({
     clearError: (state) => {
       state.error = null;
     },
+ 
   },
   extraReducers: (builder) => {
     builder.addCase(getAllDescCard.fulfilled, (state, action) => {
