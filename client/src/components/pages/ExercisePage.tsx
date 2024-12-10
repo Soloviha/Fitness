@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppSelector } from '../../providers/redux/hooks';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // Импортируем useNavigate
 import ExerciseCard from '../ui/ExerciseCard';
 import { styled } from '@mui/system';
 import styles from '../css/Exercise.module.css';
@@ -10,8 +10,30 @@ const Container = styled('div')({
   marginBottom: '48px',
 });
 
+const RemainingTimeContainer = styled('div')({
+
+  // marginTop: '5px',
+  padding: '10px 20px',
+  fontSize: '95px',
+  width: '600px',
+  marginLeft: '215px',
+  color: '#fff'
+});
+
+const Button = styled('button')({
+  marginTop: '590px',
+  padding: '10px 20px',
+  fontSize: '25px',
+  width: '600px',
+  marginLeft: '600px',
+  cursor: 'pointer',
+  color: '#fff'
+
+});
+
 export default function ExercisePage(): React.JSX.Element {
   const { id } = useParams();
+  const navigate = useNavigate(); // Создаем навигатор
   const exerciseId = id ? Number(id) : undefined;
   const exercises = useAppSelector((state) =>
     state.exercise.exercises.filter((el) => el.workoutId === exerciseId),
@@ -62,6 +84,10 @@ export default function ExercisePage(): React.JSX.Element {
     setIsWorkoutFinished(true); // Устанавливаем состояние завершенности
   }, [currentIndex]);
 
+  const handleGoBack = (): void => {
+    navigate(-1); // Возвращаемся на предыдущую страницу
+  };
+
   if (isWorkoutFinished) {
     return <div>Все тренировки завершены!</div>;
   }
@@ -71,17 +97,16 @@ export default function ExercisePage(): React.JSX.Element {
       <div className="row">
         {!isResting ? (
           <>
-          <ExerciseCard exercise={exercises[currentIndex]} />
-          <RemainingTimeContainer>
-          Оставшееся время: {Math.ceil(remainingTime / 1000)} секунд
-        </RemainingTimeContainer>
-        </>
+            <ExerciseCard exercise={exercises[currentIndex]} />
+            <RemainingTimeContainer>
+               {Math.ceil(remainingTime / 1000)} 
+            </RemainingTimeContainer>
+            <Button className={styles.button} onClick={handleGoBack}>
+              Завершить тренировку
+            </Button>
+          </>
         ) : (
-          <Timer
-            isResting={isResting}
-            remainingTime={remainingTime}
-            exercise={exercises[currentIndex]}
-          />
+          <Timer isResting={isResting} remainingTime={remainingTime} />
         )}
       </div>
     </Container>

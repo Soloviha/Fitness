@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
 import type { ExerciseType } from '../../schemas/exercise.schema';
+import styles from '../css/Exercise.module.css';
 
 const StyledCard = styled(Card)({
   width: '100%',
@@ -21,14 +22,6 @@ const StyledCardContent = styled(CardContent)({
   flexDirection: 'column',
   alignItems: 'flex-start',
   padding: '24px',
-});
-
-const StyledTitleAndDescription = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  marginBottom: '24px',
-  width: '100%',
 });
 
 const StyledTitle = styled(Typography)({
@@ -64,33 +57,32 @@ type ExerciseCardProps = {
 
 export default function ExerciseCard({ exercise }: ExerciseCardProps): React.JSX.Element {
   return (
-    <StyledCard>
-      <StyledCardMedia
-        title={exercise.name}
-      />
-      <img src={exercise.picture} style={{height: '500px', width: '800px'}}/>
-      <StyledCardContent>
-        <StyledTitleAndDescription>
-          <StyledTitle variant="h5">{exercise.name}</StyledTitle>
-          <StyledDescription variant="body1">{exercise.description}</StyledDescription>
-        </StyledTitleAndDescription>
-        <StyledInfoBox>
-          <StyledInfoItem>
-            <Typography variant="body2">Время: {exercise.time} сек.</Typography>
-          </StyledInfoItem>
-          <StyledInfoItem>
-            <Typography variant="body2">Повторений: {exercise.reps} </Typography>
-          </StyledInfoItem>
-          <StyledInfoItem>
-            <Typography variant="body2">Отдых: {exercise.relax} сек.</Typography>
-          </StyledInfoItem>
-        </StyledInfoBox>
-      </StyledCardContent>
-    </StyledCard>
+    <div className={styles.card_container}>
+      <StyledCard className={styles.styled_card}>
+      <img src={exercise.picture} alt={exercise.name} className={styles.img} />
+        <StyledCardMedia title={exercise.name} />
+
+        <StyledCardContent className={styles.styled_title_and_description}>
+         
+          <StyledTitle className={styles.styled_title} variant="h5">
+            {exercise.name}
+          </StyledTitle>
+          <StyledDescription className={styles.styled_description} variant="body1">
+            {exercise.description}
+          </StyledDescription>
+          <StyledInfoBox className={styles.styled_info_box}>
+            <StyledInfoItem className={styles.styled_info_item}>
+              <Typography variant="body2">Время: {exercise.time} сек.</Typography>
+            </StyledInfoItem>
+            <StyledInfoItem className={styles.styled_info_item}>
+              <Typography variant="body2">Повторений: {exercise.reps}</Typography>
+            </StyledInfoItem>
+            <StyledInfoItem className={styles.styled_info_item}>
+              <Typography variant="body2">Отдых: {exercise.relax} сек.</Typography>
+            </StyledInfoItem>
+          </StyledInfoBox>
+        </StyledCardContent>
+      </StyledCard>
+    </div>
   );
 }
-
-
-
-
-
