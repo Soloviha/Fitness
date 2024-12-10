@@ -45,7 +45,7 @@ export default function NavBar(): React.JSX.Element {
               <Navbar.Brand className={styles.navbarBrand}>
                 <Avatar
                   alt="Remy Sharp"
-                  src="../../../public/photo-output.PNG"
+                  src="../../../public/assets/photo-output-1.PNG"
                   sx={{ width: 70, height: 70 }}
                 />
               </Navbar.Brand>
