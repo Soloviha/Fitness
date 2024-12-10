@@ -4,16 +4,22 @@ import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import styles from '../css/WorkoutPage.module.css';
 import ButtonBase from '@mui/material/ButtonBase';
+import { Button } from '@mui/material';
 
 export default function WorkoutPage(): React.JSX.Element {
+  const navigate = useNavigate();
   const { id } = useParams();
   const workId = id ? Number(id) : undefined;
   const workouts = useAppSelector((state) =>
     state.workout.workouts.filter((el) => el.typeId === workId),
   );
+
+  const handleGoBack = (): void => {
+    navigate(-1);
+  };
 
   const theme = useTheme();
 
@@ -51,9 +57,9 @@ export default function WorkoutPage(): React.JSX.Element {
       '& .MuiImageMarked-root': {
         opacity: 0,
       },
-      '& .MuiTypography-root': {
-        border: '4px solid currentColor',
-      },
+      // '& .MuiTypography-root': {
+      //   border: '4px solid currentColor',
+      // },
     },
   }));
 
@@ -102,55 +108,65 @@ export default function WorkoutPage(): React.JSX.Element {
   }));
 
   return (
-    <div className={styles.workoutCard}>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column', // Измените на 'column', чтобы карточки располагались вертикально
-          alignItems: 'center', // Добавьте это свойство, чтобы выровнять карточки по центру
-          minWidth: 300,
-          width: '100%', // Добавьте это свойство, чтобы растянуть карточки на всю ширину
-          padding: theme.spacing(2),
-          overflowX: 'auto',
-          marginTop: '100px',
-        }}
-      >
-        {workouts.map((workout, index) => (
-          <>
-            <ImageButton
-              focusRipple
-              key={workout.id}
-              style={{
-                width: images[index % images.length].width,
-              }}
-            >
-              <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
-              <ImageBackdrop className="MuiImageBackdrop-root" />
-              <Image className={styles.img}>
-                <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
-                  <Typography
-                    component="span"
-                    variant="subtitle1"
-                    color="inherit"
-                    sx={(theme) => ({
-                      position: 'relative',
-                      p: 4,
-                      pt: 2,
-                      pb: `calc(${theme.spacing(1)} + 6px)`,
-                    })}
-                  >
-                    {workout.name}
-                    <ImageMarked className="MuiImageMarked-root" />
-                  </Typography>
-                </NavLink>
-                <div>{workout.description}</div>
+    <>
+      <div className={styles.workoutCard}>
+        <Box
+          sx={{
+            position: 'relative',
+            zIndex: '2',
+            display: 'flex',
+            flexWrap: 'nowrap',
+            justifyContent: 'center',
+            minWidth: 300,
+            width: '100%',
+            padding: theme.spacing(2),
+            overflowX: 'auto',
+            marginTop: '100px',
+          }}
+        >
+          {workouts.map((workout, index) => (
+            <>
+              <ImageButton
+                focusRipple
+                key={workout.id}
+                style={{
+                  width: images[index % images.length].width,
+                }}
+              >
+                <ImageSrc
+                  style={{ backgroundImage: `url(${images[index % images.length].url})` }}
+                />
+                <ImageBackdrop className="MuiImageBackdrop-root" />
+                <Image className={styles.img}>
+                  <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
+                    <Typography
+                      component="span"
+                      variant="subtitle1"
+                      color="inherit"
+                      sx={(theme) => ({
+                        position: 'relative',
+                        p: 4,
+                        pt: 2,
+                        pb: `calc(${theme.spacing(1)} + 6px)`,
+                      })}
+                    >
+                      {workout.name}
+                      <ImageMarked className="MuiImageMarked-root" />
+                    </Typography>
+                  </NavLink>
+                  {/* <div>{workout.description}</div>
                 <div>⌚: {workout.time} мин.</div>
-                <div>🔥: {workout.kcal} Ккал</div>
-              </Image>
-            </ImageButton>
-          </>
-        ))}
-      </Box>
-    </div>
+                <div>🔥: {workout.kcal} Ккал</div> */}
+                </Image>
+              </ImageButton>
+            </>
+          ))}
+        </Box>
+      </div>
+
+      <Button className={styles.button} onClick={handleGoBack}>
+        Назад
+      </Button>
+    </>
   );
 }

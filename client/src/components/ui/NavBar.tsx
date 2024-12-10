@@ -56,6 +56,8 @@ export default function NavBar(): React.JSX.Element {
               {'fit'}
             </Navbar.Brand>
             <Nav className="me-auto">
+             
+            
               <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                 Тренировки
               </NavLink>

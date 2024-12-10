@@ -1,16 +1,28 @@
-import React from 'react'
+/* eslint-disable @typescript-eslint/no-empty-function */
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from '../css/Time.module.css'
 
+type TimerProps = {
+  isResting: boolean;
+  remainingTime: number;
+};
 
+export default function Timer({ isResting, remainingTime }: TimerProps): React.JSX.Element {
+  useEffect(() => {}, [remainingTime]);
+  const navigate = useNavigate()
 
-export default function Timer(): React.JSX.Element {
+  const handleGoBack = (): void => {
+    navigate(-1); 
+  };
 
   return (
-<div className={styles.countdown_timer}>
-  <div className={styles.timer}>
-    <span className={styles.time} id="minutes">00</span>:<span className={styles.time} id="seconds">00</span>
-  </div>
-  <div className={styles.label}>Осталось времени</div>
-</div>
-  )
+    <div className={styles.container}>
+      <div className={styles.col}>
+      <h2 className={styles.h2}>{isResting ? 'Отдых' : 'Тренировка'}</h2>
+      <div className={styles.div}>{Math.ceil(remainingTime / 1000)} секунд</div>
+      <button className={styles.button} onClick={handleGoBack}>Завершить тренировку</button>
+      </div>
+    </div>
+  );
 }

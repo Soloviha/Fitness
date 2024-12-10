@@ -1,68 +1,41 @@
-.workoutCard {
-  margin: 0;
-  /* padding: 2rem; Добавляем отступы для лучшего вида */
-  width: 100%;
-  height: 450vh;  /* Высота страницы */
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
+.workoutCard{
   position: relative;
-  overflow: hidden;
-  padding-bottom: 3rem; /* Добавляем отступ снизу для описания */
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  height: 100vh; /* Занимает всю высоту экрана */
+  width: 1800px;
+  background-image: url(https://img.freepik.com/premium-photo/caucasian-young-female-athlete-practicing-blue-studio-background-neon-light-close-up-sportive-model-jumping-high-running-body-building-healthy-lifestyle-beauty-action-concept_489646-12081.jpg);
+  background-size: cover; /* Изображение занимает всю ширину и высоту */
+  background-position: center; /* Центрируем изображение */
+  background-repeat: no-repeat; /* Предотвращаем повторение изображения */
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-
-/* Эффект градиента на фоне */
-.workoutCard::before {
+.typeCard::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.1));
-  z-index: 0.4; /* Отправляем градиент ниже */
+
+  background-color: rgba(0, 0, 0, 0.873); /* Затемнение с прозрачностью */
+  z-index: 1; /* Устанавливаем слой затемнения выше фона */
+
 }
 
-/* Эффект анимации фона */
-@keyframes backgroundAnimation {
-  0% {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  70% {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-}
-
-/* Новая анимация фона */
-@keyframes backgroundAnimation {
-  0% {
-    background-color: rgba(0, 0, 0, 0.9);
-    transform: scale(1);
-  }
-  25% {
-    background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.02);
-  }
-  50% {
-    background-color: rgba(0, 0, 0, 0.5);
-    transform: scale(1.05);
-  }
-  75% {
-    background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.02);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.9);
-    transform: scale(1);
-  }
-}
-
-.workoutCard {
-  animation: backgroundAnimation 15s infinite; /* Анимация фона */
+.button {
+  height: 100px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+  border: none !important;
 }

@@ -9,8 +9,8 @@ import styles from '../css/PersonalPage.module.css';
 import ProgressChart from '../ui/ProgressChart';
 
 export default function PersonalPage(): React.JSX.Element {
-  const [workoutData, setWorkoutData] = useState([{ date: '2024-12-01', count: 3 }, { date: '2024-12-02', count: 2 }]);
-  const [weightData, setWeightData] = useState([{ date: '2024-12-01', weight: 70 }, { date: '2024-12-02', weight: 69 }]);
+  // const [workoutData, setWorkoutData] = useState([{ date: '2024-12-01', count: 3 }, { date: '2024-12-02', count: 2 }]);
+  // const [weightData, setWeightData] = useState([{ date: '2024-12-01', weight: 70 }, { date: '2024-12-02', weight: 69 }]);
   // это не трогай пока, оно должно работать!!!!
   // _________________________________________________________________________________
 
@@ -34,14 +34,6 @@ export default function PersonalPage(): React.JSX.Element {
   return (
     <div >
       <Container className={styles.formContainer}>
-        <Row>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div style={{ flex: 1, marginRight: '10px' }}>
-              <GraficBlock />
-            </div>
-       
-          </div>
-        </Row>
         <Row className={styles.row}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ flex: 1, marginRight: '10px' }}>

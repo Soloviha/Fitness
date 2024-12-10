@@ -37,9 +37,9 @@ export default function TypePage(): React.JSX.Element {
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
     height: 200,
-    margin: theme.spacing(2), 
-    borderRadius: theme.shape.borderRadius, 
-    boxShadow: theme.shadows[3], 
+    margin: theme.spacing(2),
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[3],
 
     [theme.breakpoints.down('sm')]: {
       width: '100% !important',
@@ -53,9 +53,9 @@ export default function TypePage(): React.JSX.Element {
       '& .MuiImageMarked-root': {
         opacity: 0,
       },
-      '& .MuiTypography-root': {
-        border: '4px solid currentColor',
-      },
+      // '& .MuiTypography-root': {
+      //   border: '4px solid currentColor',
+      // },
     },
   }));
 
@@ -67,7 +67,7 @@ export default function TypePage(): React.JSX.Element {
     bottom: 0,
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
-    borderRadius: 'inherit', 
+    borderRadius: 'inherit',
   });
 
   const Image = styled('span')(({ theme }) => ({
@@ -106,6 +106,8 @@ export default function TypePage(): React.JSX.Element {
     <div className={styles.typeCard}>
       <Box
         sx={{
+          position: 'relative',
+          zIndex: '2',
           display: 'flex',
           flexWrap: 'nowrap',
           justifyContent: 'center',
@@ -117,39 +119,36 @@ export default function TypePage(): React.JSX.Element {
         }}
       >
         {types.map((type, index) => (
-            <>
-            
-          <ImageButton
-            focusRipple
-            key={type.id}
-            style={{
-              width: images[index % images.length].width,
-            }}
-          >
-            <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
-            <ImageBackdrop className="MuiImageBackdrop-root" />
-            <Image className={styles.img}>
-            <NavLink to={`/types/workouts/${type.id}`} className='nav-link'>
-              <Typography
-                component="span"
-                variant="subtitle1"
-                color="inherit"
-                sx={(theme) => ({
-                  position: 'relative',
-                  p: 4,
-                  pt: 2,
-                  pb: `calc(${theme.spacing(1)} + 6px)`,
-                })}
-              >
-                {type.name} 
-                <ImageMarked className="MuiImageMarked-root" />
-              </Typography>
-              </NavLink>
-            </Image>
-        
-          </ImageButton>
-            
-              </>
+          <>
+            <ImageButton
+              focusRipple
+              key={type.id}
+              style={{
+                width: images[index % images.length].width,
+              }}
+            >
+              <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
+              <ImageBackdrop className="MuiImageBackdrop-root" />
+              <Image className={styles.img}>
+                <NavLink to={`/types/workouts/${type.id}`} className="nav-link">
+                  <Typography
+                    component="span"
+                    variant="subtitle1"
+                    color="inherit"
+                    sx={(theme) => ({
+                      position: 'relative',
+                      p: 4,
+                      pt: 2,
+                      pb: `calc(${theme.spacing(1)} + 6px)`,
+                    })}
+                  >
+                    {type.name}
+                    <ImageMarked className="MuiImageMarked-root" />
+                  </Typography>
+                </NavLink>
+              </Image>
+            </ImageButton>
+          </>
         ))}
       </Box>
     </div>
