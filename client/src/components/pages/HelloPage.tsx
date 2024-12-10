@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from '../css/HelloPage.module.css';
 import { useAppSelector, useAppDispatch } from '../../providers/redux/hooks';
-import DarkVariantExample from '../ui/DarkVariantExample';
 import { getAllDescCard } from '../../providers/slice/descCard/DescCardTHunk';
 import LiteVariant from '../ui/LiteVariant';
 
