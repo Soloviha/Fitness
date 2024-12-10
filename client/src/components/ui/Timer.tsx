@@ -1,35 +1,28 @@
-import React, { useEffect, useState } from 'react'
+/* eslint-disable @typescript-eslint/no-empty-function */
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styles from '../css/Time.module.css'
 
+type TimerProps = {
+  isResting: boolean;
+  remainingTime: number;
+};
 
-type StopwatchProps {
-    duration: number; // Длительность секундомера в секундах
-  }
+export default function Timer({ isResting, remainingTime }: TimerProps): React.JSX.Element {
+  useEffect(() => {}, [remainingTime]);
+  const navigate = useNavigate()
 
-export default function Timer({ duration }: StopwatchProps): React.JSX.Element {
-    const [timeLeft, setTimeLeft] = useState(duration);
+  const handleGoBack = (): void => {
+    navigate(-1); 
+  };
 
-    useEffect(() => {
-      setTimeLeft(duration); // Обновляем timeLeft при изменении duration
-    }, [duration]);
-  
-    useEffect(() => {
-      if (timeLeft <= 0) return; // Завершаем, если время истекло
-  
-      const timer = setInterval(() => {
-        setTimeLeft((prev) => Math.max(prev - 1, 0)); // Уменьшаем оставшееся время
-      }, 1000);
-  
-      return () => clearInterval(timer); // Очистка таймера при размонтировании компонента
-    }, [timeLeft]);
-  
-    const formatTime = (seconds: number) => {
-      const minutes = Math.floor(seconds / 60);
-      const remainingSeconds = seconds % 60;
-      return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
-    };
   return (
-    <div className="stopwatch">
-    <h2>Оставшееся время: {formatTime(timeLeft)}</h2>
-  </div>
-  )
+    <div className={styles.container}>
+      <div className={styles.col}>
+      <h2 className={styles.h2}>{isResting ? 'Отдых' : 'Тренировка'}</h2>
+      <div className={styles.div}>{Math.ceil(remainingTime / 1000)} секунд</div>
+      <button className={styles.button} onClick={handleGoBack}>Завершить тренировку</button>
+      </div>
+    </div>
+  );
 }

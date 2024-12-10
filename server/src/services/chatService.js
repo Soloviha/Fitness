@@ -6,22 +6,17 @@ class ChatService {
   constructor(db) {
     this.#db = db;
   }
-
-  async getAllMessages() {
-   const allMasseges = await this.#db.Chat.findAll(); // Получаем все сообщения из базы данных
-   return allMasseges.map(chat => ({
-    id: chat.id,
-    text: chat.response, // Или другое поле, которое вы хотите использовать
-  }));
-  }
+  
 
   async getResponse(userMessage) {
     const chat = await this.#db.Chat.findOne({
       where: {
-        question: userMessage,
+        question: {
+          [this.#db.Sequelize.Op.iLike]: `%${userMessage.trim().toLowerCase()}%`,
+        },
       },
     });
-    return chat ? chat.response : "Извините, я не понимаю вас.";
+    return chat ? chat.response : 'Извините, я не понимаю вас.';
   }
 }
 

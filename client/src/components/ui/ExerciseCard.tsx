@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
 import type { ExerciseType } from '../../schemas/exercise.schema';
+import styles from '../css/Exercise.module.css';
 
 const StyledCard = styled(Card)({
   width: '100%',
@@ -21,14 +22,6 @@ const StyledCardContent = styled(CardContent)({
   flexDirection: 'column',
   alignItems: 'flex-start',
   padding: '24px',
-});
-
-const StyledTitleAndDescription = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  marginBottom: '24px',
-  width: '100%',
 });
 
 const StyledTitle = styled(Typography)({

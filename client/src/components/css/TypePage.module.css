@@ -1,72 +1,28 @@
-.typeCard {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 450vh; /* Высота страницы */
-    font-family: Arial, sans-serif;
+.typeCard{
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    position: relative; 
-    overflow: hidden;
-}
-
-/* Эффект градиента на фоне */
-.typeCard::before {
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 100vh; /* Занимает всю высоту экрана */
+    width: 1800px;
+    background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
+    background-size: cover; /* Изображение занимает всю ширину и высоту */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Предотвращаем повторение изображения */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .typeCard::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(255, 255, 255, 0.1)
-    );
-    z-index: 0.4; /* Отправляем градиент ниже */
-}
-
-/* Эффект анимации фона */
-@keyframes backgroundAnimation {
-    0% {
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-    70% {
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    100% {
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-}
-
-/* Новая анимация фона */
-@keyframes backgroundAnimation {
-    0% {
-        background-color: rgba(0, 0, 0, 0.9);
-        transform: scale(1);
-    }
-    25% {
-        background-color: rgba(0, 0, 0, 0.7);
-        transform: scale(1.02);
-    }
-    50% {
-        background-color: rgba(0, 0, 0, 0.5);
-        transform: scale(1.05);
-    }
-    75% {
-        background-color: rgba(0, 0, 0, 0.7);
-        transform: scale(1.02);
-    }
-    100% {
-        background-color: rgba(0, 0, 0, 0.9);
-        transform: scale(1);
-    }
-}
-
-.typeCard {
-    animation: backgroundAnimation 15s infinite; /* Анимация фона */
-}
-
-
+    background-color: rgba(0, 0, 0, 0.687); /* Затемнение с прозрачностью */
+    z-index: 1; /* Устанавливаем слой затемнения выше фона */
+  }

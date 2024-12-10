@@ -12,7 +12,6 @@ export const exerciseSchema = z.object({
   picture: z.string(),
 });
 
-
 export type ExerciseType = z.infer<typeof exerciseSchema>;
 
 export type ExerciseSliceType = { 

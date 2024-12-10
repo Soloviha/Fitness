@@ -1,0 +1,65 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  height: 100vh; /* Занимает всю высоту экрана */
+  background-image: url(https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?semt=ais_hybrid);
+  background-size: cover; /* Изображение занимает всю ширину и высоту */
+  background-position: center; /* Центрируем изображение */
+  background-repeat: no-repeat; /* Предотвращаем повторение изображения */
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.687); /* Затемнение с прозрачностью */
+  z-index: 1; /* Устанавливаем слой затемнения выше фона */
+}
+
+.col {
+  position: relative; /* Содержимое будет выше затемнения */
+  z-index: 2; /* Устанавливаем содержимое выше затемнения */
+  display: flex;
+  justify-content: column;
+  /* justify-content: center; Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+}
+
+.h2 {
+  font-size: 2rem; /* Размер заголовка */
+  color: #ffffff; /* Цвет заголовка */
+  margin-bottom: 20px; /* Отступ снизу */
+  
+}
+
+.div {
+  font-size: 1.5rem; /* Размер текста таймера */
+  color: #fffdfd; /* Цвет текста */
+  margin-bottom: 30px; /* Отступ снизу */
+
+}
+
+.button {
+  height: 100px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+  border: none !important;
+  color: #fffdfd;
+  font-size: 25px;
+}
+
+
