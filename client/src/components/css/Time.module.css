@@ -54,8 +54,8 @@
 }
 
 .button {
-  height: 100px;
-  width: 500px;
+  height: 70px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +63,7 @@
   background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
   border: none !important;
   color: #fffdfd;
-  font-size: 25px;
+  font-size: 17px;
 }
 
  /* Адаптивные стили для мобильных устройств */
