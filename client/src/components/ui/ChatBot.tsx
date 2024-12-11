@@ -6,7 +6,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 
-
 export default function ChatBot(): React.JSX.Element {
   const dispatch = useAppDispatch();
   const { messages, error } = useAppSelector((state) => state.chat);
@@ -57,14 +56,14 @@ export default function ChatBot(): React.JSX.Element {
   return (
     <div className={styles.chatbot_container}>
       <button className={styles.chatbot_button} onClick={toggleChat}>
-      <QuestionAnswerIcon/>
+        <QuestionAnswerIcon />
       </button>
       {isOpen && (
         <div className={styles.chatbot_window} style={{ height: '400px' }}>
           <div className={styles.chatbot_header}>
             <h5>Онлайн-чат</h5>
             <button className={styles.close_button} onClick={toggleChat}>
-            <CloseIcon/>
+              <CloseIcon />
             </button>
           </div>
           <div
@@ -75,14 +74,15 @@ export default function ChatBot(): React.JSX.Element {
               overflowY: 'auto',
               maxHeight: '400px',
               position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
             }}
           >
             {messages.map((message, index) => (
               <div
                 key={message.id}
-                className={`${styles.message} ${
-                  message.sender === 'user' ? styles.user_message : styles.bot_message
-                }`}
+                className={`${styles.message} ${index % 2 === 0 ? styles.user_message : styles.bot_message}`}
                 style={{
                   position: 'absolute',
                   top: `${index * 50}px`, // Устанавливаем вертикальное положение сообщения
@@ -102,7 +102,7 @@ export default function ChatBot(): React.JSX.Element {
               onKeyPress={handleInputKeyPress}
             />
             <button className={styles.send_button} onClick={handleSendMessage}>
-            <TelegramIcon/>
+              <TelegramIcon />
             </button>
           </div>
         </div>

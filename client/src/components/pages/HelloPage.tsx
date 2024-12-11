@@ -3,6 +3,7 @@ import styles from '../css/HelloPage.module.css';
 import { useAppSelector, useAppDispatch } from '../../providers/redux/hooks';
 import DarkVariantExample from '../ui/DarkVariantExample';
 import { getAllDescCard } from '../../providers/slice/descCard/DescCardTHunk';
+import LiteVariant from '../ui/LiteVariant';
 
 export default function HelloPage(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -16,7 +17,7 @@ export default function HelloPage(): React.JSX.Element {
     <div className={styles.container}>
       <div className={styles.background_video}>
         <video autoPlay loop muted>
-          <source src="../../../public/video.mp4" type="video/mp4" />
+          <source src="../../../video.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -34,7 +35,7 @@ export default function HelloPage(): React.JSX.Element {
         <h1 className={styles.h1}>JOJO_fit</h1>
       </div>
 
-      {descCard.length > 0 && <DarkVariantExample descCard={descCard} />}
+      {descCard.length > 0 && <LiteVariant descCard={descCard} />}
 
       {/* Горизонтальная черта */}
       <hr className={styles.horizontalLine} />
