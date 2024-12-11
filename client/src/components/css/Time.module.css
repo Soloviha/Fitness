@@ -63,4 +63,33 @@
   font-size: 25px;
 }
 
+@media (max-width: 768px) {
+
+  .button {
+    height: 60px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+    border: none !important;
+    color: #fffdfd;
+    font-size: 22px;
+  }
+
+  .h2 {
+    font-size: 3rem; /* Размер заголовка */
+    color: #ffffff; /* Цвет заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+  }
+
+  .div {
+    font-size: 1.3rem; /* Размер текста таймера */
+    color: #fffdfd; /* Цвет текста */
+    margin-bottom: 30px; /* Отступ снизу */
+  }
+
+}
+
 
