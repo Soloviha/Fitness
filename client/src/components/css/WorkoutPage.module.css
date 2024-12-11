@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center; /* Центрируем по вертикали */
   align-items: center; /* Центрируем по горизонтали */
-  width: 177.4vh;
+  width: 90%;
   background-image: url(https://img.freepik.com/premium-photo/caucasian-young-female-athlete-practicing-blue-studio-background-neon-light-close-up-sportive-model-jumping-high-running-body-building-healthy-lifestyle-beauty-action-concept_489646-12081.jpg);
   background-size: cover; /* Изображение занимает всю ширину и высоту */
   background-position: center; /* Центрируем изображение */
@@ -22,6 +22,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  width: 160vh;
   height: 93.1vh;
   background-color: rgba(0, 0, 0, 0.601); /* Затемнение с прозрачностью */
   z-index: 1; /* Устанавливаем слой затемнения выше фона */

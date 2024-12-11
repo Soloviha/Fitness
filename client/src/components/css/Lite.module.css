@@ -1,11 +1,12 @@
 .paperContainer {
     box-shadow: none !important;
-    margin-top: -29rem; 
-    margin-left: 40px;
+    margin-top: -19rem; 
+    margin-left: 190px;
+    width: 80%;
   }
   
   .descCardContainer {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
   
   .buttonContainer {
@@ -15,7 +16,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 100%;
+    width: 90%;
   }
   
   .buttonContainerStart {

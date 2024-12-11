@@ -16,7 +16,7 @@ export default function HelloPage(): React.JSX.Element {
   useEffect(() => {
       const handleResize = (): void => {
           if (window.innerWidth >= 768) {
-              setItemsPerPage(3);
+              setItemsPerPage(2);
           } else {
               setItemsPerPage(1); 
           }
