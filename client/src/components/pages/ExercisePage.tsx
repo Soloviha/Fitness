@@ -7,9 +7,17 @@ import styles from '../css/Exercise.module.css';
 import Timer from '../ui/Timer';
 
 const Container = styled('div')({
-  marginBottom: '48px',
+  marginBottom: '0px',
 });
 
+const RemainingTimeContainer = styled('div')({
+  marginTop: '-800px',
+  padding: '10px 20px',
+  fontSize: '95px',
+  width: '600px',
+  marginLeft: '120px',
+  color: '#fff',
+});
 // const RemainingTimeContainer = styled('div')({
 //   padding: '10px 20px',
 //   fontSize: '95px',
@@ -19,12 +27,12 @@ const Container = styled('div')({
 // });
 
 const Button = styled('button')({
-  marginTop: '400px',
+  marginTop: '-100px',
   padding: '10px 20px',
-  fontSize: '25px',
-  height: '60px',
-  width: '600px',
-  marginLeft: '435px',
+  fontSize: '17px',
+  height: '70px',
+  width: '200px',
+  marginLeft: '-85px',
   cursor: 'pointer',
   color: '#fff',
 });

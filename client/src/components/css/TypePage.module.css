@@ -1,11 +1,9 @@
 
 .typeCard{
-  position: absolute;
-    position: relative;
     display: flex;
     justify-content: center; 
     align-items: center;
-    width: 193.5vh;
+    width: 177.3vh;
     background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
     background-size: cover; 
     background-position: center; 
@@ -14,7 +12,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    padding: 120px 0;
+    padding: 163.9px 0;
   }
   
   .typeCard::after {
