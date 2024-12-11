@@ -115,67 +115,120 @@ export default function WorkoutPage(): React.JSX.Element {
             position: 'relative',
             zIndex: '2',
             display: 'flex',
-            flexWrap: 'nowrap',
+            flexWrap: 'wrap', // Измените на wrap для лучшего отображения на маленьких экранах
             justifyContent: 'center',
             minWidth: 300,
             width: '100%',
-            padding: theme.spacing(2),
+            padding: theme.spacing(1), // Уменьшите отступы
             overflowX: 'auto',
-            marginTop: '100px',
+            marginTop: '20px', // Уменьшите верхний отступ
           }}
         >
           {workouts.map((workout, index) => (
-            <>
-              <ImageButton
-                focusRipple
-                key={workout.id}
-                style={{
-                  width: images[index % images.length].width,
-                }}
-              >
-                <ImageSrc
-                  style={{ backgroundImage: `url(${images[index % images.length].url})` }}
-                />
-                <ImageBackdrop className="MuiImageBackdrop-root" />
-                <Image className={styles.img}>
-                  <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
-                    <Typography
-                      component="span"
-                      variant="subtitle1"
-                      color="inherit"
-                      sx={(theme) => ({
-                        position: 'relative',
-                        p: 4,
-                        pt: 2,
-                        pb: `calc(${theme.spacing(1)} + 6px)`,
-                      })}
-                    >
-                      {workout.name}
-                      <ImageMarked className="MuiImageMarked-root" />
-                    </Typography>
-                  </NavLink>
-                  {/* <div>{workout.description}</div>
-                <div>⌚: {workout.time} мин.</div>
-                <div>🔥: {workout.kcal} Ккал</div> */}
-                </Image>
-              </ImageButton>
-            </>
+            <ImageButton
+              focusRipple
+              key={workout.id}
+              className="ImageButton" // Добавьте класс для стилизации
+            >
+              <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
+              <ImageBackdrop className="MuiImageBackdrop-root" />
+              <Image className={styles.img}>
+                <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
+                  <Typography
+                    component="span"
+                    variant="subtitle1"
+                    color="inherit"
+                    sx={(theme) => ({
+                      position: 'relative',
+                      p: 2,
+                      pt: 1,
+                      pb: `calc(${theme.spacing(1)} + 2px)`,
+                    })}
+                  >
+                    {workout.name}
+                    <ImageMarked className="MuiImageMarked-root" />
+                  </Typography>
+                </NavLink>
+              </Image>
+            </ImageButton>
           ))}
         </Box>
 
-        <Button className={styles.button} onClick={handleGoBack} style={{  fontSize: '20px',
-  width: '600px',
-
-  cursor: 'pointer',
-  color: '#fff',
-  height: '100px',
-  borderRadius: '12px'
- }}>
-        Назад
-      </Button>
+        <Button className={styles.button} onClick={handleGoBack}>
+          Назад
+        </Button>
       </div>
-
-      
     </>
   );
+
+  //    (
+  //     <>
+  //       <div className={styles.workoutCard}>
+  //         <Box
+  //           sx={{
+  //             position: 'relative',
+  //             zIndex: '2',
+  //             display: 'flex',
+  //             flexWrap: 'nowrap',
+  //             justifyContent: 'center',
+  //             minWidth: 300,
+  //             width: '100%',
+  //             padding: theme.spacing(2),
+  //             overflowX: 'auto',
+  //             marginTop: '100px',
+  //           }}
+  //         >
+  //           {workouts.map((workout, index) => (
+  //             <>
+  //               <ImageButton
+  //                 focusRipple
+  //                 key={workout.id}
+  //                 style={{
+  //                   width: images[index % images.length].width,
+  //                 }}
+  //               >
+  //                 <ImageSrc
+  //                   style={{ backgroundImage: `url(${images[index % images.length].url})` }}
+  //                 />
+  //                 <ImageBackdrop className="MuiImageBackdrop-root" />
+  //                 <Image className={styles.img}>
+  //                   <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
+  //                     <Typography
+  //                       component="span"
+  //                       variant="subtitle1"
+  //                       color="inherit"
+  //                       sx={(theme) => ({
+  //                         position: 'relative',
+  //                         p: 4,
+  //                         pt: 2,
+  //                         pb: `calc(${theme.spacing(1)} + 6px)`,
+  //                       })}
+  //                     >
+  //                       {workout.name}
+  //                       <ImageMarked className="MuiImageMarked-root" />
+  //                     </Typography>
+  //                   </NavLink>
+  //                   {/* <div>{workout.description}</div>
+  //                 <div>⌚: {workout.time} мин.</div>
+  //                 <div>🔥: {workout.kcal} Ккал</div> */}
+  //                 </Image>
+  //               </ImageButton>
+  //             </>
+  //           ))}
+  //         </Box>
+
+  //         <Button className={styles.button} onClick={handleGoBack} style={{  fontSize: '20px',
+  //   width: '600px',
+
+  //   cursor: 'pointer',
+  //   color: '#fff',
+  //   height: '100px',
+  //   borderRadius: '12px'
+  //  }}>
+  //         Назад
+  //       </Button>
+  //       </div>
+
+  //     </>
+  //   );
 }

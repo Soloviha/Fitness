@@ -1,40 +1,126 @@
+/* Общие стили */
 .workoutCard {
-  position: relative; /* Измените на relative */
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Центрируем по вертикали */
-  align-items: center; /* Центрируем по горизонтали */
+  justify-content: center;
+  align-items: center;
   height: 100vh; /* Занимает всю высоту экрана */
-  width: 1800px;
+  width: 100%; /* Адаптивная ширина */
+  max-width: 1800px; /* Ограничьте максимальную ширину */
   background-image: url(https://img.freepik.com/premium-photo/caucasian-young-female-athlete-practicing-blue-studio-background-neon-light-close-up-sportive-model-jumping-high-running-body-building-healthy-lifestyle-beauty-action-concept_489646-12081.jpg);
-  background-size: cover; /* Изображение занимает всю ширину и высоту */
-  background-position: center; /* Центрируем изображение */
-  background-repeat: no-repeat; /* Предотвращаем повторение изображения */
-  object-fit: cover;
-  z-index: 0; /* Устанавливаем z-index на 0 */
-}
-
-.workoutCard::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.873); /* Затемнение с прозрачностью */
-  z-index: 1; /* Устанавливаем слой затемнения выше фона */
+  background-size: cover;
+  background-position: center; /* Центрируем фон */
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .button {
-  height: 100px;
   color: #fff;
-  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
   background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
   border: none !important;
-  position: relative; /* Убедитесь, что кнопки имеют позиционирование */
-  z-index: 2; /* Устанавливаем z-index выше, чем у затемнения */
+  position: relative;
+  z-index: 2;
+}
+
+/* Адаптивные шрифты */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* Стили для мобильных устройств (до 425px) */
+@media (max-width: 425px) {
+  .workoutCard {
+    height: auto; /* Позволяем высоте адаптироваться */
+    padding: 10px; /* Добавьте отступы для лучшего отображения */
+  }
+
+  .button {
+    height: 60px; /* Уменьшите высоту кнопки */
+    width: 90%; /* Установите ширину кнопки на 90% */
+    max-width: 350px; /* Ограничьте максимальную ширину кнопки */
+    font-size: 16px; /* Уменьшите размер шрифта */
+  }
+
+  h1 {
+    font-size: 12px; /* Уменьшите размер заголовка для мобильных */
+  }
+
+  .img {
+    font-size: 14px; /* Уменьшите размер шрифта для изображений */
+  }
+
+  .ImageButton {
+    height: 200px; /* Уменьшите высоту для маленьких экранов */
+  }
+}
+
+/* Стили для планшетов (от 426px до 768px) */
+@media (min-width: 426px) and (max-width: 768px) {
+  .workoutCard {
+    padding: 20px; /* Увеличьте отступы для планшетов */
+  }
+
+  .button {
+    height: 80px; /* Увеличьте высоту кнопки */
+    width: 80%; /* Установите ширину кнопки на 80% */
+    max-width: 500px; /* Ограничьте максимальную ширину кнопки */
+    font-size: 18px; /* Увеличьте размер шрифта */
+  }
+
+  h1 {
+    font-size: 28px; /* Увеличьте размер заголовка для планшетов */
+  }
+
+  .ImageButton {
+    height: 250px; /* Увеличьте высоту для планшетов */
+  }
+}
+
+/* Стили для мониторов (от 769px до 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .workoutCard {
+    padding: 30px; /* Увеличьте отступы для мониторов */
+  }
+
+  .button {
+    height: 100px; /* Установите высоту кнопки */
+    width: 60%; /* Установите ширину кнопки на 60% */
+    max-width: 600px; /* Ограничьте максимальную ширину кнопки */
+    font-size: 20px; /* Увеличьте размер шрифта */
+  }
+
+  h1 {
+    font-size: 32px; /* Увеличьте размер заголовка для мониторов */
+  }
+
+  .ImageButton {
+    height: 300px; /* Увеличьте высоту для мониторов */
+  }
+}
+
+/* Стили для проекторов (более 1200px) */
+@media (min-width: 1201px) {
+  .workoutCard {
+    padding: 40px; /* Увеличьте отступы для проекторов */
+  }
+
+  .button {
+    height: 120px; /* Увеличьте высоту кнопки */
+    width: 50%; /* Установите ширину кнопки на 50% */
+    max-width: 800px; /* Ограничьте максимальную ширину кнопки */
+    font-size: 22px; /* Увеличьте размер шрифта */
+  }
+
+  h1 {
+    font-size: 36px; /* Увеличьте размер заголовка для проекторов */
+  }
+
+  .ImageButton {
+    height: 350px; /* Увеличьте высоту для проекторов */
+  }
 }
