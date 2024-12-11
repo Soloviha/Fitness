@@ -15,16 +15,17 @@ const RemainingTimeContainer = styled('div')({
   padding: '10px 20px',
   fontSize: '95px',
   width: '600px',
-  marginLeft: '215px',
+  marginLeft: '120px',
   color: '#fff',
 });
 
 const Button = styled('button')({
-  marginTop: '590px',
+  marginTop: '400px',
   padding: '10px 20px',
   fontSize: '25px',
+  height: '60px',
   width: '600px',
-  marginLeft: '600px',
+  marginLeft: '435px',
   cursor: 'pointer',
   color: '#fff',
 });

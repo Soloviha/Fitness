@@ -7,11 +7,12 @@ import styles from '../css/Lite.module.css';
 
 type DescCardProps = {
   descCard: DescCardType[];
+  itemsPerPage: number
 };
 
-export default function LiteVariant({ descCard }: DescCardProps): React.JSX.Element {
+export default function LiteVariant({ descCard,  itemsPerPage}: DescCardProps): React.JSX.Element {
   const [startIndex, setStartIndex] = useState(0);
-  const itemsPerPage = 4;
+  // const itemsPerPage = 4;
   const [fadeOut, setFadeOut] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
