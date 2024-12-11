@@ -14,6 +14,18 @@
   left: 0;
   z-index: -1;
 }
+  
+  .card_container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.687); /* Затемнение с прозрачностью */
+    z-index: 1; /* Устанавливаем слой затемнения выше фона */
+  }
+
 
 .card_container::after {
   content: '';
@@ -43,7 +55,7 @@
   font-size: 1rem; /* Размер описания */
   color: #666; /* Цвет описания */
 }
-
+  
 .styled_info_box {
   position: relative; /* Содержимое будет выше затемнения */
   z-index: 2; /* Устанавливаем содержимое выше затемнения */
