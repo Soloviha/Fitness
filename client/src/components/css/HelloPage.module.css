@@ -21,16 +21,16 @@
 
 .content_wrapper {
   color: white;
-  padding: 2rem;
+  padding: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 100vh;
+  height: 12vh;
 }
 
 .h1 {
-  margin-bottom: 8rem;
+  margin-bottom: 18rem;
   font-size: 3rem;
 }
 
@@ -67,8 +67,8 @@
   padding: 10px;
   margin-left: 120px;
   margin-right: 20px;
-  width: 700px;
-  height: 400px;
+  width: 600px;
+  height: 300px;
   background-color: white;
 }
 
@@ -82,7 +82,7 @@
 
 .textBox p {
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -120,58 +120,66 @@
 
 .videoSubtitle {
   font-size: 24px;
+  padding: 1rem;
   background: linear-gradient(to right, #ffffff, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-left: -8px ;
 }
 
 .videoText {
   margin-left: 70%;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  max-width: 500px;
+  margin-top: 5rem;
+  max-width: 500px; 
 }
 
-.videoText h3 {
-  font-size: 24px;
-  background: linear-gradient(to right, #ffffff, #b73ec7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.h3 {
+  font-size: 36px;
+  color: #ffffff; /* Белый цвет текста */
+  background: linear-gradient(to right, #ff6b6b, #ffa500, #9370db, #7b68ee); /* Градиент фона */
+  padding: 10px; /* Отступы для лучшего отображения */
   margin-bottom: 10px;
+  margin-left: 25px;
+  display: inline-block;
 }
 
 .videoText p {
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
 }
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
   .content_wrapper {
-    padding: 1rem;
-    height: auto; /* Изменяем высоту для мобильных */
+    padding: 0px;
+    width: 150px;
+    height: 80px; /* Изменяем высоту для мобильных */
+
   }
 
   .container {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    margin-top: 15px;
+    margin-left: 15px;
   }
 
   .background_video {
-    width: auto;
+    width: 100vh;
     height: auto;
   }
 
   .h1 {
     margin-top: 6rem;
+    margin-left: 16rem;
     font-size: 1.5rem; /* Уменьшаем размер заголовка */
-    margin-bottom: 1rem; /* Уменьшаем отступ */
+    margin-bottom: -7rem; /* Уменьшаем отступ */
   }
 
   .backgroundRun {
-    width: 100%; /* Ширина 100% для мобильных */
+    width: 80%; /* Ширина 100% для мобильных */
     margin-top: 8rem; /* Убираем отступ справа */
-    margin-left: 0; /* Убираем отступ слева */
+    margin-left: 38px; /* Убираем отступ слева */
     right: 0; /* Убираем правый отступ */
   }
 
@@ -183,9 +191,10 @@
   }
 
   .videoText {
-    margin-left: 0; /* Убираем отступ слева */
-    font-size: 2rem;
-    max-width: 100%; /* Увеличиваем максимальную ширину */
+    margin-left: 10rem; /* Убираем отступ слева */
+    margin: 0px 0px 0px 140px;
+    font-size: 3px;
+    /* max-width: 100%; Увеличиваем максимальную ширину */
   }
 
   .videoContainer {
@@ -199,15 +208,19 @@
 
   .videoTitle,
   .videoSubtitle {
-    font-size: 18px; /* Увеличиваем размер шрифта для заголовков */
+    font-size: 7px;
+    margin-top: 0;
+    margin-left: 220px;
+    padding: 0px; /* Увеличиваем размер шрифта для заголовков */
   }
+ .videoText h3 {
+  display: none;
+ }
+  
 
-  .videoText h3 {
-    font-size: 10px; /* Уменьшаем размер заголовка */
-  }
 
   .videoText p {
-    font-size: 8px; /* Уменьшаем размер текста */
+    display: none;
   }
 
   .h2 {
@@ -217,15 +230,32 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+/* 
+  .div {
+    width: 80px;
+    margin-top: -51px;
+    font-size: 7px; /* Уменьшаем размер заголовка */
+  /* } */ 
 
+  .h3 {
+    font-size: 20px;
+    color: #ffffff; /* Белый цвет текста */
+    background: linear-gradient(to right, #ff6b6b, #ffa500, #9370db, #7b68ee); /* Градиент фона */
+    padding: 10px; /* Отступы для лучшего отображения */
+    margin-bottom: 1px;
+    margin-left: 40px;
+    display: inline-block;
+    /* margin-top: -200px */
+  }
   .textBox p {
     color: black;
     font-size: 18px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
   }
 
   .videoOverlay {
-    margin: 1px 100px;
+    margin: 1px;
+    height: 20px;
     color: white;
     z-index: 1;
   }

@@ -47,7 +47,7 @@
   z-index: 1; /* Поверх изображения */
   background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
   border: none !important;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .cardBack {
@@ -56,7 +56,7 @@
 
 .cardInfo {
   position: absolute; /* Абсолютное позиционирование */
-  top: 20px; /* Отступ от верхней границы */
+  /* top: 20px; Отступ от верхней границы */
   left: 20px; /* Отступ от левой границы */
   color: white; /* Цвет текста */
   z-index: 2; /* Поверх изображения */
@@ -70,4 +70,48 @@
 .cardDescription {
   font-size: 2rem; /* Размер шрифта для описания */
   margin-top: 10px; /* Отступ сверху */
+}
+
+
+@media (max-width: 768px) {
+  .cardContainer {
+    margin-top: 26px;
+    height: 22rem;
+    width: 20rem;
+    color: black;
+  }
+
+  .cardImage {
+    margin-top: 10px;
+    width: 100%;
+    height: 350px;
+  }
+
+  .navButton {
+      font-size: 10px; /* Уменьшаем размер шрифта для кнопок */
+      padding: 0.5rem; /* Уменьшаем отступы кнопок */
+  }
+  .cardTitle {
+    font-size: 2rem; /* Размер шрифта для заголовка */
+    margin: -180px; /* Убирает отступы */
+  }
+  .cardDescription {
+    font-size: 1rem; /* Размер шрифта для описания */
+    margin-top: 10px; /* Отступ сверху */
+  }
+  .cardFlip {
+display: none;
+  }
+
+  .cardFlip {
+    margin-top: 50px;
+    width: 18rem;
+    height: 20rem;
+  }
+  .cardInfo {
+    font-size: 10px;
+    left: 20px; /* Отступ от левой границы */
+    color: white; /* Цвет текста */
+    z-index: 2; /* Поверх изображения */
+  }
 }
