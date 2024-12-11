@@ -74,11 +74,19 @@ function App(): React.JSX.Element {
           path: '/user/profile',
           element: <PersonalPage />,
         },
-
         {
-          path: '/userP',
-          element: <Lizaui />,
+          path: '/types',
+          element: <TypePage />,
         },
+        {
+          path: '/types/workouts/:id',
+          element: <WorkoutPage />,
+        },
+        {
+          path: 'types/workouts/exercises/:id',
+          element: <ExercisePage />,
+        },
+
         {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
@@ -93,6 +101,10 @@ function App(): React.JSX.Element {
             {
               path: 'types/workouts/exercises/:id',
               element: <ExercisePage />,
+            },
+            {
+              path: '/userP',
+              element: <Lizaui />,
             },
           ],
         },

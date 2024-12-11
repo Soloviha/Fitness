@@ -53,9 +53,6 @@ export default function TypePage(): React.JSX.Element {
       '& .MuiImageMarked-root': {
         opacity: 0,
       },
-      // '& .MuiTypography-root': {
-      //   border: '4px solid currentColor',
-      // },
     },
   }));
 
