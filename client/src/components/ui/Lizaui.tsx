@@ -20,54 +20,56 @@ export default function TestPage(): React.JSX.Element {
   return (
     <div className={styles.person}>
       <div className={styles.form}>
-    
+   
       {userData.img && <img src={userData.img} alt="" width="200px" height={200} style={{marginTop: '200px', borderRadius:'200px' }} defaultValue={userData.img}/>}
       <Card className={styles.card} style={{ maxWidth: '400px', marginTop: '200px' }}>
+     
       <Card.Body>
         <Form onSubmit={submitHandler}>
           <Row>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>1</Form.Label>
-                <Form.Control type="file" name="img" placeholder="" required />
+                <Form.Label>Загрузите фото</Form.Label>
+                <Form.Control type="file" name="img" placeholder="Фото" required />
               </Form.Group>
             </Col>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>2</Form.Label>
-                <Form.Control type="text" name="gender" placeholder="" required />
+                <Form.Label>Ваша Фамилия</Form.Label>
+                <Form.Control type="text" name="secondName" placeholder="Фамилия" required />
               </Form.Group>
             </Col>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>3</Form.Label>
-                <Form.Control type="number" name="weight" placeholder="" required />
+                <Form.Label>Пол</Form.Label>
+                <Form.Control type="text" name="gender" placeholder="Пол" required />
               </Form.Group>
             </Col>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>4</Form.Label>
-                <Form.Control type="number" name="height" placeholder="" required />
+                <Form.Label>Вес</Form.Label>
+                <Form.Control type="number" name="weight" placeholder="Вес" required />
               </Form.Group>
             </Col>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>5</Form.Label>
-                <Form.Control type="text" name="dateOfBirth" placeholder="" required />
+                <Form.Label>Рост</Form.Label>
+                <Form.Control type="number" name="height" placeholder="Рост" required />
               </Form.Group>
             </Col>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>6</Form.Label>
-                <Form.Control type="number" name="BMI" placeholder="" required />
+                <Form.Label>Дата рождения</Form.Label>
+                <Form.Control type="text" name="dateOfBirth" placeholder="Дата рождения" required />
               </Form.Group>
             </Col>
             <Col xs={12}>
               <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>8</Form.Label>
-                <Form.Control type="text" name="secondName" placeholder="" required />
+                <Form.Label>Индекс массы тела</Form.Label>
+                <Form.Control type="number" name="BMI" placeholder="%" required />
               </Form.Group>
             </Col>
+
             <Button variant="primary" type="submit" className={styles.btn}>
               Добавить
             </Button>

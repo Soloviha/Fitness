@@ -44,6 +44,7 @@ export default function NavBar(): React.JSX.Element {
             <NavLink to="/" style={{ textDecoration: 'none' }}>
               <Navbar.Brand className={styles.navbarBrand}>
                 <Avatar
+                  className={styles.avatar}
                   alt="Remy Sharp"
                   src="../../../public/assets/photo-output-1.PNG"
                   sx={{ width: 70, height: 70 }}
@@ -56,8 +57,9 @@ export default function NavBar(): React.JSX.Element {
               {'fit'}
             </Navbar.Brand>
             <Nav className="me-auto">
-             
-            
+            <NavLink to="/" className={`nav-link ${styles.home}`} >
+                Главная
+              </NavLink>
               <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                 Тренировки
               </NavLink>

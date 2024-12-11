@@ -102,3 +102,35 @@
     justify-content: space-between; /*Равномерное распределение пространства */
   }
   
+
+  /* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .styled_card {
+    margin-top: 6rem;
+    max-width: 90%; /* Максимальная ширина карточки */
+    max-height: 60%;
+    height: 100%;
+    width: 100%; /* Ширина карточки на 100% доступного пространства */
+  }
+  
+  .img {
+    height: 10rem; /* Высота изображения */
+    width: auto; /* Ширина изображения */
+    object-fit: cover; 
+  }
+
+.styled_title {
+  font-size: 2px; /* Размер заголовка */
+  color: #333333; /* Цвет заголовка */
+  margin-bottom: 1px; /* Отступ снизу */
+}
+
+.styled_description {
+  font-size: 1px;
+}
+
+.body2 {
+  font-size: 1px;
+}
+
+}
