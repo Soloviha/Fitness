@@ -4,6 +4,7 @@
     justify-content: center; /* Центрируем по горизонтали */
     align-items: center; /* Центрируем по вертикали */
     height: 100vh; /* Занимает всю высоту экрана */
+    width: 177.4vh;
     background-image: url(https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?semt=ais_hybrid);
     background-size: cover; /* Изображение занимает всю ширину и высоту */
     background-position: center; /* Центрируем изображение */
@@ -65,7 +66,8 @@
 
   .button {
     height: 100px;
-    width: 500px;
+    width: 400px;
+    margin-left: 30px;
     display: flex;
     justify-content: center;
     align-items: center;

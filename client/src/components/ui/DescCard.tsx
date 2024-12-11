@@ -10,7 +10,7 @@ type DescCardProps = {
 export default function DescCard({ descCard }: DescCardProps): React.JSX.Element {
   const [isFlipped, setIsFlipped] = useState(false); // Состояние для переворота
 
-  const handleFlip = () => {
+  const handleFlip = (): void => {
     setIsFlipped(prev => !prev); // Переключает состояние
   };
 
