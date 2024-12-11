@@ -40,7 +40,7 @@ export default function WorkoutPage(): React.JSX.Element {
 
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
-    height: 350,
+    height: 240,
     width: '100%', // Добавьте это свойство, чтобы растянуть карточки на всю ширину
     margin: theme.spacing(2),
     borderRadius: theme.shape.borderRadius,
@@ -163,12 +163,12 @@ export default function WorkoutPage(): React.JSX.Element {
           ))}
         </Box>
 
-        <Button className={styles.button} onClick={handleGoBack} style={{  fontSize: '20px',
-  width: '600px',
+        <Button className={styles.button} onClick={handleGoBack} style={{  fontSize: '17px',
+  width: '200px',
 
   cursor: 'pointer',
   color: '#fff',
-  height: '100px',
+  height: '70px',
   borderRadius: '12px'
  }}>
         Назад
