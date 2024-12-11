@@ -154,16 +154,21 @@ export default function WorkoutPage(): React.JSX.Element {
           ))}
         </Box>
 
-        <Button className={styles.button} onClick={handleGoBack} style={{  fontSize: '17px',
-  width: '200px',
+        <Button
+          className={styles.button}
+          onClick={handleGoBack}
+          style={{
+            fontSize: '17px',
+            width: '200px',
 
-  cursor: 'pointer',
-  color: '#fff',
-  height: '70px',
-  borderRadius: '12px'
- }}>
-        Назад
-      </Button>
+            cursor: 'pointer',
+            color: '#fff',
+            height: '70px',
+            borderRadius: '12px',
+          }}
+        >
+          Назад
+        </Button>
       </div>
     </>
   );
