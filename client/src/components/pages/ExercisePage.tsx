@@ -18,6 +18,13 @@ const RemainingTimeContainer = styled('div')({
   marginLeft: '120px',
   color: '#fff',
 });
+// const RemainingTimeContainer = styled('div')({
+//   padding: '10px 20px',
+//   fontSize: '95px',
+//   width: '600px',
+//   // marginLeft: '215px',
+//   color: '#fff',
+// });
 
 const Button = styled('button')({
   marginTop: '-100px',
@@ -97,7 +104,7 @@ export default function ExercisePage(): React.JSX.Element {
         {!isResting ? (
           <>
             <ExerciseCard exercise={exercises[currentIndex]} />
-            <RemainingTimeContainer>{Math.ceil(remainingTime / 1000)}</RemainingTimeContainer>
+            <div className={styles.remainingTime}>{Math.ceil(remainingTime / 1000)}</div>
             <Button className={styles.button} onClick={handleGoBack}>
               Завершить тренировку
             </Button>
