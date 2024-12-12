@@ -12,33 +12,9 @@
 
 @media (max-width: 768px) {
   .footer {
-    position: relative;
-    margin-top: 100vh;
-    height: 30vh; /* Уменьшаем высоту для мобильных устройств */
-    max-width: 100vh; /* Занимаем всю ширину экрана */
+    display: none;
 
-  }
 
-  .row {
-    flex-direction: row; /* Устанавливаем направление в строчку */
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    padding: 1px;  
-    align-items: center;
-    font-size: 4px;
-  }
-
-  .h6 {
-    font-size: 7px;
-  }
-
-  .container {
-    /* height: 20px; */
-    display: flex;
-  }
-  .p {
-font-size: 6px;
   }
 }
 
-/* bg-dark text-white py-5 */

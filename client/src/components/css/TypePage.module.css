@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center; 
     align-items: center;
-    width: 177.3vh;
+    width: 100%;
     background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
     background-size: cover; 
     background-position: center; 
@@ -22,6 +22,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    width: 177.5vh;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.612); /* Затемнение с прозрачностью */
     z-index: 1; /* Устанавливаем слой затемнения выше фона */
   }
