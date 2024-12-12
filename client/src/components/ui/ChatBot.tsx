@@ -59,7 +59,7 @@ export default function ChatBot(): React.JSX.Element {
         <QuestionAnswerIcon />
       </button>
       {isOpen && (
-        <div className={styles.chatbot_window} style={{ height: '400px' }}>
+        <div className={styles.chatbot_window} style={{ height: '500px' }}>
           <div className={styles.chatbot_header}>
             <h5>Онлайн-помощник</h5>
             <button className={styles.close_button} onClick={toggleChat}>
@@ -72,7 +72,7 @@ export default function ChatBot(): React.JSX.Element {
             onScroll={handleScroll}
             style={{
               overflowY: 'auto',
-              maxHeight: '400px',
+              maxHeight: '500px',
               position: 'relative',
               display: 'flex',
               flexDirection: 'column',
@@ -84,8 +84,8 @@ export default function ChatBot(): React.JSX.Element {
                 key={message.id}
                 className={`${styles.message} ${index % 2 === 0 ? styles.user_message : styles.bot_message}`}
                 style={{
-                  position: 'absolute',
                   top: `${index * 50}px`, // Устанавливаем вертикальное положение сообщения
+                  marginBottom: '20px',
                 }}
               >
                 {message.text}
