@@ -10,11 +10,15 @@
   width: 26rem;
   transition: transform 0.6s, border-radius 0.6s; /* Плавный переход для transform и border-radius */
   transform-style: preserve-3d; /* Сохраняет 3D эффект */
+ 
+  
 }
 
 .cardFlip.flipped {
   transform: rotateY(180deg); /* Полное вращение карточки */
 }
+
+
 
 .cardFront,
 .cardBack {
@@ -25,9 +29,11 @@
   width: 100%; /* Задает ширину 100% */
   height: 100%; /* Задает высоту 100% */
   border-radius: 10px; /* Устанавливает радиус закругления углов */
+
+  
+
 }
 
-/* Остальные стили остаются без изменений */
 
 .cardImage {
   width: 100%;
@@ -47,7 +53,7 @@
   z-index: 1; /* Поверх изображения */
   background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
   border: none !important;
-  /* margin-bottom: 1rem; */
+ 
 }
 
 .cardBack {
@@ -55,7 +61,7 @@
 }
 
 .cardInfo {
-  position: absolute; /* Абсолютное позиционирование */
+  position: relative; /* Абсолютное позиционирование */
   /* top: 20px; Отступ от верхней границы */
   left: 20px; /* Отступ от левой границы */
   color: rgb(0, 0, 0); /* Цвет текста */
@@ -109,6 +115,7 @@ display: none;
     height: 20rem;
   }
   .cardInfo {
+    
     font-size: 10px;
     left: 20px; /* Отступ от левой границы */
     color: white; /* Цвет текста */

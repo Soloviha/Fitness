@@ -51,14 +51,19 @@ export default function HelloPage(): React.JSX.Element {
       </div>
       </div>
 
-      <div className={styles.content_wrapper}>
+      <div className={styles.contentWrapper}>
         <h1 className={styles.h1}>JOJO_fit</h1>
       </div>
 
-      {descCard.length > 0 && <LiteVariant itemsPerPage={itemsPerPage} descCard={descCard} />}
 
-      {/* Горизонтальная черта */}
-      <hr className={styles.horizontalLine} />
+
+      {/* Карточки */}
+      <div className={styles.cardContainer} >
+        {descCard.length > 0 && <LiteVariant itemsPerPage={itemsPerPage} descCard={descCard} />}
+      </div>
+
+       {/* Горизонтальная черта */}
+       <hr className={styles.horizontalLine} />
 
       <div className={styles.videoContainer}>
         {/* Рамка с текстом */}

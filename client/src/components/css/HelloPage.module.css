@@ -20,19 +20,14 @@
   filter: brightness(0.5);
 }
 
-.content_wrapper {
+.contentWrapper {
   color: white;
-  padding: 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 12vh;
+  padding: 12rem;
+
+ 
 }
 
 .h1 {
-  margin-bottom: 10rem;
-  margin-left: -10rem;
   font-size: 3rem;
 }
 
@@ -153,7 +148,7 @@
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
-  .content_wrapper {
+  .contentWrapper {
     padding: 0px;
     width: 150px;
     height: 80px; /* Изменяем высоту для мобильных */
