@@ -47,7 +47,7 @@
   z-index: 1; /* Поверх изображения */
   background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
   border: none !important;
-  /* margin-bottom: 1rem; */
+  margin-bottom: 1rem;
 }
 
 .cardBack {
@@ -56,7 +56,7 @@
 
 .cardInfo {
   position: absolute; /* Абсолютное позиционирование */
-  /* top: 20px; Отступ от верхней границы */
+  top: 20px; /* Отступ от верхней границы */
   left: 20px; /* Отступ от левой границы */
   color: white; /* Цвет текста */
   z-index: 2; /* Поверх изображения */
@@ -109,6 +109,7 @@ display: none;
     height: 20rem;
   }
   .cardInfo {
+    
     font-size: 10px;
     left: 20px; /* Отступ от левой границы */
     color: white; /* Цвет текста */
