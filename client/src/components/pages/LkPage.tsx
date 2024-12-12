@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Col, Row, Form, Button } from 'react-bootstrap';
+import { Card, Col, Row, Form, Button, Modal } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
 import {
   addParams,
@@ -15,13 +15,27 @@ export default function LkPage(): React.JSX.Element {
   const userParams = useAppSelector((state) => state.auth.user);
 
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [weight, setWeight] = useState<number>(userData.weight ?? 0);
+  const [height, setHeight] = useState<number>(userData.height ?? 0);
+  const [bmi, setBmi] = useState<number | null>(null);
   const [isEditing] = useState<boolean>(!!userData.id);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (userData.img) {
       setImageFile(null); // Сбрасываем imageFile для обновления
     }
   }, [userData.img]);
+
+  useEffect(() => {
+    if (weight > 0 && height > 0) {
+      const heightInMeters = height / 100; // Конвертируем рост в метры
+      const calculatedBmi = weight / (heightInMeters * heightInMeters);
+      setBmi(calculatedBmi);
+    } else {
+      setBmi(null); // Сбрасываем BMI, если ввод некорректен
+    }
+  }, [weight, height]);
 
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   const submitHandler: React.FormEventHandler<HTMLFormElement> = async (e) => {
@@ -40,10 +54,21 @@ export default function LkPage(): React.JSX.Element {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       setImageFile(event.target.files[0]);
     }
+  };
+
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -56,9 +81,15 @@ export default function LkPage(): React.JSX.Element {
               <label htmlFor="imageUpload" className={styles.imageUploadLabel}>
                 <div className={styles.imageUploadCircle}>
                   {imageFile ? (
-                    <img src={URL.createObjectURL(imageFile)} alt="Uploaded" className={styles.imagePreview} />
+                    <img
+                      src={URL.createObjectURL(imageFile)}
+                      alt="Uploaded"
+                      className={styles.imagePreview}
+                    />
                   ) : (
-                    userData.img && <img src={userData.img} alt="User" className={styles.imagePreview} />
+                    userData.img && (
+                      <img src={userData.img} alt="User" className={styles.imagePreview} />
+                    )
                   )}
                 </div>
               </label>
@@ -120,32 +151,33 @@ export default function LkPage(): React.JSX.Element {
                 <Col xs={12}>
                   <Form.Group controlId="formBasicGender" className={styles.formGroup}>
                     <Form.Label>Пол</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="gender"
-                      defaultValue={userData.gender ?? ''}
-                      required
-                    />
+                    <Form.Select name="gender" defaultValue={userData.gender ?? ''} required>
+                      <option value="">Выберите пол</option>
+                      <option value="male">Мужской</option>
+                      <option value="female">Женский</option>
+                    </Form.Select>
                   </Form.Group>
                 </Col>
                 <Col xs={12}>
                   <Form.Group controlId="formBasicWeight" className={styles.formGroup}>
-                    <Form.Label>Вес</Form.Label>
+                    <Form.Label>Вес (кг)</Form.Label>
                     <Form.Control
                       type="number"
                       name="weight"
-                      defaultValue={userData.weight ?? ''}
+                      value={weight || ''}
+                      onChange={(e) => setWeight(Number(e.target.value))}
                       required
                     />
                   </Form.Group>
                 </Col>
                 <Col xs={12}>
                   <Form.Group controlId="formBasicHeight" className={styles.formGroup}>
-                    <Form.Label>Рост</Form.Label>
+                    <Form.Label>Рост (см)</Form.Label>
                     <Form.Control
                       type="number"
                       name="height"
-                      defaultValue={userData.height ?? ''}
+                      value={height || ''}
+                      onChange={(e) => setHeight(Number(e.target.value))}
                       required
                     />
                   </Form.Group>
@@ -153,20 +185,21 @@ export default function LkPage(): React.JSX.Element {
                 <Col xs={12}>
                   <Form.Group controlId="formBasicBMI" className={styles.formGroup}>
                     <Form.Label>BMI</Form.Label>
-                    <Form.Control
-                      type="number"
-                      name="BMI"
-                      defaultValue={userData.BMI ?? ''}
-                      required
-                    />
+                    <div className={styles.bmiContainer}>
+                      <Form.Control
+                        type="number"
+                        name="BMI"
+                        value={bmi !== null ? bmi.toFixed(2) : ''}
+                        readOnly
+                      />
+                      <a href="#" onClick={handleShowModal} className={styles.bmiLink}>
+                        Подробнее
+                      </a>
+                    </div>
                   </Form.Group>
                 </Col>
                 <Col xs={12}>
-                  <Button
-                    variant="primary"
-                    type="submit"
-                    className={`btn-lg w-100 mb-3 ${styles.button}`}
-                  >
+                  <Button variant="primary" type="submit" className={styles.button}>
                     Сохранить
                   </Button>
                 </Col>
@@ -175,6 +208,28 @@ export default function LkPage(): React.JSX.Element {
           </Card.Body>
         </Card>
       </div>
+
+      <Modal show={showModal} onHide={handleCloseModal} className={styles.modal}>
+  <div className={styles.modalContent}>
+    <Modal.Header closeButton>
+      <Modal.Title>Информация о BMI</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+      <p>Индекс массы тела (BMI) - это показатель, который используется для оценки соотношения веса и роста человека.</p>
+      <p>Значения BMI:</p>
+      <ul>
+        <li>16 и менее - Выраженный дефицит массы тела</li>
+        <li>16-18,5 - Недостаточная (дефицит) масса тела</li>
+        <li>18,5-25 - Нормальная масса тела</li>
+        <li>25-30 - Избыточная масса тела (предожирение)</li>
+        <li>30-35 - Ожирение 1 степени</li>
+        <li>35-40 - Ожирение 2 степени</li>
+        <li>40 и более - Ожирение 3 степени</li>
+      </ul>
+    </Modal.Body>
+  </div>
+</Modal>
+
     </div>
   );
 }
