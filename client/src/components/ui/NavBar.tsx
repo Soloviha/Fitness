@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,6 +11,9 @@ import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';
 import { Avatar } from '@mui/material';
 import styles from '../css/NavBar.module.css';
+import { getMyParameters } from '../../providers/slice/parametr/userParameterThunk';
+import { resetUserParameter } from '../../providers/slice/parametr/userParameterSlice';
+
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -20,6 +23,7 @@ export default function NavBar(): React.JSX.Element {
 
   const logoutHandler = (): void => {
     void dispatch(logoutThunk());
+    void dispatch(resetUserParameter()); 
     navigate('/');
   };
 
@@ -34,6 +38,7 @@ export default function NavBar(): React.JSX.Element {
     setIsLoginModalOpen(false);
     void dispatch(setSignupModalOpen());
   };
+
 
   return (
     <>
@@ -56,8 +61,6 @@ export default function NavBar(): React.JSX.Element {
               {'fit'}
             </Navbar.Brand>
             <Nav className="me-auto">
-             
-            
               <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                 Тренировки
               </NavLink>
@@ -79,7 +82,7 @@ export default function NavBar(): React.JSX.Element {
                 <FaUserCircle size={20} />
               </Nav.Link>
             </Nav>
-            {user && accessToken && (
+            {  user && accessToken && (
               <Nav>
                 <NavLink
                   to="/login"

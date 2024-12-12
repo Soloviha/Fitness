@@ -26,7 +26,7 @@ module.exports = {
         allowNull: true,
       },
       img: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       BMI: {
