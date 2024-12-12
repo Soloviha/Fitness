@@ -138,7 +138,7 @@ export default function WorkoutPage(): React.JSX.Element {
                 />
                 <ImageBackdrop className="MuiImageBackdrop-root" />
                 <Image className={styles.img}>
-                  <NavLink to={`/types/workouts/exercises/${workout.id}`} className="nav-link">
+                  <NavLink to={`/types/workouts/exercises/${workout.id.toString()}`} className="nav-link">
                     <Typography
                       component="span"
                       variant="subtitle1"
