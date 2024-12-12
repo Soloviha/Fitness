@@ -5,49 +5,24 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
-import PersonalPage from './components/pages/PersonalPage';
+
 import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
 import LoginModal from './components/pages/LoginModal';
 import SignupModal from './components/pages/SignupModal';
 // import TestPage from './components/pages/TestPage';
-import Lizaui from '../src/components/ui/Lizaui';
+import LkPage from './components/pages/LkPage';
 import { getAllWorkouts } from './providers/slice/workout/WorkoutThunk';
 import { getAllExercises } from './providers/slice/exercise/ExerciseThunk';
 import ExercisePage from './components/pages/ExercisePage';
 import ErorrPage from './components/pages/ErorrPage';
+import { getMyParameters } from './providers/slice/parametr/userParameterThunk';
+
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
   // const [deferredPrompt, setDeferredPrompt] = useState(null);
   const isUser = useAppSelector((state) => !!state.auth.user);
-
-  // useEffect(() => {
-  //   const handleBeforeInstallPrompt = (e: BeforeInstallPromptEvent): void => {
-  //     e.preventDefault();
-  //     setDeferredPrompt(e);
-  //   };
-
-  //   window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-  //   return () => {
-  //     window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-  //   };
-  // }, []);
-
-  // const handleInstallClick = () => {
-  //   if (deferredPrompt) {
-  //     deferredPrompt.prompt();
-  //     deferredPrompt.userChoice.then((choiceResult) => {
-  //       if (choiceResult.outcome === 'accepted') {
-  //         console.log('Пользователь установил приложение');
-  //       } else {
-  //         console.log('Пользователь отказался от установки');
-  //       }
-  //       setDeferredPrompt(null);
-  //     });
-  //   }
-  // };
 
   useEffect(() => {
     void dispatch(refreshThunk());
@@ -61,6 +36,10 @@ function App(): React.JSX.Element {
     void dispatch(getAllExercises());
   }, [dispatch]);
 
+  useEffect(() => {
+    if (isUser) void dispatch(getMyParameters())
+  }, [dispatch, isUser]);
+
   const router = createBrowserRouter([
     {
       element: <Layout />,
@@ -70,13 +49,10 @@ function App(): React.JSX.Element {
           path: '/',
           element: <HelloPage />,
         },
+
         {
-          path: '/user/profile',
-          element: <PersonalPage />,
-        },
-        {
-          path: '/types',
-          element: <TypePage />,
+          path: '/userP',
+          element: <LkPage />,
         },
         {
           path: '/types/workouts/:id',
@@ -102,10 +78,7 @@ function App(): React.JSX.Element {
               path: 'types/workouts/exercises/:id',
               element: <ExercisePage />,
             },
-            {
-              path: '/userP',
-              element: <Lizaui />,
-            },
+           
           ],
         },
         {
@@ -119,10 +92,6 @@ function App(): React.JSX.Element {
               path: '/signup',
               element: <SignupModal />,
             },
-            // {
-            //   path: '/user/profile',
-            //   element: <PersonalPage />,
-            // },
           ],
         },
       ],
