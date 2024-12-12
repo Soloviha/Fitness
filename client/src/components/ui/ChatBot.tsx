@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../css/ChatBot.module.css';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
@@ -21,30 +22,30 @@ export default function ChatBot(): React.JSX.Element {
     }
   }, [scrollPosition]);
 
-  const toggleChat = () => {
+  const toggleChat = (): void => {
     setIsOpen(!isOpen);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = ():void => {
     if (inputText.trim() !== '') {
       void dispatch(sendMessage(inputText)); // Отправляем сообщение через Redux
       setInputText('');
       setIsFirstMessage(false); // Отмечаем, что первое сообщение отправлено
-      setScrollPosition(chatMessagesRef.current?.scrollHeight || 0);
+      setScrollPosition(chatMessagesRef.current?.scrollHeight ?? 0);
     }
   };
 
-  const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter') {
       handleSendMessage();
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setInputText(e.target.value);
   };
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>): void => {
     if (e.currentTarget.scrollTop === 0 && messages.length > 4) {
       // Пользователь прокрутил вверх, показываем предыдущие сообщения
       setScrollPosition(e.currentTarget.scrollTop);
@@ -85,7 +86,7 @@ export default function ChatBot(): React.JSX.Element {
                 className={`${styles.message} ${index % 2 === 0 ? styles.user_message : styles.bot_message}`}
                 style={{
                   position: 'absolute',
-                  top: `${index * 50}px`, // Устанавливаем вертикальное положение сообщения
+                  top: `${(index * 50).toString()}px`, // Устанавливаем вертикальное положение сообщения
                 }}
               >
                 {message.text}

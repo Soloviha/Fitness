@@ -19,14 +19,14 @@ const Container = styled('div')({
 //   marginLeft: '120px',
 //   color: '#fff',
 // });
-const RemainingTimeContainer = styled('div')({
-  padding: '10px 20px',
-  fontSize: '95px',
-  width: '600px',
-  marginLeft: '215px',
-  color: '#fff',
-  marginTop: '600px',
-});
+// const RemainingTimeContainer = styled('div')({
+//   padding: '10px 20px',
+//   fontSize: '95px',
+//   width: '600px',
+//   marginLeft: '215px',
+//   color: '#fff',
+//   marginTop: '600px',
+// });
 
 // const Button = styled('button')({
 //   marginTop: '-100px',
@@ -56,8 +56,8 @@ export default function ExercisePage(): React.JSX.Element {
   useEffect(() => {
     if (currentIndex < exercises.length) {
       const currentWorkout = exercises[currentIndex];
-      const workoutTime = currentWorkout.time * 1000; // переводим в миллисекунды
-      const relaxTime = currentWorkout.relax * 1000; // переводим в миллисекунды
+      const workoutTime = currentWorkout.time ? currentWorkout.time * 1000 : 0; // переводим в миллисекунды
+      const relaxTime = currentWorkout.relax ? currentWorkout.relax * 1000 : 0; // переводим в миллисекунды
 
       setRemainingTime(workoutTime); // Устанавливаем оставшееся время на тренировку
 
