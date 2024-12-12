@@ -1,0 +1,90 @@
+.person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(../../../public/freepik44741.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.form {
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end; 
+  margin-right: 100px;
+}
+
+.card {
+  z-index: 2;
+  width: 500px; 
+  background: linear-gradient(to right, rgba(219, 217, 213, 0.8), rgba(221, 126, 126, 0.8)); /* Полупрозрачный градиент */
+  padding: 20px; /* Добавляем внутренние отступы для улучшения внешнего вида */
+  border-radius: 10px; /* Закругляем углы */
+}
+
+.imageUploadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px; /* Уменьшаем отступ для лучшего выравнивания */
+}
+
+.imageUploadLabel {
+  cursor: pointer;
+}
+
+.imageUploadCircle {
+  margin: 20px auto; /* Центрируем кружок */
+  width: 80px; /* Уменьшаем размер круга */
+  height: 80px; /* Уменьшаем размер круга */
+  border-radius: 50%; /* Закругляем углы для создания круга */
+  background-color: #ccc; /* Цвет фона, если изображение не загружено */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagePreview {
+  width: 100%; /* Занимает всю ширину круга */
+  height: 100%; /* Занимает всю высоту круга */
+  border-radius: 50%; /* Закругляем углы для изображения */
+  object-fit: cover; /* Обеспечивает правильное заполнение круга изображением */
+}
+
+.imageUploadInput {
+  display: none;
+}
+
+.btn {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  border-color: #004a99;
+}
+
+.button {
+  background-image: linear-gradient(to right, #fffefb, #b73ec7) !important;
+  border: none !important;
+}
+
+.header {
+  text-align: center; /* Центрируем текст */
+  color: rgba(255, 255, 255, 0.7); /* Прозрачный белый цвет */
+  margin-bottom: 20px; /* Отступ снизу для разделения с формой */
+}
+
+.formGroup {
+  margin-bottom: 15px; /* Отступ между группами формы */
+}
