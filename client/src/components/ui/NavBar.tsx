@@ -72,7 +72,7 @@ export default function NavBar(): React.JSX.Element {
             <Nav className="me-auto">
               <div className={styles.nav}>
                 <NavLink to="/" className={`nav-link ${styles.home}`}>
-                  Главная
+                  {/* Главная */}
                 </NavLink>
                 <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                   Тренировки
@@ -112,7 +112,7 @@ export default function NavBar(): React.JSX.Element {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {isLoginModalOpen && <LoginModal />}
+      {isLoginModalOpen && <LoginModal  />}
       <SignupModal />
     </>
   );
