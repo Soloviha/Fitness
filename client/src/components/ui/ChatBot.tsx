@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../css/ChatBot.module.css';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
@@ -12,7 +11,7 @@ export default function ChatBot(): React.JSX.Element {
   const { messages, error } = useAppSelector((state) => state.chat);
   const [isOpen, setIsOpen] = useState(false);
   const [inputText, setInputText] = useState('');
-  const [isFirstMessage, setIsFirstMessage] = useState(true);
+  const [, setIsFirstMessage] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   const chatMessagesRef = useRef<HTMLDivElement>(null);
 
@@ -26,7 +25,7 @@ export default function ChatBot(): React.JSX.Element {
     setIsOpen(!isOpen);
   };
 
-  const handleSendMessage = ():void => {
+  const handleSendMessage = (): void => {
     if (inputText.trim() !== '') {
       void dispatch(sendMessage(inputText)); // Отправляем сообщение через Redux
       setInputText('');

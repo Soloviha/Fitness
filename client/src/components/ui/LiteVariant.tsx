@@ -41,7 +41,7 @@ export default function LiteVariant({ descCard, itemsPerPage }: DescCardProps): 
     <Paper elevation={0} className={styles.paperContainer}>
       <Grid2 container spacing={2}>
         {descCard.slice(startIndex, startIndex + itemsPerPage).map((el, index) => (
-          <Grid2 item xs={12} sm={6} md={3} key={el.id}>
+          <Grid2 key={el.id}>
             <Box
               display="flex"
               flexDirection="column"

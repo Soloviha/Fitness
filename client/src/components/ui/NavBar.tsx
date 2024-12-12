@@ -12,6 +12,7 @@ import { logoutThunk } from '../../providers/slice/auth/authThunks';
 import { Avatar } from '@mui/material';
 import styles from '../css/NavBar.module.css';
 import { resetUserParameter } from '../../providers/slice/parametr/userParameterSlice';
+import logo from '../../../public/assets/logo';
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -58,7 +59,7 @@ export default function NavBar(): React.JSX.Element {
                 <Avatar
                   className={styles.avatar}
                   alt="Remy Sharp"
-                  src="../../../public/assets/photo-output-1.PNG"
+                  src={logo}
                   sx={{ width: 70, height: 70 }}
                 />
               </Navbar.Brand>
@@ -111,11 +112,10 @@ export default function NavBar(): React.JSX.Element {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {isLoginModalOpen && <LoginModal  />}
+      {isLoginModalOpen && <LoginModal />}
       <SignupModal />
     </>
   );
 }
-
 
 // openSignupModal={openSignupModal}

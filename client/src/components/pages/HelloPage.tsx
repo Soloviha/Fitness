@@ -3,6 +3,8 @@ import styles from '../css/HelloPage.module.css';
 import { useAppSelector, useAppDispatch } from '../../providers/redux/hooks';
 import { getAllDescCard } from '../../providers/slice/descCard/DescCardTHunk';
 import LiteVariant from '../ui/LiteVariant';
+import video from '../../../public/video.mp4';
+import videorun from '../../../public/video-run.mp4'
 
 export default function HelloPage(): React.JSX.Element {
   const [itemsPerPage, setItemsPerPage] = useState(1);
@@ -34,7 +36,7 @@ export default function HelloPage(): React.JSX.Element {
     <div className={styles.container}>
       <div className={styles.background_video}>
         <video autoPlay loop muted>
-          <source src="../../../video.mp4" type="video/mp4" />
+          <source src={video} type="video/mp4" />
         </video>
       </div>
 
@@ -78,7 +80,7 @@ export default function HelloPage(): React.JSX.Element {
 
         <div className={styles.backgroundRun}>
           <video autoPlay loop muted>
-            <source src="../../../public/video-run.mp4" type="video/mp4" />
+            <source src={videorun} type="video/mp4" />
           </video>
         </div>
       </div>
