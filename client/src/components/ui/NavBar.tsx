@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,9 +11,7 @@ import SignupModal from '../pages/SignupModal';
 import { logoutThunk } from '../../providers/slice/auth/authThunks';
 import { Avatar } from '@mui/material';
 import styles from '../css/NavBar.module.css';
-import { getMyParameters } from '../../providers/slice/parametr/userParameterThunk';
 import { resetUserParameter } from '../../providers/slice/parametr/userParameterSlice';
-
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -39,6 +37,13 @@ export default function NavBar(): React.JSX.Element {
     void dispatch(setSignupModalOpen());
   };
 
+  const handlePersonalCabinetClick = (): void => {
+    if (user) {
+      navigate('/userP'); // Перенаправляем на страницу пользовательских параметров
+    } else {
+      openLoginModal(); // Открываем модальное окно для входа
+    }
+  };
 
   return (
     <>
@@ -61,44 +66,41 @@ export default function NavBar(): React.JSX.Element {
             >
               {'fit'}
             </Navbar.Brand>
-            <Nav className="me-auto" >
+            <Nav className="me-auto">
               <div className={styles.nav}>
-            <NavLink to="/" className={`nav-link ${styles.home}`} >
-                Главная
-              </NavLink>
-              <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
-                Тренировки
-              </NavLink>
-              <NavLink to="/userP" className={`nav-link ${styles.navLink}`}>
-                Пользовательские параметры
-              </NavLink>
+                <NavLink to="/" className={`nav-link ${styles.home}`}>
+                  Главная
+                </NavLink>
+                <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
+                  Тренировки
+                </NavLink>
+                {user ? null : (
+                  <NavLink to="/userP" className={`nav-link ${styles.navLink}`}>
+                  
+                  </NavLink>
+                )}
               </div>
             </Nav>
             <Nav>
               <Nav.Link
                 href="#"
                 className={`nav-link ${styles.navLink} ${styles.personalCabinet}`}
-                style={{
-                  pointerEvents: user ? 'none' : 'auto',
-                  opacity: user ? 0.5 : 1,
-                }}
-                onClick={openLoginModal}
+                onClick={handlePersonalCabinetClick}
               >
                 <span style={{ marginRight: '8px' }} className={styles.nav}>Личный кабинет</span>
                 <FaUserCircle size={20} />
               </Nav.Link>
             </Nav>
-            {  user && accessToken && (
+            {user && accessToken && (
               <Nav>
                 <div className={styles.nav}>
-                <NavLink
-              
-                  to="/login"
-                  className={`nav-link ${styles.navLink} ${styles.logoutButton} ${styles.nav}`}
-                  onClick={logoutHandler}
-                >
-                  Выход
-                </NavLink>
+                  <NavLink
+                    to="/login"
+                    className={`nav-link ${styles.navLink} ${styles.logoutButton} ${styles.nav}`}
+                    onClick={logoutHandler}
+                  >
+                    Выход
+                  </NavLink>
                 </div>
               </Nav>
             )}

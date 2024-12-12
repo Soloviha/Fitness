@@ -55,6 +55,10 @@ function App(): React.JSX.Element {
           element: <LkPage />,
         },
         {
+          path: '/types',
+          element: <TypePage />,
+        },
+        {
           path: '/types/workouts/:id',
           element: <WorkoutPage />,
         },

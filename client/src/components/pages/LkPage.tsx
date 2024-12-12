@@ -56,9 +56,15 @@ export default function LkPage(): React.JSX.Element {
               <label htmlFor="imageUpload" className={styles.imageUploadLabel}>
                 <div className={styles.imageUploadCircle}>
                   {imageFile ? (
-                    <img src={URL.createObjectURL(imageFile)} alt="Uploaded" className={styles.imagePreview} />
+                    <img
+                      src={URL.createObjectURL(imageFile)}
+                      alt="Uploaded"
+                      className={styles.imagePreview}
+                    />
                   ) : (
-                    userData.img && <img src={userData.img} alt="User" className={styles.imagePreview} />
+                    userData.img && (
+                      <img src={userData.img} alt="User" className={styles.imagePreview} />
+                    )
                   )}
                 </div>
               </label>
@@ -130,7 +136,7 @@ export default function LkPage(): React.JSX.Element {
                 </Col>
                 <Col xs={12}>
                   <Form.Group controlId="formBasicWeight" className={styles.formGroup}>
-                    <Form.Label>Вес</Form.Label>
+                    <Form.Label>Вес (кг)</Form.Label>
                     <Form.Control
                       type="number"
                       name="weight"
@@ -141,7 +147,7 @@ export default function LkPage(): React.JSX.Element {
                 </Col>
                 <Col xs={12}>
                   <Form.Group controlId="formBasicHeight" className={styles.formGroup}>
-                    <Form.Label>Рост</Form.Label>
+                    <Form.Label>Рост (см)</Form.Label>
                     <Form.Control
                       type="number"
                       name="height"
