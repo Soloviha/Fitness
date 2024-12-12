@@ -38,18 +38,18 @@ export default function HelloPage(): React.JSX.Element {
         </video>
       </div>
 
-      <div className={styles.videoOverlay}>
+   
         <h2 className={styles.videoTitle}>JoJo.Fit | в твоем телефоне </h2>
         <div className={styles.div}>
         <p className={styles.videoSubtitle}>Личный тренер</p>
         <div className={styles.videoText}>
-          <h3 className={styles.h3}>Занимайтесь спортом, </h3>
+          <h3 className={styles.h3}>Занимайтесь спортом </h3>
             <h3>где угодно и когда угодно 
             с нашим инновационным приложением для онлайн-тренировок!</h3>
           <p className={styles.p}>Приложение предоставляет доступ к разнообразным программам, адаптированным под ваши цели и уровень подготовки. Ваш путь к здоровью и фитнесу начинается здесь!</p>
         </div>
       </div>
-      </div>
+  
 
       <div className={styles.contentWrapper}>
         <h1 className={styles.h1}>JOJO_fit</h1>

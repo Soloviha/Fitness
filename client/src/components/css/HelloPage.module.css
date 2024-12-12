@@ -1,6 +1,6 @@
 .container {
   font-family: Arial, sans-serif;
-  height: 250vh;
+  height: 240vh;
   width: 100%;
 }
 
@@ -22,22 +22,22 @@
 
 .contentWrapper {
   color: white;
-  padding: 12rem;
+  padding: 4vh;
 
  
 }
 
 .h1 {
-  font-size: 3rem;
+  display: flex;
+ justify-content: center;
+  font-size: 4rem;
 }
 
 .backgroundRun {
   position: relative;
-  top: 0px;
-  right: 130px;
+  right: 8rem;
   width: 35%;
   margin-left: auto;
-  margin-right: 20px;
   z-index: 1;
 }
 
@@ -49,100 +49,99 @@
 
 .horizontalLine {
   border: none;
-  height: 2px;
+  height: 0.2vh;
   background-color: black;
-  margin: 100px 0;
+  margin: 10vh 0;
   width: 100%;
 }
 
 .videoContainer {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 2vh;
 }
 
 .textBox {
-  padding: 10px;
-  margin-left: 40px;
-  margin-right: 20px;
-  width: 600px;
-  height: 300px;
-  background-color: white;
+  padding: 1rem;
+  margin-left: 2rem;
+  width: 55rem;
+  background-color: rgb(255, 255, 255);
 }
 
 .h2 {
-  margin-left: 10px;
-  font-size: 40px;
+  display: flex;
+ justify-content: center;
+  font-size: 5vh;
   background: linear-gradient(to right, #ffae00, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+ 
 }
 
 .textBox p {
-  color: black;
-  font-size: 15px;
+  width:800px;
+  margin-left:2rem;
+  margin-top: 3vh;
+  color: black; /* Цвет текста */
+  font-size: 2.7vh;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .backgroundRun:last-child {
   position: relative;
-  margin-bottom: 100px;
+
 }
 
 .backgroundRun:last-child::before {
   content: '';
   position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
+  top: -2vh;
+  left: -2vh;
+  right: -2vh;
+  bottom: -2vh;
   background: linear-gradient(to right, #ffae00, #b73ec7);
-  filter: blur(20px);
+  filter: blur(2vh);
   z-index: -1;
 }
 
-.videoOverlay {
-  margin: 30px 100px;
-  color: white;
-  z-index: 1;
-}
 
 .videoTitle {
-  font-size: 12px;
+  margin: 5vh 10vh;
+  font-size: 1.5vh;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
   background: linear-gradient(to right, #756749, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .videoSubtitle {
-  font-size: 20px;
-  padding: 0.1rem;
+  
+  font-size: 2.5vh;
+   margin-left: 11vh;
   background: linear-gradient(to right, #ffffff, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-left: -8px ;
+ 
 }
 
 .videoText {
-  margin-left: 55%;
-  margin-top: 5rem;
-  max-width: 500px; 
+  margin-top: 35vh ;
+  margin-left: 70%;
+  max-width: 55vh; 
+  color:white
 }
 
 .h3 {
-  font-size: 30px;
+  font-size: 4vh;
   color: #ffffff; /* Белый цвет текста */
   background: linear-gradient(to right, #ff6b6b, #ffa500, #9370db, #7b68ee); /* Градиент фона */
-  padding: 10px; /* Отступы для лучшего отображения */
-  margin-bottom: 10px;
-  margin-left: 0;
+  padding: 1vh; /* Отступы для лучшего отображения */
   display: inline-block;
 }
 
 .videoText p {
-  font-size: 14px;
+  font-size: 1.5vh;
   color: #ffffff;
 }
 
