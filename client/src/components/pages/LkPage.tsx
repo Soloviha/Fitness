@@ -210,26 +210,28 @@ export default function LkPage(): React.JSX.Element {
       </div>
 
       <Modal show={showModal} onHide={handleCloseModal} className={styles.modal}>
-  <div className={styles.modalContent}>
-    <Modal.Header closeButton>
-      <Modal.Title>Информация о BMI</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      <p>Индекс массы тела (BMI) - это показатель, который используется для оценки соотношения веса и роста человека.</p>
-      <p>Значения BMI:</p>
-      <ul>
-        <li>16 и менее - Выраженный дефицит массы тела</li>
-        <li>16-18,5 - Недостаточная (дефицит) масса тела</li>
-        <li>18,5-25 - Нормальная масса тела</li>
-        <li>25-30 - Избыточная масса тела (предожирение)</li>
-        <li>30-35 - Ожирение 1 степени</li>
-        <li>35-40 - Ожирение 2 степени</li>
-        <li>40 и более - Ожирение 3 степени</li>
-      </ul>
-    </Modal.Body>
-  </div>
-</Modal>
-
+        <div className={styles.modalContent}>
+          <Modal.Header closeButton>
+            <Modal.Title>Информация о BMI</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+              Индекс массы тела (BMI) - это показатель, который используется для оценки соотношения
+              веса и роста человека.
+            </p>
+            <p>Значения BMI:</p>
+            <ul>
+              <li>16 и менее - Выраженный дефицит массы тела</li>
+              <li>16-18,5 - Недостаточная (дефицит) масса тела</li>
+              <li>18,5-25 - Нормальная масса тела</li>
+              <li>25-30 - Избыточная масса тела (предожирение)</li>
+              <li>30-35 - Ожирение 1 степени</li>
+              <li>35-40 - Ожирение 2 степени</li>
+              <li>40 и более - Ожирение 3 степени</li>
+            </ul>
+          </Modal.Body>
+        </div>
+      </Modal>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col, Row, Form, Button } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
-import {  updateParams } from '../../providers/slice/parametr/userParameterThunk';
+import { updateParams } from '../../providers/slice/parametr/userParameterThunk';
 
 import type { DescCardType } from '../../schemas/descCard.schema';
 
@@ -24,7 +24,7 @@ export default function UpdateLk({ descCard }: DescCardProps): React.JSX.Element
   };
 
   return (
-    <Card >
+    <Card>
       <Card.Body>
         <Form onSubmit={submitHandler}>
           <Row>
@@ -102,11 +102,7 @@ export default function UpdateLk({ descCard }: DescCardProps): React.JSX.Element
               </Form.Group>
             </Col>
             <Col xs={12}>
-              <Button
-                variant="primary"
-                type="submit"
-                className={`btn-lg w-100 mb-3`}
-              >
+              <Button variant="primary" type="submit" className={`btn-lg w-100 mb-3`}>
                 Сохранить
               </Button>
             </Col>

@@ -5,7 +5,7 @@ import { getAllDescCard } from '../../providers/slice/descCard/DescCardTHunk';
 import LiteVariant from '../ui/LiteVariant';
 
 export default function HelloPage(): React.JSX.Element {
-  const [itemsPerPage, setItemsPerPage] = useState(1); 
+  const [itemsPerPage, setItemsPerPage] = useState(1);
   const dispatch = useAppDispatch();
   const descCard = useAppSelector((state) => state.descCard.descCard);
 
@@ -14,20 +14,20 @@ export default function HelloPage(): React.JSX.Element {
   }, [dispatch]);
 
   useEffect(() => {
-      const handleResize = (): void => {
-          if (window.innerWidth >= 768) {
-              setItemsPerPage(2);
-          } else {
-              setItemsPerPage(1); 
-          }
-      };
-      handleResize();
+    const handleResize = (): void => {
+      if (window.innerWidth >= 768) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(1);
+      }
+    };
+    handleResize();
 
-      window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
-      return () => {
-          window.removeEventListener('resize', handleResize);
-      };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -41,14 +41,18 @@ export default function HelloPage(): React.JSX.Element {
       <div className={styles.videoOverlay}>
         <h2 className={styles.videoTitle}>JoJo.Fit | в твоем телефоне </h2>
         <div className={styles.div}>
-        <p className={styles.videoSubtitle}>Личный тренер</p>
-        <div className={styles.videoText}>
-          <h3 className={styles.h3}>Занимайтесь спортом, </h3>
-            <h3>где угодно и когда угодно 
-            с нашим инновационным приложением для онлайн-тренировок!</h3>
-          <p className={styles.p}>Приложение предоставляет доступ к разнообразным программам, адаптированным под ваши цели и уровень подготовки. Ваш путь к здоровью и фитнесу начинается здесь!</p>
+          <p className={styles.videoSubtitle}>Личный тренер</p>
+          <div className={styles.videoText}>
+            <h3 className={styles.h3}>Занимайтесь спортом, </h3>
+            <h3>
+              где угодно и когда угодно с нашим инновационным приложением для онлайн-тренировок!
+            </h3>
+            <p className={styles.p}>
+              Приложение предоставляет доступ к разнообразным программам, адаптированным под ваши
+              цели и уровень подготовки. Ваш путь к здоровью и фитнесу начинается здесь!
+            </p>
+          </div>
         </div>
-      </div>
       </div>
 
       <div className={styles.content_wrapper}>

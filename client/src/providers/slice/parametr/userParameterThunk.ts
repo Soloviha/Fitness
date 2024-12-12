@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import userParameterService from '../../../services/userParameter.service';
-import {type userPType } from '../../../schemas/userP.schema';
+import { type userPType } from '../../../schemas/userP.schema';
 
 export const getAllParametr = createAsyncThunk('userP/getAllParamentr', async () =>
   userParameterService.getAll(),

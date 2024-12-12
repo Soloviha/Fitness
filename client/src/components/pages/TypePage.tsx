@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
 import React, { useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
@@ -130,7 +132,7 @@ export default function TypePage(): React.JSX.Element {
             <ImageSrc style={{ backgroundImage: `url(${images[index % images.length].url})` }} />
             <ImageBackdrop className="MuiImageBackdrop-root" />
             <Image className={styles.img}>
-            <NavLink to={`/types/workouts/${type.id}`} className='nav-link'>
+            <NavLink to={`/types/workouts/${type.id.toString()}`} className='nav-link'>
               <Typography
                 component="span"
                 variant="subtitle1"

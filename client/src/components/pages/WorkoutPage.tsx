@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import { useAppSelector } from '../../providers/redux/hooks';
 import { useTheme } from '@mui/material/styles';

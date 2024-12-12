@@ -108,7 +108,7 @@ export default function ExercisePage(): React.JSX.Element {
           <>
             <ExerciseCard exercise={exercises[currentIndex]} />
             <div className={styles.remainingTime}>{Math.ceil(remainingTime / 1000)}</div>
-            <Button  className={styles.button} onClick={handleGoBack}>
+            <Button className={styles.button} onClick={handleGoBack}>
               Завершить тренировку
             </Button>
           </>
