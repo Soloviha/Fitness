@@ -4,7 +4,7 @@
   justify-content: center; /* Центрируем по горизонтали */
   align-items: center; /* Центрируем по вертикали */
   height: 100vh; /* Занимает всю высоту экрана */
-  width: 90%;
+  width: 100%;
   background-image: url(https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?semt=ais_hybrid);
   background-size: cover; /* Изображение занимает всю ширину и высоту */
   background-position: center; /* Центрируем изображение */
@@ -25,7 +25,7 @@
   right: 0;
   bottom: 0;
   height: 115.1vh;
-  width: 160vh;
+  width: 177.4vh;
   background-color: rgba(0, 0, 0, 0.687); /* Затемнение с прозрачностью */
   z-index: 1; /* Устанавливаем слой затемнения выше фона */
 }
