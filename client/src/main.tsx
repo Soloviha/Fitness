@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './providers/redux/store.ts';
 import { injectStore } from './api/axiosInstance.ts';
 // import * as serviceWorker from './serviceWorker.js';
+import './style.css';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {

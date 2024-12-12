@@ -1,7 +1,7 @@
 .chatbot_container {
   position: fixed;
   bottom: 20px;
-  right: 160px;
+  right: 50px;
   z-index: 1000;
 }
 
@@ -76,7 +76,8 @@
 .message {
   padding: 8px 12px;
   border-radius: 8px;
-  margin-bottom: 8px;
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 .user_message {

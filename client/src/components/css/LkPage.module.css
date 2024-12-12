@@ -108,7 +108,7 @@
   background-color: transparent; /* Делаем фон модального окна прозрачным */
 }
 .modalContent {
-  background-image: linear-gradient(to right, rgba(228, 180, 50, 0.9), rgba(228, 27, 201, 0.9)); /* Полупрозрачный градиент для содержимого */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(235, 172, 100, 0.9)); /* Полупрозрачный градиент для содержимого */
   border-radius: 10px; /* Закругленные углы */
   padding: 10px; /* Внутренние отступы */
   

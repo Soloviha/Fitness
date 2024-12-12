@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Col, Row, Form, Button, Modal } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
-import {
-  addParams,
-  getAllParametr,
-  getMyParameters,
-  updateParams,
-} from '../../providers/slice/parametr/userParameterThunk';
+import { addParams, updateParams } from '../../providers/slice/parametr/userParameterThunk';
 import styles from '../css/LkPage.module.css';
 
 export default function LkPage(): React.JSX.Element {
@@ -20,6 +15,7 @@ export default function LkPage(): React.JSX.Element {
   const [bmi, setBmi] = useState<number | null>(null);
   const [isEditing] = useState<boolean>(!!userData.id);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [buttonText, setButtonText] = useState('Сохранить');
 
   useEffect(() => {
     if (userData.img) {
@@ -45,12 +41,15 @@ export default function LkPage(): React.JSX.Element {
       formData.append('img', imageFile);
     }
 
-    if (isEditing && userData.id !== null) {
-      await dispatch(updateParams({ id: userData.id, formData }));
-      void dispatch(getMyParameters());
-    } else {
-      await dispatch(addParams(formData));
-      void dispatch(getAllParametr());
+    try {
+      if (isEditing && userData.id !== null) {
+        await dispatch(updateParams({ id: userData.id, formData }));
+      } else {
+        await dispatch(addParams(formData));
+      }
+      setButtonText('Данные изменены!'); // Изменяем текст кнопки
+    } catch (error) {
+      console.error('Ошибка при сохранении:', error);
     }
   };
 
@@ -69,6 +68,26 @@ export default function LkPage(): React.JSX.Element {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const handleWeightChange = (e): void => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const value = Number(e.target.value);
+    if (value <= 200) {
+      setWeight(value);
+    } else {
+      alert('Максимальное значение веса — 200 кг');
+    }
+  };
+
+  const handleHeightChange = (e): void => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const value = Number(e.target.value);
+    if (value <= 200) {
+      setHeight(value);
+    } else {
+      alert('Максимальное значение роста — 200 см');
+    }
   };
 
   return (
@@ -165,7 +184,7 @@ export default function LkPage(): React.JSX.Element {
                       type="number"
                       name="weight"
                       value={weight || ''}
-                      onChange={(e) => setWeight(Number(e.target.value))}
+                      onChange={handleWeightChange}
                       required
                     />
                   </Form.Group>
@@ -177,7 +196,7 @@ export default function LkPage(): React.JSX.Element {
                       type="number"
                       name="height"
                       value={height || ''}
-                      onChange={(e) => setHeight(Number(e.target.value))}
+                      onChange={handleHeightChange}
                       required
                     />
                   </Form.Group>
@@ -200,7 +219,7 @@ export default function LkPage(): React.JSX.Element {
                 </Col>
                 <Col xs={12}>
                   <Button variant="primary" type="submit" className={styles.button}>
-                    Сохранить
+                    {buttonText}
                   </Button>
                 </Col>
               </Row>
