@@ -61,7 +61,7 @@ export default function ChatBot(): React.JSX.Element {
       {isOpen && (
         <div className={styles.chatbot_window} style={{ height: '400px' }}>
           <div className={styles.chatbot_header}>
-            <h5>Онлайн-чат</h5>
+            <h5>Онлайн-помощник</h5>
             <button className={styles.close_button} onClick={toggleChat}>
               <CloseIcon />
             </button>
@@ -99,7 +99,7 @@ export default function ChatBot(): React.JSX.Element {
               placeholder="Введите сообщение..."
               value={inputText}
               onChange={handleInputChange}
-              onKeyPress={handleInputKeyPress}
+              onKeyDown={handleInputKeyPress}
             />
             <button className={styles.send_button} onClick={handleSendMessage}>
               <TelegramIcon />

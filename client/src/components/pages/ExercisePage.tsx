@@ -7,7 +7,7 @@ import styles from '../css/Exercise.module.css';
 import Timer from '../ui/Timer';
 
 const Container = styled('div')({
-  marginBottom: '0px',
+  marginBottom: '48px',
 });
 
 const RemainingTimeContainer = styled('div')({
