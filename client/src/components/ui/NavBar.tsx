@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
 import { setModalOpen, setSignupModalOpen } from '../../providers/slice/auth/authSlice';
 import { FaUserCircle } from 'react-icons/fa';
@@ -16,8 +16,10 @@ import { resetUserParameter } from '../../providers/slice/parametr/userParameter
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const location = useLocation(); // Получаем текущий путь
   const { user, accessToken } = useAppSelector((state) => state.auth);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const isUserP = location.pathname === '/userP'; // Проверяем, находимся ли мы на странице userP
 
   const logoutHandler = (): void => {
     void dispatch(logoutThunk());
@@ -47,7 +49,7 @@ export default function NavBar(): React.JSX.Element {
 
   return (
     <>
-      <Navbar className={styles.navbar} expand="lg">
+      <Navbar className={`${styles.navbar} ${isUserP ? styles.userPNavbar : ''}`} expand="lg">
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className={styles.collabs}>
@@ -76,7 +78,7 @@ export default function NavBar(): React.JSX.Element {
                 </NavLink>
                 {user ? null : (
                   <NavLink to="/userP" className={`nav-link ${styles.navLink}`}>
-                  
+                    {/* Ссылка на пользовательский профиль */}
                   </NavLink>
                 )}
               </div>

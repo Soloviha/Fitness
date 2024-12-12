@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   UserParameter.init({
     gender:DataTypes.STRING,
-    weight: DataTypes.INTEGER,
-    height: DataTypes.INTEGER,
+    weight: DataTypes.FLOAT,
+    height: DataTypes.FLOAT,
     dateOfBirth:DataTypes.STRING,
-    BMI:DataTypes.INTEGER,
+    BMI:DataTypes.FLOAT,
     secondName:DataTypes.STRING,
     img:DataTypes.TEXT,
     userId: DataTypes.INTEGER

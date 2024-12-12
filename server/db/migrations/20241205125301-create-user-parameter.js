@@ -10,11 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       weight: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: true,
       },
       height: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: true,
       },
       gender: {
@@ -30,7 +30,7 @@ module.exports = {
         allowNull: false,
       },
       BMI: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       secondName: {
