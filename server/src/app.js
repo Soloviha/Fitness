@@ -14,6 +14,7 @@ const chatRouter = require('./routers/chatRouter')
 
 const app = express();
 
+
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));

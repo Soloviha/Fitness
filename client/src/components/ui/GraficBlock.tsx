@@ -23,7 +23,7 @@ const GraficBlock = () => {
   }, []);
 
   // Проверка наличия данных перед рендерингом графика
-  if (weights == unde || dates == undefined || weights.length === 0 || dates.length === 0) {
+  if (weights == undefined || dates == undefined || weights.length === 0 || dates.length === 0) {
     return (
       <LineChart
         xAxis={[{ data: [1, 2, 3, 4, 5, 6] }]} // Используем заданные даты

@@ -6,6 +6,7 @@ const { verifyAccessToken } = require('../middlewares/verifyTokens');
 
 const UserParameterRouter = express.Router();
 
+
 UserParameterRouter.get('/', UserParameterController.getAllParameters);
 
 UserParameterRouter.post(
@@ -14,6 +15,7 @@ UserParameterRouter.post(
   UserParameterController.createParameter,
 );
 
-UserParameterRouter.put('/:id', UserParameterController.updateParameter);
+UserParameterRouter.put('/:id',verifyAccessToken, upload.single('img'), UserParameterController.updateParameter);
+UserParameterRouter.get('/my', verifyAccessToken, UserParameterController.getParameterMyUserId);
 
 module.exports = UserParameterRouter;

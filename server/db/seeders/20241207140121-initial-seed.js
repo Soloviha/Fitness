@@ -26,12 +26,13 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Rider',
+        title: 'Rope',
         image: 'https://img.freepik.com/free-photo/portrait-young-spotive-girl-doing-exercises-with-rope-keeping-body-fit-isolated-green-background-neon_155003-45635.jpg?t=st=1733849723~exp=1733853323~hmac=07869cece23290c1f72e2a90195ea0d638d9a85cf707e8c8257aea414efcc440&w=1380',
-        description: 'Интенсивная кардио-тренировка с использованием сайкл-тренажёра. Идеальна для всех, кто хочет  сбросить лишние килограммы, поможет создать красивый рельеф ягодиц и бёдер, проработать мышцы ног и пресса. ',
+        description: 'Интенсивная кардио-тренировка с использованием каната. Идеальна для всех, кто хочет  сбросить лишние килограммы, поможет создать красивый рельеф , развить выносливость и проработать мышцы рук . ',
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      // rfrf
       {
         title: 'Run IT',
         image: 'https://img.freepik.com/free-photo/amazing-woman-running-while-training_197531-13088.jpg?t=st=1733849898~exp=1733853498~hmac=889084cf74acece984faf610c6b46e9efc5e6ddeed16da965ddc6ae5f6711333&w=1380',
