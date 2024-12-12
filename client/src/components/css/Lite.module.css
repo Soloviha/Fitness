@@ -1,88 +1,85 @@
 .paperContainer {
-    box-shadow: none !important;
+  box-shadow: none !important;
+  width: 100%;
+}
 
-   
-    width: 100%;
-  }
-  
-  .descCardContainer {
-    margin-bottom: 10px;
-  }
-  
-  .buttonContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-  }
-  
-  .buttonContainerStart {
-    justify-content: flex-start;
-  }
-  
-  .buttonContainerEnd {
-    justify-content: flex-end;
-  }
-  
-  .buttonContainerCenter {
-    justify-content: center;
-  }
-  
-  .navButton {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    min-width: 0;
-    margin: 0 8px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .navButtonLeft {
-    margin-left: 16px;
-  }
-  
-  .navButtonRight {
-    margin-right: 16px;
-  }
-  
-  .descCardContainer {
-    margin-bottom: 16px;
-    transition: opacity 2s ease-in-out; /* Плавный переход */
+.descCardContainer {
+  margin-bottom: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.buttonContainerStart {
+  justify-content: flex-start;
+}
+
+.buttonContainerEnd {
+  justify-content: flex-end;
+}
+
+.buttonContainerCenter {
+  justify-content: center;
+}
+
+.navButton {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  min-width: 0;
+  margin: 0 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navButtonLeft {
+  margin-left: 16px;
+}
+
+.navButtonRight {
+  margin-right: 16px;
+}
+
+.descCardContainer {
+  margin-bottom: 16px;
+  transition: opacity 2s ease-in-out; /* Плавный переход */
 }
 
 .fadeIn {
-    opacity: 1;
+  opacity: 1;
 }
 
 .fadeOut {
-    opacity: 0;
+  opacity: 0;
 }
 
-
 @media (max-width: 768px) {
-    .paperContainer {
-        margin-top: 4rem; 
-        margin-left: 2rem;
-    }
+  .paperContainer {
+    margin-top: 4rem;
+    margin-left: 2rem;
+  }
 
-    .descCardContainer {
-        padding: 0.5rem; /* Уменьшаем отступы внутри карточки для мобильных */
-    }
+  .descCardContainer {
+    padding: 0.5rem; /* Уменьшаем отступы внутри карточки для мобильных */
+  }
 
-    .buttonContainer {
-        flex-direction: row; /* Располагаем кнопки в ряд */
-        justify-content: space-between; /* Распределяем кнопки по краям */
-    }
+  .buttonContainer {
+    flex-direction: row; /* Располагаем кнопки в ряд */
+    justify-content: space-between; /* Распределяем кнопки по краям */
+  }
 
-    .navButton {
-        font-size: 0.8rem; /* Уменьшаем размер шрифта для кнопок */
-        padding: 0.5rem; /* Уменьшаем отступы кнопок */
-    }
+  .navButton {
+    font-size: 0.8rem; /* Уменьшаем размер шрифта для кнопок */
+    padding: 0.5rem; /* Уменьшаем отступы кнопок */
+  }
 }

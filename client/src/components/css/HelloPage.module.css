@@ -23,16 +23,14 @@
 .contentWrapper {
   color: white;
   padding: 4vh;
-
- 
 }
-.cardContainer{
-margin-top: 4vh;
+.cardContainer {
+  margin-top: 4vh;
 }
 
 .h1 {
   display: flex;
- justify-content: center;
+  justify-content: center;
   font-size: 4rem;
 }
 
@@ -73,17 +71,16 @@ margin-top: 4vh;
 
 .h2 {
   display: flex;
- justify-content: center;
+  justify-content: center;
   font-size: 5vh;
   background: linear-gradient(to right, #ffae00, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
- 
 }
 
 .textBox p {
-  width:90vh;
-  margin-left:2rem;
+  width: 90vh;
+  margin-left: 2rem;
   margin-top: 3vh;
   color: black; /* Цвет текста */
   font-size: 2.7vh;
@@ -92,7 +89,6 @@ margin-top: 4vh;
 
 .backgroundRun:last-child {
   position: relative;
-
 }
 
 .backgroundRun:last-child::before {
@@ -107,7 +103,6 @@ margin-top: 4vh;
   z-index: -1;
 }
 
-
 .videoTitle {
   margin: 5vh 10vh;
   font-size: 1.5vh;
@@ -119,20 +114,18 @@ margin-top: 4vh;
 }
 
 .videoSubtitle {
-  
   font-size: 2.5vh;
-   margin-left: 11vh;
+  margin-left: 11vh;
   background: linear-gradient(to right, #ffffff, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
- 
 }
 
 .videoText {
-  margin-top: 35vh ;
+  margin-top: 35vh;
   margin-left: 70%;
-  max-width: 55vh; 
-  color:white
+  max-width: 55vh;
+  color: white;
 }
 
 .h3 {
@@ -154,14 +147,11 @@ margin-top: 4vh;
     padding: 0px;
     width: 150px;
     height: 80px; /* Изменяем высоту для мобильных */
-
   }
 
   .container {
     display: flex;
     flex-direction: column;
-    /* margin-top: 15px; */
-    /* margin-left: 15px; */
   }
 
   .background_video {
@@ -214,11 +204,9 @@ margin-top: 4vh;
     margin-right: 0;
     padding: 0px; /* Увеличиваем размер шрифта для заголовков */
   }
- .videoText h3 {
-  display: none;
- }
-  
-
+  .videoText h3 {
+    display: none;
+  }
 
   .videoText p {
     display: none;
@@ -231,12 +219,6 @@ margin-top: 4vh;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-/* 
-  .div {
-    width: 80px;
-    margin-top: -51px;
-    font-size: 7px; /* Уменьшаем размер заголовка */
-  /* } */ 
 
   .h3 {
     font-size: 20px;
@@ -246,14 +228,14 @@ margin-top: 4vh;
     margin-bottom: 1px;
     margin-left: 40px;
     display: inline-block;
-    /* margin-top: -200px */
+
   }
   .textBox p {
     color: black;
     font-size: 1rem;
     margin-left: 0;
     width: 46vh;
-    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+
   }
 
   .videoOverlay {

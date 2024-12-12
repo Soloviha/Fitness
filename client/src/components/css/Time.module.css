@@ -55,16 +55,16 @@
 }
 
 .button {
-  height: 70px;
-  width: 200px;
+  height: 4rem;
+  width: 15rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
-  border: none !important;
-  color: #fffdfd;
-  font-size: 17px;
+  gap: 5vh;
+  background-image: linear-gradient(to right, #ffae00, #b73ec7);
+  color: white;
+  margin-top: 5rem;
+  padding-top: 1.2rem;
+  z-index: 2;
 }
 
  /* Адаптивные стили для мобильных устройств */

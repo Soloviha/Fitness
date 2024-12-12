@@ -1,12 +1,12 @@
 .typeCard {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   width: 100%;
   background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: -1;
 }
 
@@ -22,8 +22,6 @@
   gap: 5vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
-
 
 .imageButton {
   position: relative;
@@ -43,7 +41,6 @@
   bottom: -0.5vh;
   left: calc(50% - 0.8vh);
 }
-
 
 .imageButton:hover {
   transform: scale(1.05);
@@ -91,23 +88,18 @@
   left: calc(50% - 0.8vh);
 }
 
-  @media (max-width: 768px) {
-    .typeCard {
-      height: 100%; /* Уменьшаем высоту для мобильных устройств */
-      width: 100%; /* Занимаем всю ширину экрана */
-     
+@media (max-width: 768px) {
+  .typeCard {
+    height: 100%; /* Уменьшаем высоту для мобильных устройств */
+    width: 100%; /* Занимаем всю ширину экрана */
   }
 
   .typeCard::after {
-
     width: 52.3vh;
     height: 97vh;
-
   }
 
   .box {
     flex-direction: column;
-    margin-top: -150px;
   }
-  }
-
+}
