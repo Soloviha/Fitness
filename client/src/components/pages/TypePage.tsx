@@ -6,6 +6,9 @@ import styles from '../css/TypePage.module.css';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
 import { getAll } from '../../providers/slice/type/typeThunk';
 import { NavLink } from 'react-router-dom';
+import sport from '../../../public/sport-sajt20.jpg'
+import trening from '../../../public/trening.jpg'
+import sport2 from '../../../public/sport-sajt91.jpg'
 
 export default function TypePage(): React.JSX.Element {
   const types = useAppSelector((state) => state.type.types);
@@ -15,15 +18,19 @@ export default function TypePage(): React.JSX.Element {
     void dispatch(getAll());
   }, [dispatch]);
 
+
   const images = [
     {
-      url: '../../../public/sport-sajt20.jpg',
+      url: sport,
+      width: '30%',
     },
     {
-      url: '../../../public/trening.jpg',
+      url: trening,
+      width: '30%',
     },
     {
-      url: '../../../public/sport-sajt91.jpg',
+      url: sport2,
+      width: '30%',
     },
   ];
 

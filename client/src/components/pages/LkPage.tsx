@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Col, Row, Form, Button, Modal } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
-import {
-  addParams,
-  updateParams,
-} from '../../providers/slice/parametr/userParameterThunk';
+import { addParams, updateParams } from '../../providers/slice/parametr/userParameterThunk';
 import styles from '../css/LkPage.module.css';
 
 export default function LkPage(): React.JSX.Element {
@@ -19,7 +16,6 @@ export default function LkPage(): React.JSX.Element {
   const [isEditing] = useState<boolean>(!!userData.id);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [buttonText, setButtonText] = useState('Сохранить');
-
 
   useEffect(() => {
     if (userData.img) {
@@ -42,21 +38,20 @@ export default function LkPage(): React.JSX.Element {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     if (imageFile) {
-        formData.append('img', imageFile);
+      formData.append('img', imageFile);
     }
 
     try {
-        if (isEditing && userData.id !== null) {
-            await dispatch(updateParams({ id: userData.id, formData }));
-        } else {
-            await dispatch(addParams(formData));
-        }
-        setButtonText('Данные изменены!'); // Изменяем текст кнопки
+      if (isEditing && userData.id !== null) {
+        await dispatch(updateParams({ id: userData.id, formData }));
+      } else {
+        await dispatch(addParams(formData));
+      }
+      setButtonText('Данные изменены!'); // Изменяем текст кнопки
     } catch (error) {
-        console.error('Ошибка при сохранении:', error);
+      console.error('Ошибка при сохранении:', error);
     }
-};
-
+  };
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,20 +76,19 @@ export default function LkPage(): React.JSX.Element {
     if (value <= 200) {
       setWeight(value);
     } else {
-      alert("Максимальное значение веса — 200 кг");
+      alert('Максимальное значение веса — 200 кг');
     }
   };
-  
-  const handleHeightChange = (e) : void => {
+
+  const handleHeightChange = (e): void => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const value = Number(e.target.value);
     if (value <= 200) {
       setHeight(value);
     } else {
-      alert("Максимальное значение роста — 200 см");
+      alert('Максимальное значение роста — 200 см');
     }
   };
-  
 
   return (
     <div className={styles.person}>
@@ -235,26 +229,28 @@ export default function LkPage(): React.JSX.Element {
       </div>
 
       <Modal show={showModal} onHide={handleCloseModal} className={styles.modal}>
-  <div className={styles.modalContent}>
-    <Modal.Header closeButton>
-      <Modal.Title>Информация о BMI</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      <p>Индекс массы тела (BMI) - это показатель, который используется для оценки соотношения веса и роста человека.</p>
-      <p>Значения BMI:</p>
-      <ul>
-        <li>16 и менее - Выраженный дефицит массы тела</li>
-        <li>16-18,5 - Недостаточная (дефицит) масса тела</li>
-        <li>18,5-25 - Нормальная масса тела</li>
-        <li>25-30 - Избыточная масса тела (предожирение)</li>
-        <li>30-35 - Ожирение 1 степени</li>
-        <li>35-40 - Ожирение 2 степени</li>
-        <li>40 и более - Ожирение 3 степени</li>
-      </ul>
-    </Modal.Body>
-  </div>
-</Modal>
-
+        <div className={styles.modalContent}>
+          <Modal.Header closeButton>
+            <Modal.Title>Информация о BMI</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+              Индекс массы тела (BMI) - это показатель, который используется для оценки соотношения
+              веса и роста человека.
+            </p>
+            <p>Значения BMI:</p>
+            <ul>
+              <li>16 и менее - Выраженный дефицит массы тела</li>
+              <li>16-18,5 - Недостаточная (дефицит) масса тела</li>
+              <li>18,5-25 - Нормальная масса тела</li>
+              <li>25-30 - Избыточная масса тела (предожирение)</li>
+              <li>30-35 - Ожирение 1 степени</li>
+              <li>35-40 - Ожирение 2 степени</li>
+              <li>40 и более - Ожирение 3 степени</li>
+            </ul>
+          </Modal.Body>
+        </div>
+      </Modal>
     </div>
   );
 }

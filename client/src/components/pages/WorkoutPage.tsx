@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import { useAppSelector } from '../../providers/redux/hooks';
 import Box from '@mui/material/Box';
@@ -5,8 +6,11 @@ import Typography from '@mui/material/Typography';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import styles from '../css/WorkoutPage.module.css';
 import ButtonBase from '@mui/material/ButtonBase';
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
 import { ButtonGroup } from 'react-bootstrap';
+import sport from '../../../public/sport-sajt20.jpg'
+import trening from '../../../public/trening.jpg'
+import sport2 from '../../../public/sport-sajt91.jpg'
 
 export default function WorkoutPage(): React.JSX.Element {
   const navigate = useNavigate();
@@ -22,15 +26,15 @@ export default function WorkoutPage(): React.JSX.Element {
 
   const images = [
     {
-      url: '../../../public/sport-sajt13.jpg',
+      url: sport,
       width: '80%',
     },
     {
-      url: '../../../public/registr.jpg',
+      url: trening,
       width: '80%',
     },
     {
-      url: '../../../public/sport-sajt91.jpg',
+      url: sport2,
       width: '80%',
     },
   ];

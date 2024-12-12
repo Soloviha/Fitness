@@ -1,0 +1,21 @@
+{
+  "name": "JOJO_fitness",
+  "short_name": "J_fit",
+  "description": "Занимайтесь спортом где угодно и когда угодно с нашим инновационным приложением для онлайн-тренировок. Приложение предоставляет доступ к разнообразным программам, адаптированным под ваши цели и уровень подготовки. Ваш путь к здоровью и фитнесу начинается здесь!",
+  "icons": [
+    {
+      "src": "/public/assets/photo-output.png",
+      "sizes": "146x146",
+      "type": "image/png"
+    },
+    {
+      "src": "/public/assets/photo-output.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#000000"
+}

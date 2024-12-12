@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paper, Button,  Box, Grid2 } from '@mui/material';
+import { Paper, Button, Box, Grid2 } from '@mui/material';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import type { DescCardType } from '../../schemas/descCard.schema';
 import DescCard from './DescCard';
@@ -7,10 +7,10 @@ import styles from '../css/Lite.module.css';
 
 type DescCardProps = {
   descCard: DescCardType[];
-  itemsPerPage: number
+  itemsPerPage: number;
 };
 
-export default function LiteVariant({ descCard,  itemsPerPage}: DescCardProps): React.JSX.Element {
+export default function LiteVariant({ descCard, itemsPerPage }: DescCardProps): React.JSX.Element {
   const [startIndex, setStartIndex] = useState(0);
   // const itemsPerPage = 4;
   const [fadeOut, setFadeOut] = useState(false);
@@ -41,7 +41,7 @@ export default function LiteVariant({ descCard,  itemsPerPage}: DescCardProps): 
     <Paper elevation={0} className={styles.paperContainer}>
       <Grid2 container spacing={2}>
         {descCard.slice(startIndex, startIndex + itemsPerPage).map((el, index) => (
-          <Grid2 item xs={12} sm={6} md={3} key={el.id}>
+          <Grid2 key={el.id}>
             <Box
               display="flex"
               flexDirection="column"
@@ -49,7 +49,9 @@ export default function LiteVariant({ descCard,  itemsPerPage}: DescCardProps): 
               height="100%"
               position="relative"
             >
-              <Box className={`${styles.descCardContainer} ${fadeOut ? styles.fadeOut : styles.fadeIn}`}>
+              <Box
+                className={`${styles.descCardContainer} ${fadeOut ? styles.fadeOut : styles.fadeIn}`}
+              >
                 <DescCard descCard={el} />
               </Box>
               <Box
@@ -58,8 +60,8 @@ export default function LiteVariant({ descCard,  itemsPerPage}: DescCardProps): 
                   index === 0
                     ? styles.buttonContainerStart
                     : index === descCard.slice(startIndex, startIndex + itemsPerPage).length - 1
-                    ? styles.buttonContainerEnd
-                    : styles.buttonContainerCenter
+                      ? styles.buttonContainerEnd
+                      : styles.buttonContainerCenter
                 }`}
               >
                 {index === 0 && (
