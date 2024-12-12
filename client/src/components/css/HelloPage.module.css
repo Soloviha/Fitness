@@ -26,6 +26,9 @@
 
  
 }
+.cardContainer{
+margin-top: 4vh;
+}
 
 .h1 {
   display: flex;
@@ -79,7 +82,7 @@
 }
 
 .textBox p {
-  width:800px;
+  width:90vh;
   margin-left:2rem;
   margin-top: 3vh;
   color: black; /* Цвет текста */
