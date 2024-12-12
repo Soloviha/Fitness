@@ -12,7 +12,7 @@ import { logoutThunk } from '../../providers/slice/auth/authThunks';
 import { Avatar } from '@mui/material';
 import styles from '../css/NavBar.module.css';
 import { resetUserParameter } from '../../providers/slice/parametr/userParameterSlice';
-// import logo from '../../../public/assets/logo';
+// import logo from '../../public/assets/logo';
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
