@@ -5,29 +5,40 @@ import ExerciseCard from '../ui/ExerciseCard';
 import { styled } from '@mui/system';
 import styles from '../css/Exercise.module.css';
 import Timer from '../ui/Timer';
+import { Button } from 'react-bootstrap';
 
 const Container = styled('div')({
   marginBottom: '48px',
 });
 
+// const RemainingTimeContainer = styled('div')({
+//   marginTop: '-800px',
+//   padding: '10px 20px',
+//   fontSize: '95px',
+//   width: '600px',
+//   marginLeft: '120px',
+//   color: '#fff',
+// });
 const RemainingTimeContainer = styled('div')({
-  // marginTop: '5px',
   padding: '10px 20px',
   fontSize: '95px',
   width: '600px',
   marginLeft: '215px',
   color: '#fff',
+  marginTop: '600px',
 });
 
-const Button = styled('button')({
-  marginTop: '590px',
-  padding: '10px 20px',
-  fontSize: '25px',
-  width: '600px',
-  marginLeft: '600px',
-  cursor: 'pointer',
-  color: '#fff',
-});
+// const Button = styled('button')({
+//   marginTop: '-100px',
+//   padding: '10px 20px',
+//   fontSize: '17px',
+//   height: '70px',
+//   width: '200px',
+//   marginLeft: '600px',
+//   // cursor: 'pointer',
+//   color: '#fff',
+//   zIndex: '1000'
+// });
 
 export default function ExercisePage(): React.JSX.Element {
   const { id } = useParams();
@@ -92,12 +103,12 @@ export default function ExercisePage(): React.JSX.Element {
 
   return (
     <Container>
-      <div className="row">
+      <div className={styles.row}>
         {!isResting ? (
           <>
             <ExerciseCard exercise={exercises[currentIndex]} />
-            <RemainingTimeContainer>{Math.ceil(remainingTime / 1000)}</RemainingTimeContainer>
-            <Button className={styles.button} onClick={handleGoBack}>
+            <div className={styles.remainingTime}>{Math.ceil(remainingTime / 1000)}</div>
+            <Button  className={styles.button} onClick={handleGoBack}>
               Завершить тренировку
             </Button>
           </>

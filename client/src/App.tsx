@@ -55,6 +55,15 @@ function App(): React.JSX.Element {
           element: <LkPage />,
         },
         {
+          path: '/types/workouts/:id',
+          element: <WorkoutPage />,
+        },
+        {
+          path: 'types/workouts/exercises/:id',
+          element: <ExercisePage />,
+        },
+
+        {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
             {
@@ -69,6 +78,7 @@ function App(): React.JSX.Element {
               path: 'types/workouts/exercises/:id',
               element: <ExercisePage />,
             },
+           
           ],
         },
         {

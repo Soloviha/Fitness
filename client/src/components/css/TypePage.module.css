@@ -1,28 +1,38 @@
-.typeCard {
-  display: flex;
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: center; /* Центрируем по вертикали */
-  height: 100vh; /* Занимает всю высоту экрана */
-  width: 1800px;
-  background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
-  background-size: cover; /* Изображение занимает всю ширину и высоту */
-  background-position: center; /* Центрируем изображение */
-  background-repeat: no-repeat; /* Предотвращаем повторение изображения */
-  object-fit: cover;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 0; /* Устанавливаем z-index на 0 */
-}
 
-.typeCard::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.612); /* Затемнение с прозрачностью */
-  z-index: 1; /* Устанавливаем слой затемнения выше фона */
-}
+.typeCard{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding: 163.9px 0;
+  }
+  
+  .typeCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 177.5vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.612); /* Затемнение с прозрачностью */
+    z-index: 1; /* Устанавливаем слой затемнения выше фона */
+  }
+  
+  @media (max-width: 768px) {
+    .typeCard {
+      height: 100vh; /* Уменьшаем высоту для мобильных устройств */
+      width: 100%; /* Занимаем всю ширину экрана */
+     
+  }
+  }
 

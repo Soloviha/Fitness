@@ -27,7 +27,7 @@ const StyledTitle = styled(Typography)({
 
 const StyledDescription = styled(Typography)({
   fontSize: '1.125rem',
-  marginBottom: '12px',
+  marginBottom: '12px'
 });
 
 const StyledInfoBox = styled(Box)({
@@ -71,7 +71,7 @@ export default function ExerciseCard({ exercise }: ExerciseCardProps): React.JSX
               <Typography variant="body2">Повторений: {exercise.reps}</Typography>
             </StyledInfoItem>
             <StyledInfoItem className={styles.styled_info_item}>
-              <Typography variant="body2">Отдых: {exercise.relax} сек.</Typography>
+              <Typography variant="body2" className={styles.body2}>Отдых: {exercise.relax} сек.</Typography>
             </StyledInfoItem>
           </StyledInfoBox>
         </StyledCardContent>

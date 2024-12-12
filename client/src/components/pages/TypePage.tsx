@@ -53,9 +53,6 @@ export default function TypePage(): React.JSX.Element {
       '& .MuiImageMarked-root': {
         opacity: 0,
       },
-      // '& .MuiTypography-root': {
-      //   border: '4px solid currentColor',
-      // },
     },
   }));
 
@@ -112,7 +109,7 @@ export default function TypePage(): React.JSX.Element {
           flexWrap: 'nowrap',
           justifyContent: 'center',
           minWidth: 300,
-          width: '100%',
+          width: '90%',
           padding: theme.spacing(2),
           overflowX: 'auto',
           marginTop: '100px',

@@ -1,9 +1,12 @@
 .paperContainer {
     box-shadow: none !important;
+    margin-top: -19rem; 
+    margin-left: 190px;
+    width: 100%;
   }
   
   .descCardContainer {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
   
   .buttonContainer {
@@ -13,7 +16,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 100%;
+    width: 90%;
   }
   
   .buttonContainerStart {
@@ -60,4 +63,26 @@
 
 .fadeOut {
     opacity: 0;
+}
+
+
+@media (max-width: 768px) {
+    .paperContainer {
+        margin-top: 13rem; 
+        margin-left: 2rem;
+    }
+
+    .descCardContainer {
+        padding: 0.5rem; /* Уменьшаем отступы внутри карточки для мобильных */
+    }
+
+    .buttonContainer {
+        flex-direction: row; /* Располагаем кнопки в ряд */
+        justify-content: space-between; /* Распределяем кнопки по краям */
+    }
+
+    .navButton {
+        font-size: 0.8rem; /* Уменьшаем размер шрифта для кнопок */
+        padding: 0.5rem; /* Уменьшаем отступы кнопок */
+    }
 }

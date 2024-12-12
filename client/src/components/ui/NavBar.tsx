@@ -45,10 +45,11 @@ export default function NavBar(): React.JSX.Element {
       <Navbar className={styles.navbar} expand="lg">
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className={styles.collabs}>
             <NavLink to="/" style={{ textDecoration: 'none' }}>
               <Navbar.Brand className={styles.navbarBrand}>
                 <Avatar
+                  className={styles.avatar}
                   alt="Remy Sharp"
                   src="../../../public/assets/photo-output-1.PNG"
                   sx={{ width: 70, height: 70 }}
@@ -60,13 +61,18 @@ export default function NavBar(): React.JSX.Element {
             >
               {'fit'}
             </Navbar.Brand>
-            <Nav className="me-auto">
+            <Nav className="me-auto" >
+              <div className={styles.nav}>
+            <NavLink to="/" className={`nav-link ${styles.home}`} >
+                Главная
+              </NavLink>
               <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                 Тренировки
               </NavLink>
               <NavLink to="/userP" className={`nav-link ${styles.navLink}`}>
                 Пользовательские параметры
               </NavLink>
+              </div>
             </Nav>
             <Nav>
               <Nav.Link
@@ -78,19 +84,22 @@ export default function NavBar(): React.JSX.Element {
                 }}
                 onClick={openLoginModal}
               >
-                <span style={{ marginRight: '8px' }}>Личный кабинет</span>
+                <span style={{ marginRight: '8px' }} className={styles.nav}>Личный кабинет</span>
                 <FaUserCircle size={20} />
               </Nav.Link>
             </Nav>
             {  user && accessToken && (
               <Nav>
+                <div className={styles.nav}>
                 <NavLink
+              
                   to="/login"
                   className={`nav-link ${styles.navLink} ${styles.logoutButton} ${styles.nav}`}
                   onClick={logoutHandler}
                 >
                   Выход
                 </NavLink>
+                </div>
               </Nav>
             )}
           </Navbar.Collapse>

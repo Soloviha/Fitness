@@ -1,7 +1,7 @@
-
 .container {
   font-family: Arial, sans-serif;
   height: 250vh;
+  width: 100%;
 }
 
 .background_video {
@@ -22,72 +22,70 @@
 
 .content_wrapper {
   color: white;
-  padding: 2rem;
+  padding: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 100vh;
+  height: 12vh;
 }
 
 .h1 {
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
+  margin-left: -10rem;
   font-size: 3rem;
 }
 
 .backgroundRun {
-  position: relative; /* Изменено на relative */
-  top: 0px; /* Отступ сверху */
-  right: 130px; /* Отступ справа */
-  width: 35%; /* Ширина окна видео */
-  margin-left: auto; /* Центрирование справа */
-  margin-right: 20px; /* Отступ справа */
-  z-index: 1; /* Убедитесь, что это выше фона */
+  position: relative;
+  top: 0px;
+  right: 130px;
+  width: 35%;
+  margin-left: auto;
+  margin-right: 20px;
+  z-index: 1;
 }
 
 .backgroundRun video {
-  width: 100%; /* Ширина видео соответствует контейнеру */
-  height: auto; /* Высота будет пропорциональной */
-  object-fit: cover; /* Обрезка видео для соответствия размеру */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .horizontalLine {
-  border: none; /* Убираем стандартные стили */
-  height: 2px; /* Высота черты */
-  background-color: black; /* Цвет черты */
-  margin: 100px 0; /* Отступы сверху и снизу */
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin: 100px 0;
+  width: 100%;
 }
 
 .videoContainer {
-  display: flex; /* Используем flexbox для выравнивания */
-  align-items: center; /* Вертикальное выравнивание по центру */
-  margin-top: 20px; /* Отступ сверху */
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .textBox {
-  /* border: 2px solid black; Цвет рамки */
-  padding: 10px; /* Отступы внутри рамки */
-  margin-left: 120px;
-  margin-right: 20px; /* Отступ между рамкой и видео */
-  width: 700px; /* Ширина рамки */
-  height: 400px;
-  background-color: white; /* Цвет фона рамки */
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 20px;
+  width: 600px;
+  height: 300px;
+  background-color: white;
 }
 
-
 .h2 {
-  margin-left: 80px;
+  margin-left: 10px;
   font-size: 40px;
   background: linear-gradient(to right, #ffae00, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
- 
 }
 
 .textBox p {
-  /* margin-top: 20px; Убираем отступы у параграфа */
-  color: black; /* Цвет текста */
-  font-size: 25px;
+  color: black;
+  font-size: 15px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -97,24 +95,23 @@
 }
 
 .backgroundRun:last-child::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: -20px; 
-  left: -20px; /* Отступ слева */
-  right: -20px; /* Отступ справа */
+  top: -20px;
+  left: -20px;
+  right: -20px;
   bottom: -20px;
   background: linear-gradient(to right, #ffae00, #b73ec7);
-  filter: blur(20px); /* Размытие */
-  z-index: -1; /* Размещаем позади видео */
+  filter: blur(20px);
+  z-index: -1;
 }
 
 .videoOverlay {
- margin: 30px 100px;
+  margin: 30px 100px;
   color: white;
   z-index: 1;
-  
 }
- 
+
 .videoTitle {
   font-size: 12px;
   font-weight: bold;
@@ -122,31 +119,147 @@
   background: linear-gradient(to right, #756749, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
- 
 }
 
 .videoSubtitle {
-  font-size: 24px;
+  font-size: 20px;
+  padding: 0.1rem;
   background: linear-gradient(to right, #ffffff, #b73ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.videoText {
-  
-  margin-left: 70%;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  max-width: 500px;
+  margin-left: -8px ;
 }
 
-.videoText h3 {
-  font-size: 24px;
-  background: linear-gradient(to right, #ffffff, #b73ec7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.videoText {
+  margin-left: 55%;
+  margin-top: 5rem;
+  max-width: 500px; 
+}
+
+.h3 {
+  font-size: 30px;
+  color: #ffffff; /* Белый цвет текста */
+  background: linear-gradient(to right, #ff6b6b, #ffa500, #9370db, #7b68ee); /* Градиент фона */
+  padding: 10px; /* Отступы для лучшего отображения */
   margin-bottom: 10px;
+  margin-left: 0;
+  display: inline-block;
 }
 
 .videoText p {
-  font-size: 18px;
+  font-size: 14px;
   color: #ffffff;
-} 
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .content_wrapper {
+    padding: 0px;
+    width: 150px;
+    height: 80px; /* Изменяем высоту для мобильных */
+
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 15px; */
+    /* margin-left: 15px; */
+  }
+
+  .background_video {
+    width: 100%;
+    height: auto;
+  }
+
+  .h1 {
+    margin-top: 6rem;
+    margin-left: 16rem;
+    font-size: 1.5rem; /* Уменьшаем размер заголовка */
+    margin-bottom: -7rem; /* Уменьшаем отступ */
+  }
+
+  .backgroundRun {
+    width: 80%; /* Ширина 100% для мобильных */
+    margin-top: 8rem; /* Убираем отступ справа */
+    margin-left: 38px; /* Убираем отступ слева */
+    right: 0; /* Убираем правый отступ */
+  }
+
+  .textBox {
+    width: 80%; /* Уменьшаем ширину рамки */
+    height: 18rem; /* Высота будет автоматической */
+    margin-left: 0; /* Убираем отступ слева */
+    margin-right: 0; /* Убираем отступ справа */
+  }
+
+  .videoText {
+    margin-left: 10rem; /* Убираем отступ слева */
+    margin: 0px 0px 0px 140px;
+    font-size: 3px;
+    /* max-width: 100%; Увеличиваем максимальную ширину */
+  }
+
+  .videoContainer {
+    flex-direction: column; /* Изменяем направление на вертикальное */
+    align-items: flex-start; /* Выравниваем по левому краю */
+  }
+
+  .horizontalLine {
+    margin: 50px 0; /* Уменьшаем отступ для мобильных */
+  }
+
+  .videoTitle,
+  .videoSubtitle {
+    font-size: 7px;
+    margin-top: 0;
+    margin-left: 220px;
+    padding: 0px; /* Увеличиваем размер шрифта для заголовков */
+  }
+ .videoText h3 {
+  display: none;
+ }
+  
+
+
+  .videoText p {
+    display: none;
+  }
+
+  .h2 {
+    margin-left: 0rem;
+    font-size: 25px;
+    background: linear-gradient(to right, #ffae00, #b73ec7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+/* 
+  .div {
+    width: 80px;
+    margin-top: -51px;
+    font-size: 7px; /* Уменьшаем размер заголовка */
+  /* } */ 
+
+  .h3 {
+    font-size: 20px;
+    color: #ffffff; /* Белый цвет текста */
+    background: linear-gradient(to right, #ff6b6b, #ffa500, #9370db, #7b68ee); /* Градиент фона */
+    padding: 10px; /* Отступы для лучшего отображения */
+    margin-bottom: 1px;
+    margin-left: 40px;
+    display: inline-block;
+    /* margin-top: -200px */
+  }
+  .textBox p {
+    color: black;
+    font-size: 18px;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+  }
+
+  .videoOverlay {
+    margin: 1px;
+    height: 20px;
+    color: white;
+    z-index: 1;
+  }
+}
