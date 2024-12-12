@@ -77,8 +77,9 @@
 @media (max-width: 768px) {
   .navbar {
     height: 55px;
-    width: 100vh;
+    width: 100%;
     background-color: black;
+
   }
 
   .navbarBrand {
@@ -99,9 +100,10 @@
   }
   .collabs {
     size: 2rem;
+
   }
 
   .nav {
-    font-size: 6px;
+    font-size: 16px;
   }
 }
