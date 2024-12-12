@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import NavBar from './ui/NavBar';
 import ChatBot from './ui/ChatBot';
-// import FootBar from './ui/FootBar';
+import FootBar from './ui/FootBar';
 
 export default function Layout(): React.JSX.Element {
   return (
@@ -10,7 +10,7 @@ export default function Layout(): React.JSX.Element {
       <NavBar />
       <Outlet />
       <ChatBot /> 
-      {/* <FootBar/> */}
+      <FootBar/>
     </>
   );
 }

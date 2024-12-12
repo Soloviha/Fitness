@@ -23,16 +23,43 @@
     right: 0;
     bottom: 0;
     width: 177.5vh;
-    height: 100vh;
+    height: 95.6vh;
     background-color: rgba(0, 0, 0, 0.612); /* Затемнение с прозрачностью */
     z-index: 1; /* Устанавливаем слой затемнения выше фона */
+  }
+
+  .box {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    min-width: 300;
+    width: 100%;
+    padding: 3rem;
+    /* padding: theme.spacing(2), */
+    overflow-x: auto;
+    margin-top: 100px,
   }
   
   @media (max-width: 768px) {
     .typeCard {
-      height: 100vh; /* Уменьшаем высоту для мобильных устройств */
+      height: 100%; /* Уменьшаем высоту для мобильных устройств */
       width: 100%; /* Занимаем всю ширину экрана */
      
+  }
+
+  .typeCard::after {
+
+    width: 52.3vh;
+    height: 97vh;
+
+  }
+
+  .box {
+    flex-direction: column;
+    margin-top: -150px;
   }
   }
 

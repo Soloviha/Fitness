@@ -22,33 +22,6 @@ function App(): React.JSX.Element {
   // const [deferredPrompt, setDeferredPrompt] = useState(null);
   const isUser = useAppSelector((state) => !!state.auth.user);
 
-  // useEffect(() => {
-  //   const handleBeforeInstallPrompt = (e: BeforeInstallPromptEvent): void => {
-  //     e.preventDefault();
-  //     setDeferredPrompt(e);
-  //   };
-
-  //   window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-  //   return () => {
-  //     window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-  //   };
-  // }, []);
-
-  // const handleInstallClick = () => {
-  //   if (deferredPrompt) {
-  //     deferredPrompt.prompt();
-  //     deferredPrompt.userChoice.then((choiceResult) => {
-  //       if (choiceResult.outcome === 'accepted') {
-  //         console.log('Пользователь установил приложение');
-  //       } else {
-  //         console.log('Пользователь отказался от установки');
-  //       }
-  //       setDeferredPrompt(null);
-  //     });
-  //   }
-  // };
-
   useEffect(() => {
     void dispatch(refreshThunk());
   }, [dispatch]);

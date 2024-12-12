@@ -22,7 +22,7 @@ export default function TypePage(): React.JSX.Element {
   const images = [
     {
       url: '../../../public/sport-sajt20.jpg',
-      width: '40%',
+      width: '30%',
     },
     {
       url: '../../../public/trening.jpg',
@@ -36,6 +36,7 @@ export default function TypePage(): React.JSX.Element {
 
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
+    // width: 150,
     height: 200,
     margin: theme.spacing(2),
     borderRadius: theme.shape.borderRadius,
@@ -101,19 +102,20 @@ export default function TypePage(): React.JSX.Element {
 
   return (
     <div className={styles.typeCard}>
-      <Box
-        sx={{
-          position: 'relative',
-          zIndex: '2',
-          display: 'flex',
-          flexWrap: 'nowrap',
-          justifyContent: 'center',
-          minWidth: 300,
-          width: '90%',
-          padding: theme.spacing(2),
-          overflowX: 'auto',
-          marginTop: '100px',
-        }}
+      <div className={styles.box}>
+      <Box 
+        // sx={{
+        //   position: 'relative',
+        //   zIndex: '2',
+        //   display: 'flex',
+        //   flexWrap: 'nowrap',
+        //   justifyContent: 'center',
+        //   minWidth: 300,
+        //   width: '90%',
+        //   padding: theme.spacing(2),
+        //   overflowX: 'auto',
+        //   marginTop: '100px',
+        // }}
       >
         {types.map((type, index) => (
             <>
@@ -151,6 +153,7 @@ export default function TypePage(): React.JSX.Element {
               </>
         ))}
       </Box>
+      </div>
     </div>
   );
 }
