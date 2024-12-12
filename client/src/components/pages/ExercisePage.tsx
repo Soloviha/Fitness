@@ -8,7 +8,7 @@ import Timer from '../ui/Timer';
 import { Button } from 'react-bootstrap';
 
 const Container = styled('div')({
-  marginBottom: '0px',
+  marginBottom: '48px',
 });
 
 // const RemainingTimeContainer = styled('div')({
