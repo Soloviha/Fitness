@@ -33,6 +33,7 @@
   width: 15rem;
   display: flex;
   justify-content: center;
+
   gap: 5vh;
   background-image: linear-gradient(to right, #ffae00, #b73ec7);
   color: white;

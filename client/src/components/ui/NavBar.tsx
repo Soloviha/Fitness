@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -14,13 +15,20 @@ import styles from '../css/NavBar.module.css';
 import { resetUserParameter } from '../../providers/slice/parametr/userParameterSlice';
 import logo from '../../../public/assets/logo.png';
 
+
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const location = useLocation(); // Получаем текущий путь
+  const location = useLocation();
   const { user, accessToken } = useAppSelector((state) => state.auth);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const isUserP = location.pathname === '/userP'; // Проверяем, находимся ли мы на странице userP
+
+  // Проверяем, является ли текущий путь '/userP'
+  const isUserPNavbar = location.pathname === '/userP';
+
+  // Массив путей для применения стиля fullNavbar
+  const fullNavbarPaths = ['/types', '/types/workouts', '/types/workouts/', '/types/workouts/:id', '/types/workouts/exercises/:id'];
+  const isFullNavbar = fullNavbarPaths.some((path) => location.pathname.startsWith(path));
 
   const logoutHandler = (): void => {
     void dispatch(logoutThunk());
@@ -35,22 +43,17 @@ export default function NavBar(): React.JSX.Element {
     }
   };
 
-  // const openSignupModal = (): void => {
-  //   setIsLoginModalOpen(false);
-  //   void dispatch(setSignupModalOpen());
-  // };
-
   const handlePersonalCabinetClick = (): void => {
     if (user) {
-      navigate('/userP'); // Перенаправляем на страницу пользовательских параметров
+      navigate('/userP');
     } else {
-      openLoginModal(); // Открываем модальное окно для входа
+      openLoginModal();
     }
   };
 
   return (
     <>
-      <Navbar className={`${styles.navbar} ${isUserP ? styles.userPNavbar : ''}`} expand="lg">
+      <Navbar className={`${styles.navbar} ${isUserPNavbar ? styles.userPNavbar : isFullNavbar ? styles.fullNavbar : ''}`} expand="lg">
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className={styles.collabs}>
@@ -59,6 +62,7 @@ export default function NavBar(): React.JSX.Element {
                 <Avatar
                   className={styles.avatar}
                   alt="Remy Sharp"
+
                   src={logo}
                   sx={{ width: 70, height: 70 }}
                 />
@@ -112,10 +116,8 @@ export default function NavBar(): React.JSX.Element {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {isLoginModalOpen && <LoginModal  />}
+      {isLoginModalOpen && <LoginModal />}
       <SignupModal />
     </>
   );
 }
-
-// openSignupModal={openSignupModal}
