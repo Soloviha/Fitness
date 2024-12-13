@@ -63,12 +63,12 @@
 }
 
 .cardTitle {
-  font-size: 4rem; /* Размер шрифта для заголовка */
+  font-size: 2rem; /* Размер шрифта для заголовка */
   margin: 0; /* Убирает отступы */
 }
 
 .cardDescription {
-  font-size: 2rem; /* Размер шрифта для описания */
+  font-size: 1.7rem; /* Размер шрифта для описания */
   margin-top: 10px; /* Отступ сверху */
 }
 

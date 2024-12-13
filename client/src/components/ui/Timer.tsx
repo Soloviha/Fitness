@@ -20,7 +20,7 @@ export default function Timer({ isResting, remainingTime }: TimerProps): React.J
     <div className={styles.container}>
       <div className={styles.col}>
         <h2 className={styles.h2}>{isResting ? 'Отдых' : 'Тренировка'}</h2>
-        <div className={styles.div}>{Math.ceil(remainingTime / 1000)} секунд</div>
+        <div className={styles.divan}>{Math.ceil(remainingTime / 1000)} секунд</div>
         <button className={styles.button} onClick={handleGoBack}>
           Выйти
         </button>

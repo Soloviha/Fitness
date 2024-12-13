@@ -1,124 +1,121 @@
-.card_container {
+.ocb {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 100vh; /* Занимает всю высоту экрана */
   width: 100%;
-  height: 100vh;
+  display: flex; /* Используем Flexbox */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
   background-image: url(https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?semt=ais_hybrid);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.card_container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Затемнение */
-  z-index: 1; /* Убедитесь, что затемнение выше фона */
+  background-size: cover; /* Изображение занимает всю ширину и высоту */
+  background-position: center; /* Центрируем изображение */
 }
 
 .row {
+  position: absolute; /* Позволяет наложить затемнение на фон */
   width: 100%;
-
-  height: 100.2vh;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнение */
+  display: flex; /* Используем Flexbox для центрирования */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  z-index: 1; /* Устанавливаем z-index для затемнения */
 }
 
+.button {
+  position: absolute;
+  height: 5vh;
+  width: 10vh;
+  margin-top: 5vh;
+  border-radius: 1vh;
+  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+  border: none !important;
+  color: #fffdfd;
+  font-size: 1.7vh;
+  z-index: 2; /* Устанавливаем z-index выше, чем у фона и затемнения */
+ 
+}
+
+.buttonB {
+position: absolute;
+margin-top: 55vh;
+  height: 5vh;
+  width: 12vh;
+  border-radius: 1vh;
+  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+  border: none !important;
+  color: #fffdfd;
+  font-size: 1.7vh;
+  z-index: 2; /* Устанавливаем z-index выше, чем у фона и затемнения */
+ 
+}
+
+
 .img {
-  height: 350px; /* Высота изображения */
-  width: 450px; /* Ширина изображения */
-  /* margin-top: 80px; */
-  /* object-fit: cover; Сохраняем пропорции изображения, обрезая его при необходимости */
+  height: 45vh; /* Высота изображения */
+  width: 50vh /* Ширина изображения */
+}
+
+.styled_card {
+  width: 50%;
+  height: 45vh;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50vh;
+
+  
+  
+}
+
+.styled_card_content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+ 
+
 }
 
 .styled_title {
-  font-size: 1.5rem; /* Размер заголовка */
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
   color: #333333; /* Цвет заголовка */
-  margin-bottom: 8px; /* Отступ снизу */
 }
 
 .styled_description {
-  font-size: 1rem; /* Размер описания */
+  font-size: 1.125rem;
+  margin-bottom: 12px;
   color: #666; /* Цвет описания */
 }
 
 .styled_info_box {
-  position: relative; /* Содержимое будет выше затемнения */
-  z-index: 2; /* Устанавливаем содержимое выше затемнения */
-  color: rgb(0, 0, 0);
-  display: flex; /* Используем flexbox для размещения информации */
-  justify-content: space-around; /* Равномерное распределение информации */
-  padding: 16px; /* Отступы внутри информационного блока */
-  background-color: #f0f0f0; /* Фоновый цвет для блока информации */
-}
-
-.styled-info-item {
-  flex: 1; /* Элементы занимают равное пространство */
-  text-align: center; /* Центрируем текст */
-  color: #7900e35e; /* Цвет текста информации */
-}
-
-.button {
-  height: 4rem;
-  width: 15rem;
   display: flex;
-  justify-content: center;
-  gap: 5vh;
-  background-image: linear-gradient(to right, #ffae00, #b73ec7);
-  color: white;
-  margin-top: 5rem;
-  padding-top: 1.2rem;
-  z-index: 2;
-
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.styled_card {
-  position: relative; /* Содержимое будет выше затемнения */
-  z-index: 2; /* Устанавливаем содержимое выше затемнения */
-  color: white;
-  background-color: white; /* Цвет фона карточки */
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень карточки */
-  max-width: 800px; /* Максимальная ширина карточки */
-  width: 90%; /* Ширина карточки на 100% доступного пространства */
-  justify-content: space-evenly;
-  overflow: hidden; /* Скрываем переполнение */
-}
-
-.styled_title_and_description {
-  /* display: flex; Flexbox для заголовка и описания */
-  /* justify-content: space-between; Равномерное распределение пространства */
-  margin-bottom: 16px; /* Отступ снизу для разделения */
-}
-
-.styled_info_box {
-  display: flex; /*Flexbox для информационных элементов */
-  justify-content: space-between; /*Равномерное распределение пространства */
+.styled_info_item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 24px;
 }
 
 .remainingTime {
   position: absolute; /* Позволяет позиционировать элемент относительно ближайшего родителя с position: relative */
-  top: 120px; /* Отступ от верхнего края */
-  right: 270px; /* Отступ от правого края */
-  font-size: 95px;
-  width: 600px;
+  top: 12vh; /* Отступ от верхнего края */
+  font-size: 10vh;
   color: #fff;
-  z-index: 1000;
+  
 }
 
-/* Адаптивные стили для мобильных устройств */
 
+/* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
   .remainingTime {
     padding: 10px 20px;
     font-size: 80px;
     width: 600px;
-    color: #fff;
     margin-left: 26px; /* Обнуляем значение marginLeft */
   }
 
@@ -138,15 +135,10 @@
 
   .styled_title {
     font-size: 2px; /* Размер заголовка */
-    color: #333333; /* Цвет заголовка */
     margin-bottom: 1px; /* Отступ снизу */
   }
 
   .styled_description {
-    font-size: 1px;
-  }
-
-  .body2 {
     font-size: 1px;
   }
 }

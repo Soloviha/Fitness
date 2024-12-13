@@ -28,10 +28,6 @@ function App(): React.JSX.Element {
     void dispatch(refreshThunk());
     void dispatch(getAllWorkouts());
     void dispatch(getAllExercises());
-  }, [dispatch]);
-
-
-  useEffect(() => {
     if (isUser) void dispatch(getMyParameters())
   }, [dispatch, isUser]);
 

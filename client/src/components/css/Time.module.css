@@ -1,34 +1,5 @@
-.container {
-  /* position: relative; */
-  display: flex;
-  justify-content: center; /* Центрируем по горизонтали */
-  align-items: center; /* Центрируем по вертикали */
-  height: 100vh; /* Занимает всю высоту экрана */
-  width: 100%;
-  background-image: url(https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?semt=ais_hybrid);
-  background-size: cover; /* Изображение занимает всю ширину и высоту */
-  background-position: center; /* Центрируем изображение */
-  background-repeat: no-repeat; /* Предотвращаем повторение изображения */
-  object-fit: cover;
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  z-index: -1;
-  padding: 190.9px 0;
-}
 
-.container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 115.1vh;
-  width: 177.4vh;
-  background-color: rgba(0, 0, 0, 0.687); /* Затемнение с прозрачностью */
-  z-index: 1; /* Устанавливаем слой затемнения выше фона */
-}
+
 
 .col {
   position: relative; /* Содержимое будет выше затемнения */
@@ -47,42 +18,29 @@
   
 }
 
-.div {
+.divan {
   font-size: 1.5rem; /* Размер текста таймера */
-  color: #fffdfd; /* Цвет текста */
+  color: #ffffff; /* Цвет текста */
   margin-bottom: 30px; /* Отступ снизу */
 
 }
 
 .button {
-  height: 4rem;
-  width: 15rem;
-  display: flex;
-  justify-content: center;
-  gap: 5vh;
-  background-image: linear-gradient(to right, #ffae00, #b73ec7);
-  color: white;
-  margin-top: 5rem;
-  padding-top: 1.2rem;
-  z-index: 2;
+  height: 6vh;
+  width: 15vh;
+  margin-top: 5vh;
+  border-radius: 1vh;
+  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
+  border: none !important;
+  color: #fffdfd;
+  z-index: 2; 
 }
+
 
  /* Адаптивные стили для мобильных устройств */
  
 @media (max-width: 768px) {
 
-  .button {
-    height: 60px;
-    width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
-    border: none !important;
-    color: #fffdfd;
-    font-size: 22px;
-  }
 
   .h2 {
     font-size: 3rem; /* Размер заголовка */
