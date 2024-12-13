@@ -36,7 +36,7 @@ module.exports = {
         typeId: 1,
       },
       {
-        name: 'Утренний заряд',
+        name: 'Утренний стендап',
         description: 'Тренировка для бодрого начала дня.',
         isPublic: true,
         time: 30,
