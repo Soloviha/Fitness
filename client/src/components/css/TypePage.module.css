@@ -1,12 +1,12 @@
 .typeCard {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   width: 100%;
   background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: -1;
 }
 
@@ -23,8 +23,6 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-
-
 .imageButton {
   position: relative;
   height: 20vh;
@@ -33,6 +31,11 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
   margin: 0 10px; /* Отступы между карточками */
+  overflow: hidden; /* Скрываем все, что выходит за пределы кнопки */
+  background-image: url('your-image.jpg'); /* Укажите путь к изображению */
+  background-size: cover; /* Заполняем кнопку изображением, сохраняя пропорции */
+  background-position: center; /* Центрируем изображение */
+  background-repeat: no-repeat; /* Не повторяем изображение */
 }
 
 .imageMarked {
@@ -43,7 +46,6 @@
   bottom: -0.5vh;
   left: calc(50% - 0.8vh);
 }
-
 
 .imageButton:hover {
   transform: scale(1.05);
@@ -58,6 +60,8 @@
   background-size: cover;
   background-position: center 40%;
   border-radius: inherit;
+
+  
 }
 
 .imageBackdrop {
@@ -91,23 +95,18 @@
   left: calc(50% - 0.8vh);
 }
 
-  @media (max-width: 768px) {
-    .typeCard {
-      height: 100%; /* Уменьшаем высоту для мобильных устройств */
-      width: 100%; /* Занимаем всю ширину экрана */
-     
+@media (max-width: 768px) {
+  .typeCard {
+    height: 100%; /* Уменьшаем высоту для мобильных устройств */
+    width: 100%; /* Занимаем всю ширину экрана */
   }
 
   .typeCard::after {
-
     width: 52.3vh;
     height: 97vh;
-
   }
 
   .box {
     flex-direction: column;
-    margin-top: -150px;
   }
-  }
-
+}

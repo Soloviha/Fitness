@@ -1,3 +1,4 @@
+
 .ocb {
   position: relative;
   height: 100vh; /* Занимает всю высоту экрана */
@@ -8,6 +9,7 @@
   background-image: url(https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?semt=ais_hybrid);
   background-size: cover; /* Изображение занимает всю ширину и высоту */
   background-position: center; /* Центрируем изображение */
+
 }
 
 .row {
@@ -65,11 +67,6 @@ margin-top: 55vh;
   
 }
 
-.styled_card_content {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
- 
 
 }
 
