@@ -8,9 +8,9 @@ import styles from '../css/WorkoutPage.module.css';
 import ButtonBase from '@mui/material/ButtonBase';
 // import { Button } from '@mui/material';
 import { ButtonGroup } from 'react-bootstrap';
-import sport from '../../../public/sport-sajt20.jpg'
-import trening from '../../../public/trening.jpg'
-import sport2 from '../../../public/sport-sajt91.jpg'
+// import sport from '../../../public/sport-sajt20.jpg'
+// import trening from '../../../public/trening.jpg'
+// import sport2 from '../../../public/sport-sajt91.jpg'
 
 export default function WorkoutPage(): React.JSX.Element {
   const navigate = useNavigate();
@@ -26,15 +26,15 @@ export default function WorkoutPage(): React.JSX.Element {
 
   const images = [
     {
-      url: sport,
+      url: '',
       width: '80%',
     },
     {
-      url: trening,
+      url: '',
       width: '80%',
     },
     {
-      url: sport2,
+      url: '',
       width: '80%',
     },
   ];
