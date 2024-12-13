@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from 'react';
 import { Card, Col, Row, Form, Button, Modal } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
@@ -70,7 +71,7 @@ export default function LkPage(): React.JSX.Element {
     setShowModal(false);
   };
 
-  const handleWeightChange = (e): void => {
+  const handleWeightChange = (e: any): void => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const value = Number(e.target.value);
     if (value <= 200) {
@@ -80,7 +81,7 @@ export default function LkPage(): React.JSX.Element {
     }
   };
 
-  const handleHeightChange = (e): void => {
+  const handleHeightChange = (e: any): void => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     const value = Number(e.target.value);
     if (value <= 200) {
