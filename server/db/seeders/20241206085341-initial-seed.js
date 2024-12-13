@@ -447,28 +447,6 @@ module.exports = {
         picture:
           'https://kotsport.ru/wp-content/uploads/2023/12/skruchivaniia-s-vytianutymi-nogami-1.webp',
       },
-      {
-        name: 'Скакалка',
-        description:
-          'Прыжки на скакалке для кардио. Держите руки на уровне талии и прыгайте, стараясь не приземляться на пятки. Это упражнение отлично развивает выносливость и координацию.',
-        time: 20,
-        reps: 1,
-        relax: 10,
-        workoutId: 6,
-        isPublic: true,
-        picture: 'https://ss.sport-express.ru/userfiles/materials/188/1883295/large.jpg',
-      },
-      {
-        name: 'Бег на месте',
-        description:
-          'Бегите на месте с высокими коленями. Поднимайте колени как можно выше, стараясь поддерживать ритм. Это упражнение активно задействует сердечно-сосудистую систему.',
-        time: 20,
-        reps: 1,
-        relax: 10,
-        workoutId: 6,
-        isPublic: true,
-        picture: 'https://marathonec.ru/wp-content/uploads/2020/04/beg-na-meste-doma.jpg',
-      },
 
       // Тренировка 6 (workoutId: 6)
       {
