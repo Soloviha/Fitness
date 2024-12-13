@@ -46,6 +46,11 @@
   height: 20vh;
   width: 100%; /* Растянуть карточки на всю ширину */
   box-shadow: 0 1vh 1vh rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Скрываем все, что выходит за пределы карточки */
+  background-image: url('your-image.jpg'); /* Укажите путь к изображению */
+  background-size: cover; /* Заполняем карточку изображением, сохраняя пропорции */
+  background-position: center; /* Центрируем изображение */
+  background-repeat: no-repeat; /* Не повторяем изображение */
 }
 
 .imageSrc {
