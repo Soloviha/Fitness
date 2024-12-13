@@ -15,6 +15,7 @@ import styles from '../css/NavBar.module.css';
 import { resetUserParameter } from '../../providers/slice/parametr/userParameterSlice';
 import logo from '../../../public/assets/logo.png';
 
+
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -61,6 +62,7 @@ export default function NavBar(): React.JSX.Element {
                 <Avatar
                   className={styles.avatar}
                   alt="Remy Sharp"
+
                   src={logo}
                   sx={{ width: 70, height: 70 }}
                 />
