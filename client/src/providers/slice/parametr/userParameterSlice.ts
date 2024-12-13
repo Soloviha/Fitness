@@ -40,7 +40,7 @@ export const userPSlice = createSlice({
         BMI: null,
         userId: null,
         secondName: null,
-      }; 
+      };
     },
   },
   extraReducers: (builder) => {
@@ -57,7 +57,6 @@ export const userPSlice = createSlice({
       state.error = 'Ошибка получения параметров';
     });
 
-
     builder.addCase(addParams.fulfilled, (state, action) => {
       state.userP = action.payload;
       // state.userPOne = action.payliad
@@ -69,12 +68,11 @@ export const userPSlice = createSlice({
     builder.addCase(updateParams.fulfilled, (state, action) => {
       state.userP = action.payload;
     });
-    
+
     builder.addCase(updateParams.rejected, (state, action) => {
       console.error('Ошибка обновления параметров:', action.error.message);
       state.error = 'Ошибка обновления параметров';
     });
-    
   },
 });
 

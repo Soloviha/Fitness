@@ -447,7 +447,7 @@ module.exports = {
         picture:
           'https://kotsport.ru/wp-content/uploads/2023/12/skruchivaniia-s-vytianutymi-nogami-1.webp',
       },
-      
+
       // Тренировка 6 (workoutId: 6)
       {
         name: 'Скакалка',

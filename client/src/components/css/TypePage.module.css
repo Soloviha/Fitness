@@ -1,48 +1,96 @@
+.typeCard {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+  background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  z-index: -1;
+}
 
-.typeCard{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 100%;
-    background-image: url(https://img.freepik.com/free-photo/young-beautiful-asian-woman-with-athletic-body-doing-push-ups-modern-fitness-center_74952-2516.jpg);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    padding: 163.9px 0;
-  }
-  
-  .typeCard::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 177.5vh;
-    height: 95.6vh;
-    background-color: rgba(0, 0, 0, 0.612); /* Затемнение с прозрачностью */
-    z-index: 1; /* Устанавливаем слой затемнения выше фона */
-  }
+.box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Центрирование по вертикали */
+  width: 100%;
+  height: 100vh;
+  overflow-x: auto; /* Горизонтальная прокрутка */
+  gap: 5vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  .box {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    min-width: 300;
-    width: 100%;
-    padding: 3rem;
-    /* padding: theme.spacing(2), */
-    overflow-x: auto;
-    margin-top: 100px,
-  }
-  
+
+
+.imageButton {
+  position: relative;
+  height: 20vh;
+  width: 50vh; /* Установлено фиксированное значение ширины */
+  border-radius: 8px; /* Пример радиуса */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  margin: 0 10px; /* Отступы между карточками */
+}
+
+.imageMarked {
+  height: 0.1vh;
+  width: 1.5vh;
+  background-color: white;
+  position: absolute;
+  bottom: -0.5vh;
+  left: calc(50% - 0.8vh);
+}
+
+
+.imageButton:hover {
+  transform: scale(1.05);
+}
+
+.imageSrc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center 40%;
+  border-radius: inherit;
+}
+
+.imageBackdrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s;
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.imageMarked {
+  height: 0.1vh;
+  width: 1.5vh;
+  background-color: white;
+  position: absolute;
+  bottom: -0.5vh;
+  left: calc(50% - 0.8vh);
+}
+
   @media (max-width: 768px) {
     .typeCard {
       height: 100%; /* Уменьшаем высоту для мобильных устройств */

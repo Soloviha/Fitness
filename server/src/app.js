@@ -8,12 +8,11 @@ const workoutRouter = require('./routers/workoutRouter');
 const UserParameterRouter = require('./routers/userParameterRouter');
 const exerciseRouter = require('./routers/exerciseRouter');
 const descCardRouter = require('./routers/descCardRouter');
- const path = require('path')
+const path = require('path');
 
-const chatRouter = require('./routers/chatRouter')
+const chatRouter = require('./routers/chatRouter');
 
 const app = express();
-
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -27,8 +26,13 @@ app.use('/api/token', tokenRouter);
 app.use('/api/typeOfWorkouts', typeOfWorkoutRouter);
 app.use('/api/workouts', workoutRouter);
 app.use('/api/exercises', exerciseRouter);
-app.use('/api/userP', UserParameterRouter)
-app.use('/api/descCard', descCardRouter)
+app.use('/api/userP', UserParameterRouter);
+app.use('/api/descCard', descCardRouter);
 app.use('/api/chats', chatRouter);
+
+app.use(express.static(path.join(__dirname, '..', 'dist')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+});
 
 module.exports = app;

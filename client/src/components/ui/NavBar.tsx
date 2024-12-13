@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../providers/redux/hooks';
-import { setModalOpen, setSignupModalOpen } from '../../providers/slice/auth/authSlice';
+import { setModalOpen } from '../../providers/slice/auth/authSlice';
 import { FaUserCircle } from 'react-icons/fa';
 import LoginModal from '../pages/LoginModal';
 import SignupModal from '../pages/SignupModal';
@@ -12,6 +12,7 @@ import { logoutThunk } from '../../providers/slice/auth/authThunks';
 import { Avatar } from '@mui/material';
 import styles from '../css/NavBar.module.css';
 import { resetUserParameter } from '../../providers/slice/parametr/userParameterSlice';
+// import logo from '../../../public/assets/logo';
 
 export default function NavBar(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -23,7 +24,7 @@ export default function NavBar(): React.JSX.Element {
 
   const logoutHandler = (): void => {
     void dispatch(logoutThunk());
-    void dispatch(resetUserParameter()); 
+    void dispatch(resetUserParameter());
     navigate('/');
   };
 
@@ -34,10 +35,10 @@ export default function NavBar(): React.JSX.Element {
     }
   };
 
-  const openSignupModal = (): void => {
-    setIsLoginModalOpen(false);
-    void dispatch(setSignupModalOpen());
-  };
+  // const openSignupModal = (): void => {
+  //   setIsLoginModalOpen(false);
+  //   void dispatch(setSignupModalOpen());
+  // };
 
   const handlePersonalCabinetClick = (): void => {
     if (user) {
@@ -58,7 +59,7 @@ export default function NavBar(): React.JSX.Element {
                 <Avatar
                   className={styles.avatar}
                   alt="Remy Sharp"
-                  src="../../../public/assets/photo-output-1.PNG"
+                  // src={logo}
                   sx={{ width: 70, height: 70 }}
                 />
               </Navbar.Brand>
@@ -71,7 +72,7 @@ export default function NavBar(): React.JSX.Element {
             <Nav className="me-auto">
               <div className={styles.nav}>
                 <NavLink to="/" className={`nav-link ${styles.home}`}>
-                  Главная
+                  {/* Главная */}
                 </NavLink>
                 <NavLink to="/types" className={`nav-link ${styles.navLink}`}>
                   Тренировки
@@ -89,7 +90,9 @@ export default function NavBar(): React.JSX.Element {
                 className={`nav-link ${styles.navLink} ${styles.personalCabinet}`}
                 onClick={handlePersonalCabinetClick}
               >
-                <span style={{ marginRight: '8px' }} className={styles.nav}>Личный кабинет</span>
+                <span style={{ marginRight: '8px' }} className={styles.nav}>
+                  Личный кабинет
+                </span>
                 <FaUserCircle size={20} />
               </Nav.Link>
             </Nav>
@@ -109,8 +112,10 @@ export default function NavBar(): React.JSX.Element {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {isLoginModalOpen && <LoginModal openSignupModal={openSignupModal} />}
+      {isLoginModalOpen && <LoginModal  />}
       <SignupModal />
     </>
   );
 }
+
+// openSignupModal={openSignupModal}

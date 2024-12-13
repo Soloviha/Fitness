@@ -1,43 +1,113 @@
 .workoutCard {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Центрируем по вертикали */
-  align-items: center; /* Центрируем по горизонтали */
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 100vh;
   background-image: url(https://img.freepik.com/premium-photo/caucasian-young-female-athlete-practicing-blue-studio-background-neon-light-close-up-sportive-model-jumping-high-running-body-building-healthy-lifestyle-beauty-action-concept_489646-12081.jpg);
-  background-size: cover; /* Изображение занимает всю ширину и высоту */
-  background-position: center; /* Центрируем изображение */
-  background-repeat: no-repeat; /* Предотвращаем повторение изображения */
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  padding: 80.9px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.workoutCard::after {
+.workoutCard::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 177.2vh;
-  height: 93.1vh;
-  background-color: rgba(0, 0, 0, 0.601); /* Затемнение с прозрачностью */
-  z-index: 1; /* Устанавливаем слой затемнения выше фона */
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнение */
+  z-index: 1; /* Убедитесь, что затемнение выше фона */
 }
 
+.workoutCard > * {
+  position: relative; /* Элементы внутри карточки будут выше затемнения */
+  z-index: 2;
+}
+
+
 .button {
-  height: 1000px;
-  color: #fff;
-  width: 200px;
+  height: 5vh;
+  width: 15vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background-image: linear-gradient(to right, #ffae00, #b73ec7) !important;
-  border: none !important;
-  position: relative; /* Убедитесь, что кнопки имеют позиционирование */
+  gap:5vh;
+ 
+  background-image: linear-gradient(to right, #ffae00, #b73ec7) ;
+  color: white;
+ 
   z-index: 2; /* Устанавливаем z-index выше, чем у затемнения */
+  
+}
+
+.imageButton {
+  position: relative;
+  height: 20vh;
+  width: 100%; /* Растянуть карточки на всю ширину */
+  box-shadow: 0 1vh 1vh rgba(0, 0, 0, 0.2);
+  
+ 
+}
+
+.imageSrc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: inherit;
+  
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%; 
+  
+}
+
+.imageBackdrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Затемнение */
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  
+}
+
+.imageMarked {
+  height: 0.3vh;
+  width: 1.5vh;
+  background-color: white;
+  position: absolute;
+  top: 12vh;
+  left: calc(50% - 1vh);
+  
+}
+
+.scrollableBox {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap:10px;
+  width: 100%;
+  padding: 1vh;
+  overflow-x: auto;
+  
+  
 }

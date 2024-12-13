@@ -1,13 +1,16 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import { useAppSelector } from '../../providers/redux/hooks';
-import { useTheme } from '@mui/material/styles';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import styles from '../css/WorkoutPage.module.css';
 import ButtonBase from '@mui/material/ButtonBase';
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
+import { ButtonGroup } from 'react-bootstrap';
+import sport from '../../../public/sport-sajt20.jpg'
+import trening from '../../../public/trening.jpg'
+import sport2 from '../../../public/sport-sajt91.jpg'
 
 export default function WorkoutPage(): React.JSX.Element {
   const navigate = useNavigate();
@@ -21,163 +24,58 @@ export default function WorkoutPage(): React.JSX.Element {
     navigate(-1);
   };
 
-  const theme = useTheme();
-
   const images = [
     {
-      url: '../../../public/sport-sajt13.jpg',
+      url: sport,
       width: '80%',
     },
     {
-      url: '../../../public/registr.jpg',
+      url: trening,
       width: '80%',
     },
     {
-      url: '../../../public/sport-sajt91.jpg',
+      url: sport2,
       width: '80%',
     },
   ];
 
-  const ImageButton = styled(ButtonBase)(({ theme }) => ({
-    position: 'relative',
-    height: 240,
-    width: '100%', // Добавьте это свойство, чтобы растянуть карточки на всю ширину
-    margin: theme.spacing(2),
-    borderRadius: theme.shape.borderRadius,
-    boxShadow: theme.shadows[3],
-
-    [theme.breakpoints.down('sm')]: {
-      height: 100,
-    },
-    '&:hover, &.Mui-focusVisible': {
-      zIndex: 1,
-      '& .MuiImageBackdrop-root': {
-        opacity: 0.15,
-      },
-      '& .MuiImageMarked-root': {
-        opacity: 0,
-      },
-      // '& .MuiTypography-root': {
-      //   border: '4px solid currentColor',
-      // },
-    },
-  }));
-
-  const ImageSrc = styled('span')({
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center 40%',
-    borderRadius: 'inherit',
-  });
-
-  const Image = styled('span')(({ theme }) => ({
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: theme.palette.common.white,
-    width: '100%', // Добавьте это свойство, чтобы растянуть текст на всю ширину
-  }));
-
-  const ImageBackdrop = styled('span')(({ theme }) => ({
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    backgroundColor: theme.palette.common.black,
-    opacity: 0.7,
-    transition: theme.transitions.create('opacity'),
-  }));
-
-  const ImageMarked = styled('span')(({ theme }) => ({
-    height: 3,
-    width: 18,
-    backgroundColor: theme.palette.common.white,
-    position: 'absolute',
-    bottom: -2,
-    left: 'calc(50% - 9px)',
-  }));
-
   return (
     <>
       <div className={styles.workoutCard}>
-        <Box
-          sx={{
-            position: 'relative',
-            zIndex: '2',
-            display: 'flex',
-            flexWrap: 'nowrap',
-            justifyContent: 'center',
-            minWidth: 300,
-            width: '100%',
-            padding: theme.spacing(2),
-            overflowX: 'auto',
-            marginTop: '100px',
-          }}
-        >
+        <Box className={styles.scrollableBox}>
           {workouts.map((workout, index) => (
-            <>
-              <ImageButton
-                focusRipple
-                key={workout.id}
-                style={{
-                  width: images[index % images.length].width,
-                }}
-              >
-                <ImageSrc
-                  style={{ backgroundImage: `url(${images[index % images.length].url})` }}
-                />
-                <ImageBackdrop className="MuiImageBackdrop-root" />
-                <Image className={styles.img}>
-                  <NavLink to={`/types/workouts/exercises/${workout.id.toString()}`} className="nav-link">
-                    <Typography
-                      component="span"
-                      variant="subtitle1"
-                      color="inherit"
-                      sx={(theme) => ({
-                        position: 'relative',
-                        p: 4,
-                        pt: 2,
-                        pb: `calc(${theme.spacing(1)} + 6px)`,
-                      })}
-                    >
-                      {workout.name}
-                      <ImageMarked className="MuiImageMarked-root" />
-                    </Typography>
-                  </NavLink>
-                  {/* <div>{workout.description}</div>
-                <div>⌚: {workout.time} мин.</div>
-                <div>🔥: {workout.kcal} Ккал</div> */}
-                </Image>
-              </ImageButton>
-            </>
+            <ButtonBase
+              className={styles.imageButton}
+              key={workout.id}
+              style={{
+                backgroundImage: `url(${images[index % images.length].url})`,
+              }}
+            >
+              <span className={styles.imageSrc} />
+              <span className={styles.imageBackdrop} />
+              <span className={styles.image}>
+                <NavLink to={`/types/workouts/exercises/${workout.id.toString()}`} className="nav-link">
+                  <Typography
+                    // component="span"
+                    // variant="subtitle1"
+                    // color="inherit"
+
+                  >
+                    {workout.name}
+                    <span className={styles.imageMarked} />
+                  </Typography>
+                </NavLink>
+              </span>
+            </ButtonBase>
           ))}
         </Box>
 
-        <Button
+        <ButtonGroup
           className={styles.button}
           onClick={handleGoBack}
-          style={{
-            fontSize: '17px',
-            width: '200px',
-
-            cursor: 'pointer',
-            color: '#fff',
-            height: '70px',
-            borderRadius: '12px',
-          }}
         >
           Назад
-        </Button>
+        </ButtonGroup>
       </div>
     </>
   );

@@ -30,4 +30,5 @@ export type AuthSliceType = {
   error: string | null;
   isModalOpen: boolean;
   isSignupModalOpen: boolean;
+  isLoading: boolean
 };
