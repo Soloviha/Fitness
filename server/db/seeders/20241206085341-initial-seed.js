@@ -403,9 +403,9 @@ module.exports = {
         name: 'Планка с вращением',
         description:
           'Удерживайте планку и вращайте тело в стороны, касаясь пола рукой. Это упражнение развивает силу и гибкость.',
-        time: 30,
+        time: 15,
         reps: 10,
-        relax: 30,
+        relax: 10,
         workoutId: 5,
         isPublic: true,
         picture:
@@ -415,9 +415,9 @@ module.exports = {
         name: 'Скручивания с весом',
         description:
           'Скручивания с дополнительным весом для увеличения нагрузки. Держите вес на груди или над головой, выполняя скручивания.',
-        time: 30,
+        time: 15,
         reps: 14,
-        relax: 30,
+        relax: 10,
         workoutId: 5,
         isPublic: true,
         picture:
@@ -427,9 +427,9 @@ module.exports = {
         name: 'Подъем ног',
         description:
           'Лягте на спину и поднимите ноги вверх, удерживая их прямыми. Это упражнение эффективно тренирует нижние мышцы живота.',
-        time: 30,
+        time: 15,
         reps: 10,
-        relax: 30,
+        relax: 10,
         workoutId: 5,
         isPublic: true,
         picture: 'https://power-body.ru/wp-content/uploads/2017/05/39_600x362.jpg',
@@ -438,14 +438,36 @@ module.exports = {
         name: 'Боковые скручивания',
         description:
           'Скручивания в стороны для косых мышц. Лягте на спину и поднимите плечи к коленям, вращая тело в стороны.',
-        time: 30,
+        time: 15,
         reps: 14,
-        relax: 30,
+        relax: 10,
 
         workoutId: 5,
         isPublic: true,
         picture:
           'https://kotsport.ru/wp-content/uploads/2023/12/skruchivaniia-s-vytianutymi-nogami-1.webp',
+      },
+      {
+        name: 'Скакалка',
+        description:
+          'Прыжки на скакалке для кардио. Держите руки на уровне талии и прыгайте, стараясь не приземляться на пятки. Это упражнение отлично развивает выносливость и координацию.',
+        time: 20,
+        reps: 1,
+        relax: 10,
+        workoutId: 6,
+        isPublic: true,
+        picture: 'https://ss.sport-express.ru/userfiles/materials/188/1883295/large.jpg',
+      },
+      {
+        name: 'Бег на месте',
+        description:
+          'Бегите на месте с высокими коленями. Поднимайте колени как можно выше, стараясь поддерживать ритм. Это упражнение активно задействует сердечно-сосудистую систему.',
+        time: 20,
+        reps: 1,
+        relax: 10,
+        workoutId: 6,
+        isPublic: true,
+        picture: 'https://marathonec.ru/wp-content/uploads/2020/04/beg-na-meste-doma.jpg',
       },
 
       // Тренировка 6 (workoutId: 6)
