@@ -1,7 +1,7 @@
-import { AxiosInstance } from "axios";
-import { authResponseSchema, authResponseType, loginFormType, signupFormType } from "../schemas/auth.schema";
-import axiosInstance from "../api/axiosInstance";
-
+import type { AxiosInstance } from 'axios';
+import type { authResponseType, loginFormType, signupFormType } from '../schemas/auth.schema';
+import { authResponseSchema } from '../schemas/auth.schema';
+import axiosInstance from '../api/axiosInstance';
 
 class AuthService {
   constructor(private readonly client: AxiosInstance) {

@@ -10,7 +10,7 @@ const initialState: AuthSliceType = {
   error: null,
   isModalOpen: false,
   isSignupModalOpen: false,
-  isLoading: false, // Добавлено состояние загрузки
+  isLoading: true, // Добавлено состояние загрузки
 };
 
 export const authSlice = createSlice({

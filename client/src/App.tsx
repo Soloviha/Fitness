@@ -5,30 +5,29 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import HelloPage from './components/pages/HelloPage';
 import ProtectedRouter from './HOCs/ProtectedRouter';
-
 import TypePage from './components/pages/TypePage';
 import WorkoutPage from './components/pages/WorkoutPage';
 import LoginModal from './components/pages/LoginModal';
 import SignupModal from './components/pages/SignupModal';
-// import TestPage from './components/pages/TestPage';
 import LkPage from './components/pages/LkPage';
 import { getAllWorkouts } from './providers/slice/workout/WorkoutThunk';
 import { getAllExercises } from './providers/slice/exercise/ExerciseThunk';
 import ExercisePage from './components/pages/ExercisePage';
 import ErorrPage from './components/pages/ErorrPage';
 import { getMyParameters } from './providers/slice/parametr/userParameterThunk';
+import Spinner from './components/ui/Spinner';
 
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
-  // const [deferredPrompt, setDeferredPrompt] = useState(null);
   const isUser = useAppSelector((state) => !!state.auth.user);
+  const isLoading = useAppSelector((state) => state.auth.isLoading); // Получаем состояние загрузки
 
   useEffect(() => {
     void dispatch(refreshThunk());
     void dispatch(getAllWorkouts());
     void dispatch(getAllExercises());
-    if (isUser) void dispatch(getMyParameters())
+    if (isUser) void dispatch(getMyParameters());
   }, [dispatch, isUser]);
 
   const router = createBrowserRouter([
@@ -40,7 +39,6 @@ function App(): React.JSX.Element {
           path: '/',
           element: <HelloPage />,
         },
-
         {
           path: '/userP',
           element: <LkPage />,
@@ -57,7 +55,6 @@ function App(): React.JSX.Element {
           path: 'types/workouts/exercises/:id',
           element: <ExercisePage />,
         },
-
         {
           element: <ProtectedRouter isAllowed={isUser} redirectTo="/login" />,
           children: [
@@ -73,7 +70,6 @@ function App(): React.JSX.Element {
               path: 'types/workouts/exercises/:id',
               element: <ExercisePage />,
             },
-           
           ],
         },
         {
@@ -92,6 +88,11 @@ function App(): React.JSX.Element {
       ],
     },
   ]);
+
+  if (isLoading) {
+    return <Spinner />; 
+  }
+
   return <RouterProvider router={router} />;
 }
 
